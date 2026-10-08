@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router";
 import { useCart } from "../../context/CartContext";
 import { useCartDrawer } from "../../context/CartDrawerContext";
+import { useDebounce } from "../../hooks/useDebounce";
 import { Logo } from "../common/Logo";
 import { SearchBar } from "../product/SearchBar";
 import { IconBag, IconSearch, IconX } from "../common/Icons";
@@ -17,7 +18,42 @@ export function Navbar() {
   const mobileInputRef = useRef<HTMLInputElement>(null);
 
   const onHome = location.pathname === "/";
-  const query = onHome ? (params.get("q") ?? "") : "";
+  const urlQuery = onHome ? (params.get("q") ?? "") : "";
+
+  // Local state for immediate typing feedback
+  const [searchTerm, setSearchTerm] = useState(urlQuery);
+  const debouncedSearch = useDebounce(searchTerm, 250);
+
+  // Sync local input with URL when updated externally (clear filters, back/forward)
+  useEffect(() => {
+    setSearchTerm(urlQuery);
+  }, [urlQuery]);
+
+  // Update URL search params after debounce delay
+  useEffect(() => {
+    if (!onHome) return;
+    if (debouncedSearch === urlQuery) return;
+
+    const nextParams = new URLSearchParams(params);
+    if (debouncedSearch) {
+      nextParams.set("q", debouncedSearch);
+    } else {
+      nextParams.delete("q");
+    }
+    setParams(nextParams, { replace: true });
+  }, [debouncedSearch, onHome, params, setParams, urlQuery]);
+
+  const handleSearchChange = (newVal: string) => {
+    setSearchTerm(newVal);
+    if (!onHome && newVal) {
+      navigate(`/?q=${encodeURIComponent(newVal)}`);
+    } else if (onHome && newVal === "") {
+      // Immediate reset on clear button click
+      const nextParams = new URLSearchParams(params);
+      nextParams.delete("q");
+      setParams(nextParams, { replace: true });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,20 +69,6 @@ export function Navbar() {
       mobileInputRef.current?.focus();
     }
   }, [isMobileSearchOpen]);
-
-  const handleSearchChange = (newVal: string) => {
-    if (onHome) {
-      const nextParams = new URLSearchParams(params);
-      if (newVal) {
-        nextParams.set("q", newVal);
-      } else {
-        nextParams.delete("q");
-      }
-      setParams(nextParams, { replace: true });
-    } else if (newVal) {
-      navigate(`/?q=${encodeURIComponent(newVal)}`);
-    }
-  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-[#f7f4ee]/95 backdrop-blur-md transition-all duration-200">
@@ -64,7 +86,7 @@ export function Navbar() {
         <Logo className="md:w-48" />
 
         <div className="mx-auto hidden w-full max-w-md md:block">
-          <SearchBar value={query} onChange={handleSearchChange} id="search-desktop" />
+          <SearchBar value={searchTerm} onChange={handleSearchChange} id="search-desktop" />
         </div>
 
         <div className="ml-auto flex items-center gap-1 md:ml-0 md:w-48 md:justify-end">
@@ -100,7 +122,7 @@ export function Navbar() {
       {isMobileSearchOpen && (
         <div className="fade border-t border-line px-5 py-3 md:hidden">
           <SearchBar
-            value={query}
+            value={searchTerm}
             onChange={handleSearchChange}
             id="search-mobile"
             inputRef={mobileInputRef}

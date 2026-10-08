@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { useSearchParams } from "react-router";
 import { useProducts } from "../hooks/useProducts";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { filterAndSortProducts } from "../lib/productFilters";
 import { CategoryPills } from "../components/product/CategoryPills";
 import { SortSelect } from "../components/product/SortSelect";
@@ -13,6 +14,7 @@ import { btnPrimary } from "../lib/styles";
 import { CATEGORIES, type Category } from "../types/product";
 
 export default function Home() {
+  useDocumentTitle("Artisanal Coffee & Rare-Leaf Teas");
   const [params, setParams] = useSearchParams();
   const q = params.get("q") ?? "";
   const cat = (params.get("cat") ?? "all") as Category | "all";

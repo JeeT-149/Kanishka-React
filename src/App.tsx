@@ -1,24 +1,7 @@
-import { RouterProvider, createHashRouter } from "react-router";
-import { Layout } from "./components/layout/Layout";
+import { RouterProvider } from "react-router";
 import { CartProvider } from "./context/CartContext";
 import { CartDrawerProvider } from "./context/CartDrawerContext";
-import Home from "./pages/Home";
-import ProductDetail from "./pages/ProductDetail";
-import Cart from "./pages/Cart";
-import NotFound from "./pages/NotFound";
-
-const router = createHashRouter([
-  {
-    path: "/",
-    Component: Layout,
-    children: [
-      { index: true, Component: Home },
-      { path: "product/:id", Component: ProductDetail },
-      { path: "cart", Component: Cart },
-      { path: "*", Component: NotFound },
-    ],
-  },
-]);
+import { router } from "./router";
 
 export default function App() {
   return (

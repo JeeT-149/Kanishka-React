@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useCart } from "../context/CartContext";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { CartLineItem } from "../components/cart/CartLineItem";
 import { CartSummary } from "../components/cart/CartSummary";
 import { EmptyState } from "../components/feedback/EmptyState";
@@ -7,6 +8,7 @@ import { IconBack, IconBag } from "../components/common/Icons";
 import { btnPrimary } from "../lib/styles";
 
 export default function Cart() {
+  useDocumentTitle("Shopping Cart");
   const { lines, count } = useCart();
 
   if (lines.length === 0) {

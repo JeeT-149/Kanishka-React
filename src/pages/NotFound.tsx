@@ -1,7 +1,9 @@
 import { Link } from "react-router";
 import { btnPrimary } from "../lib/styles";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 export default function NotFound() {
+  useDocumentTitle("404 - Page Not Found");
   return (
     <div className="mx-auto flex max-w-[1280px] flex-col items-center px-5 py-24 text-center md:py-32">
       <p

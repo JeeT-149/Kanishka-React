@@ -5,6 +5,7 @@ import { money, toMinor, formatMinor } from "../lib/currency";
 import { useCart } from "../context/CartContext";
 import { useCartDrawer } from "../context/CartDrawerContext";
 import { useProduct } from "../hooks/useProduct";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { SafeImage } from "../components/common/SafeImage";
 import { StarRating } from "../components/common/StarRating";
 import { QuantityStepper } from "../components/common/QuantityStepper";
@@ -25,6 +26,10 @@ export default function ProductDetail() {
   const [qty, setQty] = useState(1);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isAdded, setIsAdded] = useState(false);
+
+  useDocumentTitle(
+    product ? product.name : status === "not-found" ? "Product Not Found" : "Loading Product",
+  );
 
   useEffect(() => {
     setQty(1);
