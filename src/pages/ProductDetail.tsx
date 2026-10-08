@@ -213,15 +213,17 @@ export default function ProductDetail() {
                 isOutOfStock ? "cursor-not-allowed opacity-60" : ""
               }`}
             >
-              {isOutOfStock ? (
-                "Out of stock"
-              ) : isAdded ? (
-                <>
-                  <IconCheck width={18} height={18} /> Added to cart ✓
-                </>
-              ) : (
-                `Add to cart · ${totalPriceText}`
-              )}
+              <span className="inline-flex items-center gap-2" aria-live="polite">
+                {isOutOfStock ? (
+                  "Out of stock"
+                ) : isAdded ? (
+                  <>
+                    <IconCheck width={18} height={18} /> Added to cart ✓
+                  </>
+                ) : (
+                  `Add to cart · ${totalPriceText}`
+                )}
+              </span>
             </button>
           </div>
           <div aria-live="polite" className="mt-3 hidden min-h-6 text-sm md:block">
@@ -256,15 +258,17 @@ export default function ProductDetail() {
             isOutOfStock ? "cursor-not-allowed opacity-60" : ""
           }`}
         >
-          {isOutOfStock ? (
-            "Out of stock"
-          ) : isAdded ? (
-            <>
-              <IconCheck width={16} height={16} /> Added ✓
-            </>
-          ) : (
-            `Add · ${totalPriceText}`
-          )}
+          <span className="inline-flex items-center gap-2" aria-live="polite">
+            {isOutOfStock ? (
+              "Out of stock"
+            ) : isAdded ? (
+              <>
+                <IconCheck width={16} height={16} /> Added ✓
+              </>
+            ) : (
+              `Add · ${totalPriceText}`
+            )}
+          </span>
         </button>
       </div>
     </div>

@@ -11,8 +11,33 @@ import { btnPrimary } from "../../lib/styles";
 export function CartDrawer() {
   const { isOpen, closeDrawer } = useCartDrawer();
   const { lines, count } = useCart();
+  const asideRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerElementRef = useRef<HTMLElement | null>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isOpen) {
+      // Retain the trigger element that opened the drawer to restore focus on close
+      triggerElementRef.current = document.activeElement as HTMLElement | null;
+      document.body.style.overflow = "hidden";
+
+      // Focus close button inside drawer after render
+      const timer = setTimeout(() => {
+        closeButtonRef.current?.focus();
+      }, 50);
+
+      return () => {
+        clearTimeout(timer);
+      };
+    } else {
+      document.body.style.overflow = "";
+      if (triggerElementRef.current) {
+        triggerElementRef.current.focus();
+        triggerElementRef.current = null;
+      }
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -20,16 +45,37 @@ export function CartDrawer() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         closeDrawer();
+        return;
+      }
+
+      // Enforce focus trap within the modal dialog
+      if (e.key === "Tab" && asideRef.current) {
+        const focusable = asideRef.current.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        );
+
+        if (focusable.length === 0) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       }
     };
 
     document.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
-    closeButtonRef.current?.focus();
-
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
     };
   }, [isOpen, closeDrawer]);
 
@@ -45,16 +91,17 @@ export function CartDrawer() {
         }`}
       />
       <aside
+        ref={asideRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Shopping cart"
+        aria-labelledby="cart-drawer-heading"
         inert={!isOpen}
         className={`absolute right-0 top-0 flex h-full w-full flex-col bg-paper shadow-soft transition-transform duration-300 ease-out sm:w-[440px] ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <header className="flex items-center justify-between border-b border-line px-6 py-4">
-          <h2 className="font-display text-2xl">
+          <h2 id="cart-drawer-heading" className="font-display text-2xl">
             Your cart <span className="text-base text-mute">({count})</span>
           </h2>
           <button
@@ -62,7 +109,7 @@ export function CartDrawer() {
             type="button"
             onClick={closeDrawer}
             aria-label="Close cart"
-            className="grid size-11 place-items-center rounded-full hover:bg-sunk"
+            className="grid size-11 place-items-center rounded-full hover:bg-sunk focus-visible:outline-2"
           >
             <IconX />
           </button>
@@ -102,7 +149,7 @@ export function CartDrawer() {
               <Link
                 to="/cart"
                 onClick={closeDrawer}
-                className="mt-3 flex min-h-11 items-center justify-center gap-1.5 text-sm text-mute underline-offset-4 hover:text-ink hover:underline"
+                className="mt-3 flex min-h-11 items-center justify-center gap-1.5 text-sm text-mute underline-offset-4 hover:text-ink hover:underline focus-visible:outline-2"
               >
                 View full cart <IconArrow width={14} height={14} />
               </Link>
