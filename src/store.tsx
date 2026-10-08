@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { byId, toMinor, fromMinor } from "./data";
+import { findProduct } from "./services/productService";
+import { toMinor, fromMinor } from "./lib/currency";
 
 type Line = { id: string; qty: number };
 type Ctx = {
@@ -34,10 +35,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [lines]);
 
   const value = useMemo<Ctx>(() => {
-    const valid = lines.filter((l) => byId(l.id));
+    const valid = lines.filter((l) => findProduct(l.id));
     // Compute in smallest integer unit (pence/paise) to prevent floating-point accumulation errors
     const subtotalMinor = valid.reduce((sum, l) => {
-      const p = byId(l.id)!;
+      const p = findProduct(l.id)!;
       return sum + toMinor(p.price) * l.qty;
     }, 0);
 

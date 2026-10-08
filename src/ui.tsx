@@ -1,6 +1,7 @@
 import { useState, type ReactNode, type SVGProps } from "react";
 import { Link } from "react-router";
-import { categoryLabel, money, type Product } from "./data";
+import { categoryLabel, type Product } from "./types/product";
+import { money } from "./lib/currency";
 import { useCart } from "./store";
 
 export const btnPrimary =
@@ -153,7 +154,10 @@ export function ProductCard({ p, index = 0 }: { p: Product; index?: number }) {
   const [done, setDone] = useState(false);
   const meta = [p.origin ?? categoryLabel(p.category), p.weight].join(" · ");
 
+  const isOutOfStock = p.inStock === false;
+
   const handleAdd = () => {
+    if (isOutOfStock) return;
     add(p.id);
     setDone(true);
     setTimeout(() => setDone(false), 1400);
@@ -168,13 +172,18 @@ export function ProductCard({ p, index = 0 }: { p: Product; index?: number }) {
       />
       <div className="relative aspect-[4/5] overflow-hidden rounded-card bg-sunk">
         <Img
-          src={p.images[0]}
-          alt={`${p.name}, ${p.weight}`}
+          src={p.images?.[0] ?? p.image}
+          alt={`${p.name}, ${p.weight ?? ""}`}
           className="size-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
         />
         {p.rating < 4.1 && (
           <span className="absolute left-3 top-3 rounded-full bg-paper/90 px-2.5 py-1 text-[11px] font-medium text-mute shadow-2xs">
             Acquired taste
+          </span>
+        )}
+        {isOutOfStock && (
+          <span className="absolute right-3 top-3 rounded-full bg-ink/80 px-2.5 py-1 text-[11px] font-medium text-paper">
+            Sold out
           </span>
         )}
       </div>
@@ -189,22 +198,27 @@ export function ProductCard({ p, index = 0 }: { p: Product; index?: number }) {
 
         {/* Rating and price row */}
         <div className="mt-3 flex items-center justify-between">
-          <Stars rating={p.rating} count={p.reviews} />
+          <Stars rating={p.rating} count={p.reviewCount} />
           <span className="text-sm font-medium tabular-nums">{money(p.price)}</span>
         </div>
 
         {/* Full-width Add to cart button matching design with Added ✓ state */}
         <button
           onClick={handleAdd}
+          disabled={isOutOfStock}
           className={`relative z-20 mt-4 min-h-11 w-full rounded-ctl border text-sm font-medium transition active:scale-[0.98] ${
-            done
+            isOutOfStock
+              ? "cursor-not-allowed border-line bg-sunk text-mute opacity-70"
+              : done
               ? "border-accent bg-accent text-white"
               : "border-ink/20 hover:border-accent hover:bg-accent hover:text-white"
           }`}
-          aria-label={`Add ${p.name} to cart`}
+          aria-label={isOutOfStock ? `${p.name} is out of stock` : `Add ${p.name} to cart`}
         >
           <span className="inline-flex items-center gap-2" aria-live="polite">
-            {done ? (
+            {isOutOfStock ? (
+              "Out of stock"
+            ) : done ? (
               <>
                 <IconCheck width={16} height={16} /> Added ✓
               </>

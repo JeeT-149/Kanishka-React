@@ -1,0 +1,431 @@
+[
+  {
+    "id": "ethiopia-yirgacheffe",
+    "name": "Yirgacheffe Kochere",
+    "category": "single",
+    "origin": "Ethiopia Yirgacheffe",
+    "weight": "250g",
+    "price": 19,
+    "rating": 4.9,
+    "reviewCount": 214,
+    "roast": 1,
+    "tastingNotes": ["Jasmine", "Bergamot", "Peach"],
+    "description": "A washed lot from smallholders around Kochere, dried slowly on raised beds. Delicate, floral and tea-like, with a bright citrus finish.",
+    "brewRecipe": "V60, 1:16 ratio, 94°C, 3:00 total",
+    "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620154562329-b4d6c9fac183?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "featured": 1,
+    "inStock": true
+  },
+  {
+    "id": "colombia-huila",
+    "name": "Huila Las Margaritas",
+    "category": "single",
+    "origin": "Colombia Huila",
+    "weight": "250g",
+    "price": 17,
+    "rating": 4.7,
+    "reviewCount": 168,
+    "roast": 2,
+    "tastingNotes": ["Red apple", "Panela", "Cacao nib"],
+    "description": "Sweet, rounded and easy to love. Grown at 1,750m by a cooperative of 40 families near Pitalito.",
+    "brewRecipe": "Espresso 1:2 in 28s, or Aeropress 1:15",
+    "image": "https://images.unsplash.com/photo-1605711599412-775918dbe770?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1605711599412-775918dbe770?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1699806678863-07164145876b?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "featured": 2,
+    "inStock": true
+  },
+  {
+    "id": "kenya-nyeri",
+    "name": "Nyeri Gatomboya AA",
+    "category": "single",
+    "origin": "Kenya Nyeri",
+    "weight": "250g",
+    "price": 21,
+    "rating": 4.8,
+    "reviewCount": 129,
+    "roast": 2,
+    "tastingNotes": ["Blackcurrant", "Grapefruit", "Brown sugar"],
+    "description": "Juicy and structured, the classic Kenyan profile. SL28 and SL34 varieties, double-washed and soaked.",
+    "brewRecipe": "Chemex, 1:15, 95°C, 4:30 total",
+    "image": "https://images.unsplash.com/photo-1593084264959-d8297ea0725c?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1593084264959-d8297ea0725c?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620154561953-0756754dd76d?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "featured": 3,
+    "inStock": true
+  },
+  {
+    "id": "guatemala-antigua",
+    "name": "Antigua Volcán de Fuego",
+    "category": "single",
+    "origin": "Guatemala Antigua",
+    "weight": "500g",
+    "price": 29,
+    "rating": 4.5,
+    "reviewCount": 97,
+    "roast": 3,
+    "tastingNotes": ["Milk chocolate", "Almond", "Orange zest"],
+    "description": "Grown in volcanic ash soil on the slopes of Fuego. Balanced, chocolatey and a dependable daily brew.",
+    "brewRecipe": "French press, 1:14, 4:00 steep",
+    "image": "https://images.unsplash.com/photo-1695245503558-5cdb37f49092?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1695245503558-5cdb37f49092?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620154562294-b5de7281e05d?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "brazil-cerrado",
+    "name": "Cerrado Mineiro Natural",
+    "category": "single",
+    "origin": "Brazil Cerrado",
+    "weight": "500g",
+    "price": 26,
+    "rating": 4.4,
+    "reviewCount": 83,
+    "roast": 3,
+    "tastingNotes": ["Hazelnut", "Toffee", "Dried fig"],
+    "description": "Naturally processed and low in acidity, a soft and nutty coffee that takes milk beautifully.",
+    "brewRecipe": "Moka pot or espresso",
+    "image": "https://images.unsplash.com/photo-1614792440169-b30e7f734f58?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1614792440169-b30e7f734f58?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620154562329-b4d6c9fac183?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "sumatra-mandheling",
+    "name": "Sumatra Lintong Wet-Hulled",
+    "category": "single",
+    "origin": "Indonesia Sumatra",
+    "weight": "250g",
+    "price": 18,
+    "rating": 3.8,
+    "reviewCount": 41,
+    "roast": 4,
+    "tastingNotes": ["Cedar", "Dark cocoa", "Tobacco leaf"],
+    "description": "Earthy and heavy-bodied. A polarising coffee, loved by those who want depth over brightness.",
+    "brewRecipe": "French press, 1:15",
+    "image": "https://images.unsplash.com/photo-1708961352625-82e59dd0c0af?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1708961352625-82e59dd0c0af?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1699806678863-07164145876b?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "rwanda-nyamasheke",
+    "name": "Nyamasheke Washed",
+    "category": "single",
+    "origin": "Rwanda Nyamasheke",
+    "weight": "250g",
+    "price": 18,
+    "rating": 4.6,
+    "reviewCount": 72,
+    "roast": 2,
+    "tastingNotes": ["Red grape", "Black tea", "Honey"],
+    "description": "A clean, sweet lot from the shores of Lake Kivu, with a silky body and a long honeyed finish.",
+    "brewRecipe": "Kalita Wave, 1:16, 93°C",
+    "image": "https://images.unsplash.com/photo-1593084264959-d8297ea0725c?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1593084264959-d8297ea0725c?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620154561953-0756754dd76d?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "kiln-house-blend",
+    "name": "Kiln House Blend",
+    "category": "blends",
+    "origin": "Brazil, Colombia",
+    "weight": "500g",
+    "price": 24,
+    "rating": 4.8,
+    "reviewCount": 402,
+    "roast": 3,
+    "tastingNotes": ["Caramel", "Roasted almond", "Cocoa"],
+    "description": "Our everyday coffee. Medium roasted for sweetness and comfort, built to work in any brewer you own.",
+    "brewRecipe": "Any method; we love it as a flat white",
+    "image": "https://images.unsplash.com/photo-1712402832925-d41c446883d3?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1712402832925-d41c446883d3?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620154562294-b5de7281e05d?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "featured": 4,
+    "inStock": true
+  },
+  {
+    "id": "morning-ember",
+    "name": "Morning Ember",
+    "category": "blends",
+    "origin": "Ethiopia, Guatemala",
+    "weight": "250g",
+    "price": 15,
+    "rating": 4.6,
+    "reviewCount": 188,
+    "roast": 2,
+    "tastingNotes": ["Stone fruit", "Milk chocolate", "Lemon"],
+    "description": "Bright but gentle. A lighter blend for slow weekends and filter lovers.",
+    "brewRecipe": "Batch brew, 60g per litre",
+    "image": "https://images.unsplash.com/photo-1642505171999-d704cd50f93c?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1642505171999-d704cd50f93c?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620154562329-b4d6c9fac183?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "midnight-espresso",
+    "name": "Midnight Espresso",
+    "category": "blends",
+    "origin": "Sumatra, Brazil",
+    "weight": "500g",
+    "price": 27,
+    "rating": 4.7,
+    "reviewCount": 255,
+    "roast": 5,
+    "tastingNotes": ["Dark chocolate", "Molasses", "Smoke"],
+    "description": "Dense, syrupy and bittersweet. Roasted dark but never burnt, built for milk drinks.",
+    "brewRecipe": "Espresso 1:2 in 30s",
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1699806678863-07164145876b?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "decaf-swiss-water",
+    "name": "Decaf Swiss Water Colombia",
+    "category": "blends",
+    "origin": "Colombia",
+    "weight": "250g",
+    "price": 16,
+    "rating": 4.2,
+    "reviewCount": 64,
+    "roast": 3,
+    "tastingNotes": ["Toffee", "Walnut", "Red apple"],
+    "description": "Chemical-free decaffeination keeps the sweetness. For the evening cup.",
+    "brewRecipe": "Aeropress or espresso",
+    "image": "https://images.unsplash.com/photo-1605711599412-775918dbe770?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1605711599412-775918dbe770?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620154561953-0756754dd76d?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": false
+  },
+  {
+    "id": "holiday-reserve-limited-edition-whole-bean-gift-box-with-hand-numbered-tin",
+    "name": "Winter Reserve Limited Edition Whole Bean Gift Box with Hand-Numbered Tin and Tasting Card",
+    "category": "blends",
+    "origin": "Ethiopia, Kenya, Colombia",
+    "weight": "3 × 100g",
+    "price": 48,
+    "rating": 4.9,
+    "reviewCount": 33,
+    "roast": 2,
+    "tastingNotes": ["Spice", "Orange peel", "Dark berry"],
+    "description": "Three small lots in one numbered tin, with a card to guide a side-by-side tasting. Available while stocks last.",
+    "brewRecipe": "Pour over, 1:16",
+    "image": "https://images.unsplash.com/photo-1695245503558-5cdb37f49092?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1695245503558-5cdb37f49092?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620154562294-b5de7281e05d?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "darjeeling-first-flush",
+    "name": "Darjeeling First Flush",
+    "category": "tea",
+    "origin": "India Darjeeling",
+    "weight": "100g",
+    "price": 16,
+    "rating": 4.8,
+    "reviewCount": 152,
+    "tastingNotes": ["Muscatel", "Fresh cut grass", "Apricot"],
+    "description": "Picked in early spring from the Castleton gardens. Light, lively and quietly complex.",
+    "brewRecipe": "2.5g per 200ml, 85°C, 3 minutes",
+    "image": "https://images.unsplash.com/photo-1606163017137-888c0177b3dd?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1606163017137-888c0177b3dd?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1760602180499-382146d5eb02?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "featured": 5,
+    "inStock": true
+  },
+  {
+    "id": "assam-breakfast",
+    "name": "Assam Mangalam Breakfast",
+    "category": "tea",
+    "origin": "India Assam",
+    "weight": "250g",
+    "price": 14,
+    "rating": 4.6,
+    "reviewCount": 210,
+    "tastingNotes": ["Malt", "Honey", "Dark bread"],
+    "description": "Robust and malty with a deep amber cup. Stands up to milk and a splash of sugar.",
+    "brewRecipe": "3g per 200ml, 98°C, 4 minutes",
+    "image": "https://images.unsplash.com/photo-1610111793912-b8a45b3f94b4?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1610111793912-b8a45b3f94b4?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1632088691096-ba95dd63a647?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "japanese-sencha",
+    "name": "Japanese Sencha Yabukita",
+    "category": "tea",
+    "origin": "Japan Shizuoka",
+    "weight": "100g",
+    "price": 17,
+    "rating": 4.7,
+    "reviewCount": 119,
+    "tastingNotes": ["Sea air", "Sweet pea", "Lemon balm"],
+    "description": "Steamed green tea with a vivid emerald cup. Savoury, fresh and green.",
+    "brewRecipe": "4g per 200ml, 70°C, 60 seconds",
+    "image": "https://images.unsplash.com/photo-1610112278819-069287c86d03?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1610112278819-069287c86d03?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1610111794807-83a64d32ef72?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "genmaicha",
+    "name": "Toasted Genmaicha",
+    "category": "tea",
+    "weight": "100g",
+    "price": 12,
+    "rating": 4.3,
+    "reviewCount": 76,
+    "tastingNotes": ["Toasted rice", "Popcorn", "Sweet grass"],
+    "description": "Sencha blended with roasted brown rice. Nutty, comforting and low in caffeine.",
+    "image": "https://images.unsplash.com/photo-1610643625267-aee6dae3ca22?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1610643625267-aee6dae3ca22?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1606163017137-888c0177b3dd?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "oolong-alishan",
+    "name": "Alishan High Mountain Oolong",
+    "category": "tea",
+    "origin": "Taiwan Alishan",
+    "weight": "100g",
+    "price": 22,
+    "rating": 4.9,
+    "reviewCount": 88,
+    "tastingNotes": ["Orchid", "Cream", "Green apple"],
+    "description": "Grown above 1,200m in cool mist. Buttery, floral and endlessly re-steepable.",
+    "brewRecipe": "5g per 150ml, 95°C, five short infusions",
+    "image": "https://images.unsplash.com/photo-1760602180499-382146d5eb02?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1760602180499-382146d5eb02?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1610111793912-b8a45b3f94b4?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "earl-grey-smoked",
+    "name": "Smoked Earl Grey",
+    "category": "tea",
+    "origin": "China Yunnan",
+    "weight": "100g",
+    "price": 13,
+    "rating": 4.1,
+    "reviewCount": 57,
+    "tastingNotes": ["Bergamot", "Pine smoke", "Black pepper"],
+    "description": "Lapsang and bergamot oil in an unlikely, delicious pairing.",
+    "brewRecipe": "3g per 200ml, 96°C, 4 minutes",
+    "image": "https://images.unsplash.com/photo-1632088691096-ba95dd63a647?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1632088691096-ba95dd63a647?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1610112278819-069287c86d03?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "hand-grinder",
+    "name": "Hand Grinder, Matte Black",
+    "category": "gear",
+    "weight": "620g",
+    "price": 79,
+    "rating": 4.8,
+    "reviewCount": 301,
+    "tastingNotes": ["48mm burrs", "Steel body", "30 clicks"],
+    "description": "Precise, quiet and travels well. Stainless conical burrs deliver even grounds from espresso to French press.",
+    "brewRecipe": "Dial 12 clicks for pour-over, 5 for espresso",
+    "image": "https://images.unsplash.com/photo-1595827295672-97a059484442?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1595827295672-97a059484442?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1522726336270-3a0053210f06?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "pour-over-kit",
+    "name": "Ceramic Pour-Over Set",
+    "category": "gear",
+    "weight": "54g",
+    "price": 54,
+    "rating": 4.6,
+    "reviewCount": 144,
+    "tastingNotes": ["Dripper", "Carafe", "40 filters"],
+    "description": "A glazed ceramic dripper, a glass carafe and a starter pack of paper filters.",
+    "brewRecipe": "Recommended with 02 filter papers and 300-500ml brews",
+    "image": "https://images.unsplash.com/photo-1587955245893-389f2215c6eb?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1587955245893-389f2215c6eb?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1729277133095-bff46b56c29a?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "gooseneck-kettle",
+    "name": "Gooseneck Kettle 0.9L",
+    "category": "gear",
+    "weight": "1.1kg",
+    "price": 68,
+    "rating": 4.7,
+    "reviewCount": 205,
+    "tastingNotes": ["Precise pour", "Stainless", "Gas and induction"],
+    "description": "A balanced, slow-pouring spout makes bloom and spiral technique easy.",
+    "brewRecipe": "Heat water to 92-96°C for optimal extraction",
+    "image": "https://images.unsplash.com/photo-1592417766326-088bf3da80c5?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1592417766326-088bf3da80c5?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1541469406036-71229832e06e?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "digital-scale",
+    "name": "Brew Scale with Timer",
+    "category": "gear",
+    "weight": "420g",
+    "price": 49,
+    "rating": 4.0,
+    "reviewCount": 62,
+    "tastingNotes": ["0.1g accuracy", "Water-resistant", "USB-C"],
+    "description": "Weigh, time and repeat. Reliable accuracy for the home brewer.",
+    "brewRecipe": "Tare carafe, start timer with first water pour",
+    "image": "https://images.unsplash.com/photo-1522726336270-3a0053210f06?w=900&h=1100&fit=crop&auto=format&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1522726336270-3a0053210f06?w=900&h=1100&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1595827295672-97a059484442?w=900&h=1100&fit=crop&auto=format&q=80"
+    ],
+    "inStock": true
+  }
+]

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Outlet, ScrollRestoration, useLocation, useNavigate, useSearchParams } from "react-router";
-import { byId, money, toMinor, formatMinor } from "./data";
+import { findProduct } from "./services/productService";
+import { money, toMinor, formatMinor } from "./lib/currency";
 import { useCart } from "./store";
 import { IconArrow, IconBag, IconSearch, IconTrash, IconX, Img, Logo, Qty, StateBlock, btnGhost, btnPrimary } from "./ui";
 
@@ -9,7 +10,8 @@ export function CartLines({ compact = false }: { compact?: boolean }) {
   return (
     <ul className="divide-y divide-line">
       {lines.map((l) => {
-        const p = byId(l.id)!;
+        const p = findProduct(l.id);
+        if (!p) return null;
         return (
           <li key={l.id} className="rise flex gap-4 py-5">
             <Link to={`/product/${p.id}`} onClick={() => setDrawer(false)} className="shrink-0">

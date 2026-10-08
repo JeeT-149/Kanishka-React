@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useSearchParams } from "react-router";
-import { CATEGORIES, PRODUCTS } from "../data";
+import { CATEGORIES } from "../types/product";
+import { useProducts } from "../hooks/useProducts";
 import { IconArrow, IconSearch, IconX, ProductCard, SkeletonCard, StateBlock, btnGhost, btnPrimary } from "../ui";
 
 const SORTS = [
@@ -10,25 +11,12 @@ const SORTS = [
   ["rating", "Top rated"],
 ] as const;
 
-let loadedOnce = false;
-
 export default function Home() {
   const [params, setParams] = useSearchParams();
   const q = params.get("q") ?? "";
   const cat = params.get("cat") ?? "all";
   const sort = params.get("sort") ?? "featured";
-  const demo = params.get("demo");
-  const [loading, setLoading] = useState(!loadedOnce);
-  const [failed, setFailed] = useState(false);
-
-  useEffect(() => {
-    if (!loading) return;
-    const t = setTimeout(() => {
-      loadedOnce = true;
-      setLoading(false);
-    }, 900);
-    return () => clearTimeout(t);
-  }, [loading]);
+  const { products, status, retry } = useProducts();
 
   const set = (k: string, v: string | null) => {
     const n = new URLSearchParams(params);
@@ -38,10 +26,10 @@ export default function Home() {
 
   const results = useMemo(() => {
     const t = q.trim().toLowerCase();
-    const list = PRODUCTS.filter(
+    const list = products.filter(
       (p) =>
         (cat === "all" || p.category === cat) &&
-        (!t || [p.name, p.origin ?? "", ...p.notes].join(" ").toLowerCase().includes(t)),
+        (!t || [p.name, p.origin ?? "", ...(p.tastingNotes ?? [])].join(" ").toLowerCase().includes(t)),
     );
     const s = [...list];
     if (sort === "price-asc") s.sort((a, b) => a.price - b.price);
@@ -49,7 +37,7 @@ export default function Home() {
     else if (sort === "rating") s.sort((a, b) => b.rating - a.rating);
     else s.sort((a, b) => (a.featured ?? 99) - (b.featured ?? 99));
     return s;
-  }, [q, cat, sort]);
+  }, [products, q, cat, sort]);
 
   const filtered = q || cat !== "all";
   const clear = () => {
@@ -57,8 +45,8 @@ export default function Home() {
     ["q", "cat"].forEach((k) => n.delete(k));
     setParams(n, { replace: true });
   };
-  const showLoading = loading || demo === "loading";
-  const showError = failed || demo === "error";
+  const showLoading = status === "loading";
+  const showError = status === "error";
   const catLabel = CATEGORIES.find((c) => c.id === cat)?.label;
 
   return (
@@ -182,11 +170,7 @@ export default function Home() {
             action={
               <button
                 className={btnPrimary}
-                onClick={() => {
-                  setFailed(false);
-                  set("demo", null);
-                  setLoading(true);
-                }}
+                onClick={retry}
               >
                 Try again
               </button>
