@@ -7,7 +7,6 @@ export type CartAction =
   | { type: "ADD"; id: string; qty?: number }
   | { type: "SET_QTY"; id: string; qty: number }
   | { type: "REMOVE"; id: string }
-  | { type: "CLEAR" }
   | { type: "SYNC"; lines: CartItem[] };
 
 /**
@@ -45,10 +44,6 @@ export function cartReducer(state: CartItem[], action: CartAction): CartItem[] {
 
     case "REMOVE": {
       return state.filter((item) => item.id !== action.id);
-    }
-
-    case "CLEAR": {
-      return [];
     }
 
     case "SYNC": {

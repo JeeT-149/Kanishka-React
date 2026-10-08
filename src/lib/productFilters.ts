@@ -10,7 +10,21 @@ export const SORT_OPTIONS: { id: SortOption; label: string }[] = [
 ];
 
 /**
+ * Normalizes text for search: decomposes diacritics, strips combining marks,
+ * converts to lowercase, trims, and collapses consecutive whitespace.
+ */
+export function normalizeSearchString(text: string): string {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
+/**
  * Pure filtering and sorting pipeline for products.
+ * Search matches if ALL query words appear in the product's searchable text (diacritic- and case-insensitive).
  */
 export function filterAndSortProducts(
   products: Product[],
@@ -18,19 +32,25 @@ export function filterAndSortProducts(
   category: Category | "all",
   sort: string,
 ): Product[] {
-  const normalizedQuery = query.trim().toLowerCase();
+  const normalizedQuery = normalizeSearchString(query);
+  const queryWords = normalizedQuery.length > 0 ? normalizedQuery.split(" ") : [];
 
   const filtered = products.filter((product) => {
     const matchesCategory = category === "all" || product.category === category;
-    const searchableText = [
-      product.name,
-      product.origin ?? "",
-      ...(product.tastingNotes ?? []),
-    ]
-      .join(" ")
-      .toLowerCase();
-    const matchesQuery = !normalizedQuery || searchableText.includes(normalizedQuery);
-    return matchesCategory && matchesQuery;
+    if (!matchesCategory) return false;
+
+    if (queryWords.length === 0) return true;
+
+    const haystack = normalizeSearchString(
+      [
+        product.name,
+        product.origin ?? "",
+        product.description,
+        ...(product.tastingNotes ?? []),
+      ].join(" "),
+    );
+
+    return queryWords.every((word) => haystack.includes(word));
   });
 
   const sorted = [...filtered];

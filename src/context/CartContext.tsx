@@ -24,7 +24,6 @@ export interface CartContextValue {
   add: (id: string, qty?: number) => void;
   setQty: (id: string, qty: number) => void;
   remove: (id: string) => void;
-  clear: () => void;
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -76,7 +75,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       add: (id, qty = 1) => dispatch({ type: "ADD", id, qty }),
       setQty: (id, qty) => dispatch({ type: "SET_QTY", id, qty }),
       remove: (id) => dispatch({ type: "REMOVE", id }),
-      clear: () => dispatch({ type: "CLEAR" }),
     }),
     [lines, count, subtotal, subtotalMinor],
   );
