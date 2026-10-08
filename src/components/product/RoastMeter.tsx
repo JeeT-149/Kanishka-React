@@ -15,17 +15,11 @@ const ROAST_LABELS: Record<RoastLevel, string> = {
 export function RoastMeter({ level }: RoastMeterProps) {
   return (
     <span className="flex items-center gap-3">
-      <span
-        className="flex gap-1"
-        role="img"
-        aria-label={`Roast level ${level} of 5`}
-      >
+      <span className="flex gap-1" role="img" aria-label={`Roast level ${level} of 5`}>
         {([1, 2, 3, 4, 5] as const).map((n) => (
           <span
             key={n}
-            className={`h-2 w-6 rounded-full ${
-              n <= level ? "bg-accent" : "bg-line"
-            }`}
+            className={`h-2 w-6 rounded-full ${n <= level ? "bg-accent" : "bg-line"}`}
           />
         ))}
       </span>

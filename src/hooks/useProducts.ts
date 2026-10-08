@@ -14,6 +14,13 @@ export function useProducts(): UseProductsResult {
   const [products, setProducts] = useState<Product[]>([]);
   const [status, setStatus] = useState<ProductsStatus>("loading");
   const [attempt, setAttempt] = useState(0);
+  const [prevAttempt, setPrevAttempt] = useState(0);
+
+  // Synchronize loading state when attempt changes without setState in effect
+  if (prevAttempt !== attempt) {
+    setPrevAttempt(attempt);
+    setStatus("loading");
+  }
 
   const retry = useCallback(() => {
     setAttempt((prev) => prev + 1);
@@ -21,7 +28,6 @@ export function useProducts(): UseProductsResult {
 
   useEffect(() => {
     let cancelled = false;
-    setStatus("loading");
 
     fetchProducts()
       .then((data) => {

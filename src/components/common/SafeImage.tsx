@@ -12,12 +12,7 @@ export interface SafeImageProps {
  * Image component that reserves aspect ratio to avoid layout shift
  * and renders a neutral fallback placeholder when an image fails to load.
  */
-export function SafeImage({
-  src,
-  alt,
-  className = "",
-  aspectRatio,
-}: SafeImageProps) {
+export function SafeImage({ src, alt, className = "", aspectRatio }: SafeImageProps) {
   const [hasError, setHasError] = useState(false);
 
   if (hasError) {

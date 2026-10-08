@@ -29,7 +29,8 @@ export function Footer() {
         </nav>
       </div>
       <div className="mx-auto max-w-[1280px] border-t border-line px-5 py-5 text-xs text-mute md:px-8">
-        © 2026 Kiln &amp; Leaf Roasters Ltd. A fictional shop for design showcase purposes.
+        © 2026 Kiln &amp; Leaf Roasters Ltd. A fictional shop for design showcase
+        purposes.
       </div>
     </footer>
   );

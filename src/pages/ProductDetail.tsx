@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import { categoryLabel } from "../types/product";
 import { money, toMinor, formatMinor } from "../lib/currency";
@@ -23,19 +23,26 @@ export default function ProductDetail() {
   const navigate = useNavigate();
   const { add } = useCart();
   const { openDrawer } = useCartDrawer();
+  const [prevId, setPrevId] = useState(id);
   const [qty, setQty] = useState(1);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isAdded, setIsAdded] = useState(false);
 
-  useDocumentTitle(
-    product ? product.name : status === "not-found" ? "Product Not Found" : "Loading Product",
-  );
-
-  useEffect(() => {
+  // Synchronously reset form state when route id changes
+  if (prevId !== id) {
+    setPrevId(id);
     setQty(1);
     setActiveImageIndex(0);
     setIsAdded(false);
-  }, [id]);
+  }
+
+  useDocumentTitle(
+    product
+      ? product.name
+      : status === "not-found"
+        ? "Product Not Found"
+        : "Loading Product",
+  );
 
   if (status === "loading") {
     return <ProductDetailSkeleton />;
@@ -162,7 +169,9 @@ export default function ProductDetail() {
           </h1>
           <div className="mt-4 flex items-center gap-4">
             <StarRating rating={product.rating} count={product.reviewCount} />
-            {product.weight && <span className="text-sm text-mute">{product.weight}</span>}
+            {product.weight && (
+              <span className="text-sm text-mute">{product.weight}</span>
+            )}
           </div>
           <p className="mt-5 text-3xl font-medium tabular-nums text-ink">
             {money(product.price)}
@@ -244,12 +253,7 @@ export default function ProductDetail() {
 
       {/* Mobile sticky action bar with solid/blurred background */}
       <div className="fixed inset-x-0 bottom-0 z-30 flex items-center gap-3 border-t border-line bg-[#f7f4ee]/95 px-4 py-3 backdrop-blur-md md:hidden">
-        <QuantityStepper
-          size="sm"
-          value={qty}
-          onChange={setQty}
-          label={product.name}
-        />
+        <QuantityStepper size="sm" value={qty} onChange={setQty} label={product.name} />
         <button
           type="button"
           onClick={isAdded ? openDrawer : handleAdd}

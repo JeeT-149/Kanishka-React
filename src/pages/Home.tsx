@@ -55,9 +55,13 @@ export default function Home() {
           <br />
           <span className="italic text-accent">Steeped</span> with care.
         </h1>
-        <div className="rise max-w-sm md:justify-self-end" style={{ animationDelay: "120ms" }}>
+        <div
+          className="rise max-w-sm md:justify-self-end"
+          style={{ animationDelay: "120ms" }}
+        >
           <p className="text-sm leading-relaxed text-mute">
-            Small-batch coffee and rare-leaf tea from growers we know by name, roasted every Tuesday and Friday.
+            Small-batch coffee and rare-leaf tea from growers we know by name, roasted
+            every Tuesday and Friday.
           </p>
           <a href="#shop" className={`${btnPrimary} mt-4`}>
             Shop the roastery <IconArrow width={16} height={16} />
@@ -129,11 +133,14 @@ export default function Home() {
                   {q && cat !== "all" && " · "}
                   {cat !== "all" && (
                     <>
-                      Category: <strong className="font-medium text-ink">{catLabel}</strong>
+                      Category:{" "}
+                      <strong className="font-medium text-ink">{catLabel}</strong>
                     </>
                   )}
                 </p>
-                <p className="mt-2">Try a different spelling, or browse everything we roast.</p>
+                <p className="mt-2">
+                  Try a different spelling, or browse everything we roast.
+                </p>
               </>
             }
             action={
@@ -144,9 +151,7 @@ export default function Home() {
           />
         )}
 
-        {status === "success" && results.length > 0 && (
-          <ProductGrid products={results} />
-        )}
+        {status === "success" && results.length > 0 && <ProductGrid products={results} />}
       </section>
     </>
   );

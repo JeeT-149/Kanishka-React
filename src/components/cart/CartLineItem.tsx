@@ -24,11 +24,7 @@ export function CartLineItem({ item, compact = false }: CartLineItemProps) {
 
   return (
     <li className="rise flex gap-4 py-5">
-      <Link
-        to={`/product/${product.id}`}
-        onClick={closeDrawer}
-        className="shrink-0"
-      >
+      <Link to={`/product/${product.id}`} onClick={closeDrawer} className="shrink-0">
         <SafeImage
           src={product.images?.[0] ?? product.image}
           alt={product.name}

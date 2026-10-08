@@ -5,10 +5,7 @@ export interface CategoryPillsProps {
   onSelectCategory: (category: Category | "all") => void;
 }
 
-export function CategoryPills({
-  activeCategory,
-  onSelectCategory,
-}: CategoryPillsProps) {
+export function CategoryPills({ activeCategory, onSelectCategory }: CategoryPillsProps) {
   return (
     <div
       role="group"

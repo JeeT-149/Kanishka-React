@@ -21,13 +21,15 @@ export function Navbar() {
   const urlQuery = onHome ? (params.get("q") ?? "") : "";
 
   // Local state for immediate typing feedback
+  const [prevUrlQuery, setPrevUrlQuery] = useState(urlQuery);
   const [searchTerm, setSearchTerm] = useState(urlQuery);
   const debouncedSearch = useDebounce(searchTerm, 250);
 
   // Sync local input with URL when updated externally (clear filters, back/forward)
-  useEffect(() => {
+  if (prevUrlQuery !== urlQuery) {
+    setPrevUrlQuery(urlQuery);
     setSearchTerm(urlQuery);
-  }, [urlQuery]);
+  }
 
   // Update URL search params after debounce delay
   useEffect(() => {
@@ -86,7 +88,11 @@ export function Navbar() {
         <Logo className="md:w-48" />
 
         <div className="mx-auto hidden w-full max-w-md md:block">
-          <SearchBar value={searchTerm} onChange={handleSearchChange} id="search-desktop" />
+          <SearchBar
+            value={searchTerm}
+            onChange={handleSearchChange}
+            id="search-desktop"
+          />
         </div>
 
         <div className="ml-auto flex items-center gap-1 md:ml-0 md:w-48 md:justify-end">

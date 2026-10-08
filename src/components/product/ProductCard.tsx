@@ -65,9 +65,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
         <div className="mt-3 flex items-center justify-between">
           <StarRating rating={product.rating} count={product.reviewCount} />
-          <span className="text-sm font-medium tabular-nums">
-            {money(product.price)}
-          </span>
+          <span className="text-sm font-medium tabular-nums">{money(product.price)}</span>
         </div>
 
         <button
@@ -78,8 +76,8 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             isOutOfStock
               ? "cursor-not-allowed border-line bg-sunk text-mute opacity-70"
               : isAdded
-              ? "border-accent bg-accent text-white"
-              : "border-ink/20 hover:border-accent hover:bg-accent hover:text-white"
+                ? "border-accent bg-accent text-white"
+                : "border-ink/20 hover:border-accent hover:bg-accent hover:text-white"
           }`}
           aria-label={
             isOutOfStock

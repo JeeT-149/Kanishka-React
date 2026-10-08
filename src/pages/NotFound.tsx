@@ -14,7 +14,8 @@ export default function NotFound() {
       </p>
       <h1 className="mt-4 font-display text-3xl md:text-4xl">This page has gone cold</h1>
       <p className="mt-3 max-w-sm text-sm leading-relaxed text-mute">
-        The page you are looking for doesn&apos;t exist or has moved. Let&apos;s get you back to something freshly roasted.
+        The page you are looking for doesn&apos;t exist or has moved. Let&apos;s get you
+        back to something freshly roasted.
       </p>
       <Link to="/" className={`${btnPrimary} mt-8`}>
         Back to the shop

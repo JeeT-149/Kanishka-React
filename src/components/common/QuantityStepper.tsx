@@ -21,7 +21,9 @@ export function QuantityStepper({
 
   const buttonClass =
     "grid place-items-center transition hover:bg-sunk active:bg-line disabled:cursor-not-allowed disabled:text-mute/40 disabled:hover:bg-transparent " +
-    (size === "sm" ? "size-9 min-h-[44px] min-w-[36px]" : "size-11 min-h-[44px] min-w-[44px]");
+    (size === "sm"
+      ? "size-9 min-h-[44px] min-w-[36px]"
+      : "size-11 min-h-[44px] min-w-[44px]");
 
   return (
     <div className="inline-flex flex-col items-start gap-1">

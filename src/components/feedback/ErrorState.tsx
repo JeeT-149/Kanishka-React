@@ -15,13 +15,13 @@ export function ErrorState({
   onRetry,
   action,
 }: ErrorStateProps) {
-  const renderedAction = action ?? (
-    onRetry && (
+  const renderedAction =
+    action ??
+    (onRetry && (
       <button type="button" className={btnPrimary} onClick={onRetry}>
         Try again
       </button>
-    )
-  );
+    ));
 
   return (
     <div className="fade mx-auto flex max-w-md flex-col items-center px-6 py-20 text-center">
@@ -29,13 +29,9 @@ export function ErrorState({
         <IconX width={28} height={28} />
       </div>
       <h2 className="font-display text-3xl leading-tight">{title}</h2>
-      {message && (
-        <div className="mt-3 text-sm leading-relaxed text-mute">{message}</div>
-      )}
+      {message && <div className="mt-3 text-sm leading-relaxed text-mute">{message}</div>}
       {renderedAction && (
-        <div className="mt-7 flex flex-wrap justify-center gap-3">
-          {renderedAction}
-        </div>
+        <div className="mt-7 flex flex-wrap justify-center gap-3">{renderedAction}</div>
       )}
     </div>
   );
