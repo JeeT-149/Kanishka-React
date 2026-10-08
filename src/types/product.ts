@@ -2,6 +2,15 @@ export type Category = "single" | "blends" | "tea" | "gear";
 
 export type RoastLevel = 1 | 2 | 3 | 4 | 5;
 
+export type ArtKind =
+  | "dripper"
+  | "kettle"
+  | "grinder"
+  | "scale"
+  | "filters"
+  | "gift-box"
+  | "generic";
+
 export interface Product {
   id: string;
   name: string;
@@ -19,6 +28,7 @@ export interface Product {
   reviewCount?: number;
   brewRecipe?: string;
   featured?: number;
+  artKind?: ArtKind;
 }
 
 export const CATEGORIES: { id: Category | "all"; label: string }[] = [

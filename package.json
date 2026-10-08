@@ -9,7 +9,8 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "art": "node scripts/generate-product-art.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

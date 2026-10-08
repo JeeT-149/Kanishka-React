@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <radialGradient id="shadow-gooseneck-kettle" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.18" />
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="400" cy="800" rx="220" ry="26" fill="url(#shadow-gooseneck-kettle)" />
+
+  <!-- Gear Illustration (No brand text on gear) -->
+  <g id="gear-illustration">
+    
+      <!-- Kettle base & body -->
+      <path d="M 280 680 L 520 680 Q 530 520 480 440 L 320 440 Q 270 520 280 680 Z" fill="#2E3238" stroke="#1E2024" stroke-width="3" />
+      <!-- Gooseneck Spout -->
+      <path d="M 285 620 C 170 580, 160 380, 290 310 C 275 330, 220 450, 310 590 Z" fill="#2E3238" stroke="#1E2024" stroke-width="2" />
+      <!-- Lid & Wooden Knob -->
+      <path d="M 320 440 L 480 440 L 460 395 L 340 395 Z" fill="#3A3E45" stroke="#1E2024" stroke-width="2" />
+      <ellipse cx="400" cy="380" rx="24" ry="14" fill="#9E5D2A" stroke="#7A4218" stroke-width="2" />
+      <!-- Ergonomic Handle -->
+      <path d="M 480 460 C 600 470, 620 620, 505 660" fill="none" stroke="#2E3238" stroke-width="24" stroke-linecap="round" />
+      <path d="M 480 460 C 600 470, 620 620, 505 660" fill="none" stroke="#9E5D2A" stroke-width="16" stroke-linecap="round" />
+    
+  </g>
+</svg>

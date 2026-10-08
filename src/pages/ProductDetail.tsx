@@ -1,21 +1,20 @@
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import { categoryLabel } from "../types/product";
-import { money, toMinor, formatMinor } from "../lib/currency";
+import { money } from "../lib/currency";
 import { useCart } from "../context/CartContext";
 import { useCartDrawer } from "../context/CartDrawerContext";
 import { useProduct } from "../hooks/useProduct";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import { SafeImage } from "../components/common/SafeImage";
 import { StarRating } from "../components/common/StarRating";
-import { QuantityStepper } from "../components/common/QuantityStepper";
 import { RoastMeter } from "../components/product/RoastMeter";
 import { RelatedProducts } from "../components/product/RelatedProducts";
 import { ProductDetailSkeleton } from "../components/feedback/ProductDetailSkeleton";
 import { EmptyState } from "../components/feedback/EmptyState";
 import { ErrorState } from "../components/feedback/ErrorState";
-import { IconArrow, IconBack, IconCheck, IconSearch } from "../components/common/Icons";
-import { btnPrimary } from "../lib/styles";
+import { IconBack, IconCheck, IconSearch } from "../components/common/Icons";
+import { btnPrimary, getCategoryTileBg, getProductAlt } from "../lib/styles";
 
 export default function ProductDetail() {
   const { id = "" } = useParams();
@@ -24,14 +23,12 @@ export default function ProductDetail() {
   const { add } = useCart();
   const { openDrawer } = useCartDrawer();
   const [prevId, setPrevId] = useState(id);
-  const [qty, setQty] = useState(1);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isAdded, setIsAdded] = useState(false);
 
   // Synchronously reset form state when route id changes
   if (prevId !== id) {
     setPrevId(id);
-    setQty(1);
     setActiveImageIndex(0);
     setIsAdded(false);
   }
@@ -83,15 +80,21 @@ export default function ProductDetail() {
 
   const handleAdd = () => {
     if (isOutOfStock) return;
-    add(product.id, qty);
+    add(product.id, 1);
     setIsAdded(true);
+    openDrawer();
   };
-
-  const totalPriceText = formatMinor(toMinor(product.price) * qty);
 
   return (
     <div className="mx-auto max-w-[1280px] px-5 pb-28 pt-6 md:px-8 md:pb-12">
-      <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-mute">
+      <div className="flex flex-col items-start gap-2.5 text-sm text-mute">
+        <button
+          type="button"
+          onClick={() => navigate(-1)}
+          className="inline-flex items-center gap-1.5 py-1 text-mute transition hover:text-ink"
+        >
+          <IconBack width={16} height={16} /> Back
+        </button>
         <nav aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
@@ -108,29 +111,31 @@ export default function ProductDetail() {
             <li aria-hidden="true">/</li>
             <li
               aria-current="page"
-              className="max-w-[40vw] truncate text-ink md:max-w-xs"
+              className="max-w-[80vw] truncate text-ink md:max-w-md"
             >
               {product.name}
             </li>
           </ol>
         </nav>
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          className="inline-flex min-h-11 items-center gap-1.5 hover:text-ink"
-        >
-          <IconBack width={16} height={16} /> Back
-        </button>
       </div>
 
       <div className="mt-4 grid gap-10 md:grid-cols-2 md:gap-16">
         <div className="rise md:sticky md:top-24 md:self-start">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-card bg-sunk">
+          <div
+            className={`relative aspect-[4/5] overflow-hidden rounded-card ${getCategoryTileBg(
+              product.category,
+              product.artKind,
+            )} flex items-center justify-center p-6 md:p-8`}
+          >
             <SafeImage
               key={activeImageIndex}
               src={gallery[activeImageIndex] ?? gallery[0]}
-              alt={`${product.name}, view ${activeImageIndex + 1}`}
-              className="fade size-full object-cover"
+              alt={
+                activeImageIndex === 0
+                  ? getProductAlt(product)
+                  : `${product.name} tasting and cupping notes archive card`
+              }
+              className="fade size-full object-contain"
             />
             {isOutOfStock && (
               <span className="absolute right-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs font-medium text-paper">
@@ -145,15 +150,22 @@ export default function ProductDetail() {
                   key={src}
                   type="button"
                   onClick={() => setActiveImageIndex(i)}
-                  aria-label={`Show image ${i + 1}`}
+                  aria-label={
+                    i === 0
+                      ? `Show packaging for ${product.name}`
+                      : `Show tasting notes card for ${product.name}`
+                  }
                   aria-current={i === activeImageIndex}
-                  className={`size-20 overflow-hidden rounded-lg border-2 transition ${
+                  className={`size-20 overflow-hidden rounded-lg border-2 p-1.5 ${getCategoryTileBg(
+                    product.category,
+                    product.artKind,
+                  )} transition ${
                     i === activeImageIndex
                       ? "border-accent"
                       : "border-transparent opacity-70 hover:opacity-100"
                   }`}
                 >
-                  <SafeImage src={src} alt="" className="size-full object-cover" />
+                  <SafeImage src={src} alt="" className="size-full object-contain" />
                 </button>
               ))}
             </div>
@@ -212,13 +224,12 @@ export default function ProductDetail() {
             />
           </dl>
 
-          <div className="mt-8 hidden items-center gap-4 md:flex">
-            <QuantityStepper value={qty} onChange={setQty} label={product.name} />
+          <div className="mt-8 hidden items-center md:flex">
             <button
               type="button"
               onClick={handleAdd}
               disabled={isOutOfStock}
-              className={`${btnPrimary} flex-1 ${
+              className={`${btnPrimary} w-full ${
                 isOutOfStock ? "cursor-not-allowed opacity-60" : ""
               }`}
             >
@@ -230,35 +241,23 @@ export default function ProductDetail() {
                     <IconCheck width={18} height={18} /> Added to cart ✓
                   </>
                 ) : (
-                  `Add to cart · ${totalPriceText}`
+                  `Add to cart · ${money(product.price)}`
                 )}
               </span>
             </button>
-          </div>
-          <div aria-live="polite" className="mt-3 hidden min-h-6 text-sm md:block">
-            {isAdded && (
-              <button
-                type="button"
-                onClick={openDrawer}
-                className="fade inline-flex items-center gap-1.5 text-accent underline underline-offset-4"
-              >
-                View cart <IconArrow width={14} height={14} />
-              </button>
-            )}
           </div>
         </div>
       </div>
 
       <RelatedProducts currentProduct={product} />
 
-      {/* Mobile sticky action bar with solid/blurred background */}
-      <div className="fixed inset-x-0 bottom-0 z-30 flex items-center gap-3 border-t border-line bg-[#f7f4ee]/95 px-4 py-3 backdrop-blur-md md:hidden">
-        <QuantityStepper size="sm" value={qty} onChange={setQty} label={product.name} />
+      {/* Mobile sticky action bar */}
+      <div className="fixed inset-x-0 bottom-0 z-30 flex items-center border-t border-line bg-[#f7f4ee]/95 px-4 py-3 backdrop-blur-md md:hidden">
         <button
           type="button"
-          onClick={isAdded ? openDrawer : handleAdd}
+          onClick={handleAdd}
           disabled={isOutOfStock}
-          className={`${btnPrimary} flex-1 ${
+          className={`${btnPrimary} w-full ${
             isOutOfStock ? "cursor-not-allowed opacity-60" : ""
           }`}
         >
@@ -270,7 +269,7 @@ export default function ProductDetail() {
                 <IconCheck width={16} height={16} /> Added ✓
               </>
             ) : (
-              `Add · ${totalPriceText}`
+              `Add to cart · ${money(product.price)}`
             )}
           </span>
         </button>

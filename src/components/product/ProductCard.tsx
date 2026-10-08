@@ -8,6 +8,8 @@ import { SafeImage } from "../common/SafeImage";
 import { StarRating } from "../common/StarRating";
 import { IconCheck } from "../common/Icons";
 
+import { getCategoryTileBg, getProductAlt } from "../../lib/styles";
+
 export interface ProductCardProps {
   product: Product;
   index?: number;
@@ -39,11 +41,16 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         aria-label={`${product.name}, ${money(product.price)}`}
         className="absolute inset-0 z-10 rounded-card focus-visible:outline-2"
       />
-      <div className="relative aspect-[4/5] overflow-hidden rounded-card bg-sunk">
+      <div
+        className={`relative aspect-[4/5] overflow-hidden rounded-card ${getCategoryTileBg(
+          product.category,
+          product.artKind,
+        )} p-4 flex items-center justify-center`}
+      >
         <SafeImage
           src={product.images?.[0] ?? product.image}
-          alt={`${product.name}, ${product.weight ?? ""}`}
-          className="size-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
+          alt={getProductAlt(product)}
+          className="size-full object-contain transition duration-700 ease-out group-hover:scale-[1.04]"
         />
         {product.rating < 4.1 && (
           <span className="absolute left-3 top-3 rounded-full bg-paper/90 px-2.5 py-1 text-[11px] font-medium text-mute shadow-2xs">

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <radialGradient id="shadow-ethiopia-yirgacheffe" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.18" />
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="pouch-body-ethiopia-yirgacheffe" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C4AD89" />
+      <stop offset="18%" stop-color="#D9C6A5" />
+      <stop offset="50%" stop-color="#D9C6A5" />
+      <stop offset="85%" stop-color="#C4AD89" />
+      <stop offset="100%" stop-color="#D9C6A5" />
+    </linearGradient>
+    <linearGradient id="top-seal-ethiopia-yirgacheffe" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.15" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="400" cy="855" rx="230" ry="28" fill="url(#shadow-ethiopia-yirgacheffe)" />
+
+  <!-- Pouch Body -->
+  <g>
+    <!-- Back gusset fold hint -->
+    <path d="M 235 220 L 565 220 L 585 790 Q 400 812 215 790 Z" fill="#C4AD89" opacity="0.6" />
+
+    <!-- Main pouch front -->
+    <path d="M 240 220 L 560 220 Q 580 320 575 780 Q 400 812 225 780 Q 220 320 240 220 Z" fill="url(#pouch-body-ethiopia-yirgacheffe)" />
+
+    <!-- Side crease highlights -->
+    <path d="M 240 220 L 255 785" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2" />
+    <path d="M 560 220 L 545 785" stroke="#000000" stroke-opacity="0.22" stroke-width="2" />
+
+    <!-- Top seal / zipper band -->
+    <rect x="236" y="170" width="328" height="52" rx="4" fill="#D9C6A5" stroke="#C4AD89" stroke-width="1.5" />
+    <rect x="236" y="170" width="328" height="52" rx="4" fill="url(#top-seal-ethiopia-yirgacheffe)" />
+    <line x1="244" y1="192" x2="556" y2="192" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="4 3" />
+    <line x1="244" y1="202" x2="556" y2="202" stroke="#000000" stroke-opacity="0.2" stroke-width="1" />
+
+    <!-- Tear notches -->
+    <path d="M 236 195 L 246 190 L 246 200 Z" fill="#FFFFFF" fill-opacity="0.4" />
+    <path d="M 564 195 L 554 190 L 554 200 Z" fill="#000000" fill-opacity="0.3" />
+
+    
+
+    <!-- One-way degassing valve -->
+    <circle cx="400" cy="272" r="14" fill="#000000" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1" />
+    <circle cx="400" cy="272" r="4" fill="#000000" fill-opacity="0.25" />
+    <circle cx="395" cy="272" r="1.5" fill="#FFFFFF" fill-opacity="0.4" />
+    <circle cx="405" cy="272" r="1.5" fill="#FFFFFF" fill-opacity="0.4" />
+
+    <!-- Label Sticker -->
+    <g filter="drop-shadow(0 4px 12px rgba(0,0,0,0.08))">
+      <rect x="268" y="324" width="264" height="376" rx="6" fill="#FCFAF5" stroke="#E2DCD0" stroke-width="1.5" />
+      
+      <!-- Wordmark -->
+      <text x="400" y="364" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="700" letter-spacing="4" fill="#8C3A14">KILN &amp; LEAF</text>
+      <text x="400" y="380" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="8.5" font-weight="600" letter-spacing="2" fill="#786F66">ROASTERY · ARTISAN LOT</text>
+      <line x1="308" y1="394" x2="492" y2="394" stroke="#E2DCD0" stroke-width="1" />
+
+      <!-- Product Name -->
+      <text x="400" y="432" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="600" fill="#161412">Yirgacheffe Kochere</text>
+
+      <line x1="330" y1="532" x2="470" y2="532" stroke="#E2DCD0" stroke-width="1" />
+
+      <!-- Origin & Details -->
+      <text x="400" y="562" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#4E473F">Ethiopia Yirgacheffe</text>
+      <text x="400" y="582" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="10.5" font-weight="500" fill="#786F66">Whole Bean · 250g</text>
+
+      <!-- Roast dots -->
+      <g transform="translate(0, 16)">
+        <text x="400" y="612" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="8.5" font-weight="600" letter-spacing="1.5" fill="#786F66">ROAST PROFILE</text>
+        
+      <circle cx="364" cy="630" r="4.5" fill="#8C3A14" stroke="#8C3A14" stroke-width="1.5" />
+    
+      <circle cx="382" cy="630" r="4.5" fill="none" stroke="#8C3A14" stroke-width="1.5" />
+    
+      <circle cx="400" cy="630" r="4.5" fill="none" stroke="#8C3A14" stroke-width="1.5" />
+    
+      <circle cx="418" cy="630" r="4.5" fill="none" stroke="#8C3A14" stroke-width="1.5" />
+    
+      <circle cx="436" cy="630" r="4.5" fill="none" stroke="#8C3A14" stroke-width="1.5" />
+    
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <radialGradient id="shadow-kashmiri-kahwa" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.22" />
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="tin-body-kashmiri-kahwa" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8E4A13" />
+      <stop offset="15%" stop-color="#B86624" />
+      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.18" />
+      <stop offset="65%" stop-color="#B86624" />
+      <stop offset="100%" stop-color="#8E4A13" />
+    </linearGradient>
+    <linearGradient id="lid-sheen-kashmiri-kahwa" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8E4A13" />
+      <stop offset="30%" stop-color="#24180E" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.25" />
+      <stop offset="75%" stop-color="#24180E" />
+      <stop offset="100%" stop-color="#8E4A13" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="400" cy="850" rx="210" ry="26" fill="url(#shadow-kashmiri-kahwa)" />
+
+  <!-- Tin Cylinder Body -->
+  <g>
+    <!-- Base Body -->
+    <rect x="250" y="270" width="300" height="530" rx="16" fill="#B86624" />
+    <rect x="250" y="270" width="300" height="530" rx="16" fill="url(#tin-body-kashmiri-kahwa)" />
+
+    <!-- Top Rim Collar -->
+    <rect x="246" y="254" width="308" height="26" rx="4" fill="#24180E" stroke="#8E4A13" stroke-width="1" />
+    <rect x="246" y="254" width="308" height="26" rx="4" fill="url(#lid-sheen-kashmiri-kahwa)" opacity="0.6" />
+
+    <!-- Stepped Lid Dome -->
+    <path d="M 256 254 L 270 190 Q 400 178 530 190 L 544 254 Z" fill="#B86624" stroke="#8E4A13" stroke-width="1" />
+    <path d="M 256 254 L 270 190 Q 400 178 530 190 L 544 254 Z" fill="url(#tin-body-kashmiri-kahwa)" opacity="0.75" />
+
+    <!-- Lid Knob -->
+    <rect x="360" y="166" width="80" height="26" rx="6" fill="#24180E" />
+    <ellipse cx="400" cy="166" rx="40" ry="8" fill="#FFFFFF" fill-opacity="0.25" />
+
+    <!-- Embossed Gold/Copper Trim Lines -->
+    <line x1="250" y1="310" x2="550" y2="310" stroke="#24180E" stroke-opacity="0.4" stroke-width="1.5" />
+    <line x1="250" y1="750" x2="550" y2="750" stroke="#24180E" stroke-opacity="0.4" stroke-width="1.5" />
+
+    <!-- Elegant Label Plate -->
+    <g filter="drop-shadow(0 4px 10px rgba(0,0,0,0.12))">
+      <rect x="278" y="340" width="244" height="370" rx="8" fill="#FDF8EE" stroke="#24180E" stroke-opacity="0.5" stroke-width="1.5" />
+      <rect x="284" y="346" width="232" height="358" rx="5" fill="none" stroke="#24180E" stroke-opacity="0.25" stroke-width="1" />
+
+      <!-- Wordmark -->
+      <text x="400" y="390" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="700" letter-spacing="4" fill="#3A1E0B">KILN &amp; LEAF</text>
+      <text x="400" y="408" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="8.5" font-weight="600" letter-spacing="2" fill="#786F66">HERITAGE TEA CANISTER</text>
+      <line x1="316" y1="422" x2="484" y2="422" stroke="#24180E" stroke-opacity="0.3" stroke-width="1" />
+
+      <!-- Product Name -->
+      <text x="400" y="464" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="600" fill="#3A1E0B">Kashmiri Saffron</text>
+      <text x="400" y="490" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="600" fill="#3A1E0B">Kahwa</text>
+
+      <line x1="334" y1="568" x2="466" y2="568" stroke="#24180E" stroke-opacity="0.3" stroke-width="1" />
+
+      <!-- Origin & Details -->
+      <text x="400" y="602" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#3A1E0B">India Kashmir</text>
+      <text x="400" y="624" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="10" font-weight="500" fill="#786F66">Single Estate · Net Wt. 100g</text>
+      
+      <circle cx="400" cy="656" r="4" fill="#24180E" opacity="0.7" />
+    </g>
+  </g>
+</svg>

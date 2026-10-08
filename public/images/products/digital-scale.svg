@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <radialGradient id="shadow-digital-scale" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.18" />
+      <stop offset="70%" stop-color="#000000" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ground shadow -->
+  <ellipse cx="400" cy="800" rx="220" ry="26" fill="url(#shadow-digital-scale)" />
+
+  <!-- Gear Illustration (No brand text on gear) -->
+  <g id="gear-illustration">
+    
+      <!-- Ultra-thin body -->
+      <rect x="220" y="520" width="360" height="180" rx="18" fill="#24262A" stroke="#161719" stroke-width="3" />
+      <!-- Weighing platform plate -->
+      <rect x="240" y="535" width="320" height="110" rx="10" fill="#343840" stroke="#222428" stroke-width="1.5" />
+      <!-- Illuminated LED readout -->
+      <rect x="300" y="655" width="200" height="32" rx="4" fill="#141517" />
+      <text x="350" y="677" text-anchor="middle" font-family="monospace" font-size="16" font-weight="700" fill="#C59B27">02:14</text>
+      <text x="450" y="677" text-anchor="middle" font-family="monospace" font-size="16" font-weight="700" fill="#E8ECEE">345.8 g</text>
+      <circle cx="260" cy="671" r="7" fill="#C59B27" opacity="0.8" />
+    
+  </g>
+</svg>

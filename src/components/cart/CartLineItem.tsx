@@ -7,6 +7,7 @@ import type { CartItem } from "../../context/cartReducer";
 import { SafeImage } from "../common/SafeImage";
 import { QuantityStepper } from "../common/QuantityStepper";
 import { IconTrash } from "../common/Icons";
+import { getCategoryTileBg, getProductAlt } from "../../lib/styles";
 
 export interface CartLineItemProps {
   item: CartItem;
@@ -25,11 +26,20 @@ export function CartLineItem({ item, compact = false }: CartLineItemProps) {
   return (
     <li className="rise flex gap-4 py-5">
       <Link to={`/product/${product.id}`} onClick={closeDrawer} className="shrink-0">
-        <SafeImage
-          src={product.images?.[0] ?? product.image}
-          alt={product.name}
-          className={`${compact ? "size-20" : "size-24 sm:size-28"} rounded-lg bg-sunk object-cover`}
-        />
+        <div
+          className={`${
+            compact ? "size-20" : "size-24 sm:size-28"
+          } rounded-lg ${getCategoryTileBg(
+            product.category,
+            product.artKind,
+          )} p-1.5 flex items-center justify-center`}
+        >
+          <SafeImage
+            src={product.images?.[0] ?? product.image}
+            alt={getProductAlt(product)}
+            className="size-full object-contain"
+          />
+        </div>
       </Link>
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex justify-between gap-3">

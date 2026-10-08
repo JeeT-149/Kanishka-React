@@ -1,5 +1,104 @@
 [
   {
+    "id": "chikmagalur-estate",
+    "name": "Chikmagalur Baba Budan Arabica",
+    "category": "single",
+    "origin": "India Chikmagalur",
+    "weight": "250g",
+    "price": 599,
+    "rating": 4.9,
+    "reviewCount": 184,
+    "roast": 2,
+    "tastingNotes": [
+      "Milk chocolate",
+      "Cardamom",
+      "Almond"
+    ],
+    "description": "Grown at 1,350m elevation on the misty Baba Budangiri slopes in Karnataka, the historical cradle of Indian coffee. A sweet, balanced washed Arabica with gentle spice and nuttiness.",
+    "brewRecipe": "V60, 1:16 ratio, 92°C, 2:45 total",
+    "image": "/images/products/chikmagalur-estate.svg",
+    "images": [
+      "/images/products/chikmagalur-estate.svg",
+      "/images/products/chikmagalur-estate-notes.svg"
+    ],
+    "featured": 1,
+    "inStock": true
+  },
+  {
+    "id": "monsooned-malabar",
+    "name": "Monsooned Malabar AA",
+    "category": "single",
+    "origin": "India Malabar Coast",
+    "weight": "250g",
+    "price": 649,
+    "rating": 4.8,
+    "reviewCount": 226,
+    "roast": 4,
+    "tastingNotes": [
+      "Dark cocoa",
+      "Bakers spice",
+      "Malted earth"
+    ],
+    "description": "India's legendary specialty process. Raw Arabica beans are cured by humid Arabian Sea monsoon winds for months, reducing acidity and yielding a syrupy, heavy body with deep spicy notes.",
+    "brewRecipe": "South Indian filter, Moka pot, or French press",
+    "image": "/images/products/monsooned-malabar.svg",
+    "images": [
+      "/images/products/monsooned-malabar.svg",
+      "/images/products/monsooned-malabar-notes.svg"
+    ],
+    "featured": 2,
+    "inStock": true
+  },
+  {
+    "id": "araku-valley",
+    "name": "Araku Valley Washed",
+    "category": "single",
+    "origin": "India Araku Valley",
+    "weight": "250g",
+    "price": 649,
+    "rating": 4.8,
+    "reviewCount": 167,
+    "roast": 2,
+    "tastingNotes": [
+      "Red grape",
+      "Black tea",
+      "Raw honey"
+    ],
+    "description": "Organically cultivated by indigenous Adivasi smallholder farmers at 1,100m elevation in the Eastern Ghats of Andhra Pradesh. A prized specialty lot with clean floral sweetness.",
+    "brewRecipe": "Kalita Wave or V60, 1:16, 93°C",
+    "image": "/images/products/araku-valley.svg",
+    "images": [
+      "/images/products/araku-valley.svg",
+      "/images/products/araku-valley-notes.svg"
+    ],
+    "featured": 3,
+    "inStock": true
+  },
+  {
+    "id": "coorg-rainforest",
+    "name": "Coorg Rainforest Arabica",
+    "category": "single",
+    "origin": "India Coorg",
+    "weight": "250g",
+    "price": 549,
+    "rating": 4.7,
+    "reviewCount": 142,
+    "roast": 3,
+    "tastingNotes": [
+      "Nutmeg",
+      "Brown sugar",
+      "Orange peel"
+    ],
+    "description": "Shade-grown in the lush Western Ghats under native rainforest canopy, intercropped with pepper vines and orange orchards for an intensely aromatic, balanced cup.",
+    "brewRecipe": "Aeropress 1:15 or Pour-over",
+    "image": "/images/products/coorg-rainforest.svg",
+    "images": [
+      "/images/products/coorg-rainforest.svg",
+      "/images/products/coorg-rainforest-notes.svg"
+    ],
+    "inStock": true
+  },
+  {
     "id": "ethiopia-yirgacheffe",
     "name": "Yirgacheffe Kochere",
     "category": "single",
@@ -9,15 +108,18 @@
     "rating": 4.9,
     "reviewCount": 214,
     "roast": 1,
-    "tastingNotes": ["Jasmine", "Bergamot", "Peach"],
+    "tastingNotes": [
+      "Jasmine",
+      "Bergamot",
+      "Peach"
+    ],
     "description": "A washed lot from smallholders around Kochere, dried slowly on raised beds. Delicate, floral and tea-like, with a bright citrus finish.",
     "brewRecipe": "V60, 1:16 ratio, 94°C, 3:00 total",
-    "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/ethiopia-yirgacheffe.svg",
     "images": [
-      "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1620154562329-b4d6c9fac183?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/ethiopia-yirgacheffe.svg",
+      "/images/products/ethiopia-yirgacheffe-notes.svg"
     ],
-    "featured": 1,
     "inStock": true
   },
   {
@@ -30,15 +132,18 @@
     "rating": 4.7,
     "reviewCount": 168,
     "roast": 2,
-    "tastingNotes": ["Red apple", "Panela", "Cacao nib"],
+    "tastingNotes": [
+      "Red apple",
+      "Panela",
+      "Cacao nib"
+    ],
     "description": "Sweet, rounded and easy to love. Grown at 1,750m by a cooperative of 40 families near Pitalito.",
     "brewRecipe": "Espresso 1:2 in 28s, or Aeropress 1:15",
-    "image": "https://images.unsplash.com/photo-1605711599412-775918dbe770?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/colombia-huila.svg",
     "images": [
-      "https://images.unsplash.com/photo-1605711599412-775918dbe770?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1699806678863-07164145876b?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/colombia-huila.svg",
+      "/images/products/colombia-huila-notes.svg"
     ],
-    "featured": 2,
     "inStock": true
   },
   {
@@ -51,15 +156,18 @@
     "rating": 4.8,
     "reviewCount": 129,
     "roast": 2,
-    "tastingNotes": ["Blackcurrant", "Grapefruit", "Brown sugar"],
+    "tastingNotes": [
+      "Blackcurrant",
+      "Grapefruit",
+      "Brown sugar"
+    ],
     "description": "Juicy and structured, the classic Kenyan profile. SL28 and SL34 varieties, double-washed and soaked.",
     "brewRecipe": "Chemex, 1:15, 95°C, 4:30 total",
-    "image": "https://images.unsplash.com/photo-1593084264959-d8297ea0725c?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/kenya-nyeri.svg",
     "images": [
-      "https://images.unsplash.com/photo-1593084264959-d8297ea0725c?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1620154561953-0756754dd76d?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/kenya-nyeri.svg",
+      "/images/products/kenya-nyeri-notes.svg"
     ],
-    "featured": 3,
     "inStock": true
   },
   {
@@ -72,13 +180,17 @@
     "rating": 4.5,
     "reviewCount": 97,
     "roast": 3,
-    "tastingNotes": ["Milk chocolate", "Almond", "Orange zest"],
+    "tastingNotes": [
+      "Milk chocolate",
+      "Almond",
+      "Orange zest"
+    ],
     "description": "Grown in volcanic ash soil on the slopes of Fuego. Balanced, chocolatey and a dependable daily brew.",
     "brewRecipe": "French press, 1:14, 4:00 steep",
-    "image": "https://images.unsplash.com/photo-1695245503558-5cdb37f49092?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/guatemala-antigua.svg",
     "images": [
-      "https://images.unsplash.com/photo-1695245503558-5cdb37f49092?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1620154562294-b5de7281e05d?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/guatemala-antigua.svg",
+      "/images/products/guatemala-antigua-notes.svg"
     ],
     "inStock": true
   },
@@ -92,13 +204,17 @@
     "rating": 4.4,
     "reviewCount": 83,
     "roast": 3,
-    "tastingNotes": ["Hazelnut", "Toffee", "Dried fig"],
+    "tastingNotes": [
+      "Hazelnut",
+      "Toffee",
+      "Dried fig"
+    ],
     "description": "Naturally processed and low in acidity, a soft and nutty coffee that takes milk beautifully.",
     "brewRecipe": "Moka pot or espresso",
-    "image": "https://images.unsplash.com/photo-1614792440169-b30e7f734f58?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/brazil-cerrado.svg",
     "images": [
-      "https://images.unsplash.com/photo-1614792440169-b30e7f734f58?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1620154562329-b4d6c9fac183?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/brazil-cerrado.svg",
+      "/images/products/brazil-cerrado-notes.svg"
     ],
     "inStock": true
   },
@@ -112,19 +228,23 @@
     "rating": 3.8,
     "reviewCount": 41,
     "roast": 4,
-    "tastingNotes": ["Cedar", "Dark cocoa", "Tobacco leaf"],
+    "tastingNotes": [
+      "Cedar",
+      "Dark cocoa",
+      "Tobacco leaf"
+    ],
     "description": "Earthy and heavy-bodied. A polarising coffee, loved by those who want depth over brightness.",
     "brewRecipe": "French press, 1:15",
-    "image": "https://images.unsplash.com/photo-1708961352625-82e59dd0c0af?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/sumatra-mandheling.svg",
     "images": [
-      "https://images.unsplash.com/photo-1708961352625-82e59dd0c0af?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1699806678863-07164145876b?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/sumatra-mandheling.svg",
+      "/images/products/sumatra-mandheling-notes.svg"
     ],
     "inStock": true
   },
   {
     "id": "rwanda-nyamasheke",
-    "name": "Araku Valley Washed",
+    "name": "Araku Valley Reserve",
     "category": "single",
     "origin": "India Araku Valley",
     "weight": "250g",
@@ -132,13 +252,17 @@
     "rating": 4.6,
     "reviewCount": 72,
     "roast": 2,
-    "tastingNotes": ["Red grape", "Black tea", "Honey"],
-    "description": "A clean, sweet lot grown in shade by tribal farmers in the Eastern Ghats of Araku Valley, with a silky body and a long honeyed finish.",
+    "tastingNotes": [
+      "Red grape",
+      "Black tea",
+      "Honey"
+    ],
+    "description": "A clean, sweet micro-lot grown in shade by tribal farmers in the Eastern Ghats of Araku Valley, with a silky body and a long honeyed finish.",
     "brewRecipe": "Kalita Wave, 1:16, 93°C",
-    "image": "https://images.unsplash.com/photo-1593084264959-d8297ea0725c?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/rwanda-nyamasheke.svg",
     "images": [
-      "https://images.unsplash.com/photo-1593084264959-d8297ea0725c?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1620154561953-0756754dd76d?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/rwanda-nyamasheke.svg",
+      "/images/products/rwanda-nyamasheke-notes.svg"
     ],
     "inStock": true
   },
@@ -152,13 +276,17 @@
     "rating": 4.8,
     "reviewCount": 402,
     "roast": 3,
-    "tastingNotes": ["Caramel", "Roasted almond", "Cocoa"],
-    "description": "Our everyday coffee. Medium roasted for sweetness and comfort, built to work in any brewer you own.",
+    "tastingNotes": [
+      "Caramel",
+      "Roasted almond",
+      "Cocoa"
+    ],
+    "description": "Our signature roastery blend combining shade-grown Chikmagalur Arabica with body-rich Coorg beans. Balanced, sweet, and comforting across all brewers.",
     "brewRecipe": "Any method; we love it as a flat white",
-    "image": "https://images.unsplash.com/photo-1712402832925-d41c446883d3?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/kiln-house-blend.svg",
     "images": [
-      "https://images.unsplash.com/photo-1712402832925-d41c446883d3?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1620154562294-b5de7281e05d?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/kiln-house-blend.svg",
+      "/images/products/kiln-house-blend-notes.svg"
     ],
     "featured": 4,
     "inStock": true
@@ -167,19 +295,23 @@
     "id": "morning-ember",
     "name": "Morning Ember",
     "category": "blends",
-    "origin": "Araku, Ethiopia",
+    "origin": "Araku, Chikmagalur",
     "weight": "250g",
     "price": 499,
     "rating": 4.6,
     "reviewCount": 188,
     "roast": 2,
-    "tastingNotes": ["Stone fruit", "Milk chocolate", "Lemon"],
-    "description": "Bright but gentle. A lighter blend for slow weekends and filter lovers.",
+    "tastingNotes": [
+      "Stone fruit",
+      "Milk chocolate",
+      "Lemon"
+    ],
+    "description": "Bright but gentle. A lighter roast pairing floral Araku Valley washed lot with sweet Chikmagalur beans for slow weekend filter brewing.",
     "brewRecipe": "Batch brew, 60g per litre",
-    "image": "https://images.unsplash.com/photo-1642505171999-d704cd50f93c?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/morning-ember.svg",
     "images": [
-      "https://images.unsplash.com/photo-1642505171999-d704cd50f93c?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1620154562329-b4d6c9fac183?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/morning-ember.svg",
+      "/images/products/morning-ember-notes.svg"
     ],
     "inStock": true
   },
@@ -187,39 +319,47 @@
     "id": "midnight-espresso",
     "name": "Midnight Espresso",
     "category": "blends",
-    "origin": "Coorg, Brazil",
+    "origin": "Coorg, Malabar",
     "weight": "500g",
     "price": 949,
     "rating": 4.7,
     "reviewCount": 255,
     "roast": 5,
-    "tastingNotes": ["Dark chocolate", "Molasses", "Smoke"],
-    "description": "Dense, syrupy and bittersweet. Roasted dark but never burnt, built for milk drinks.",
+    "tastingNotes": [
+      "Dark chocolate",
+      "Molasses",
+      "Smoke"
+    ],
+    "description": "Dense, syrupy and bittersweet blend of shade-grown Coorg and Monsooned Malabar beans. Roasted dark but never burnt, built for rich milk drinks.",
     "brewRecipe": "Espresso 1:2 in 30s",
-    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/midnight-espresso.svg",
     "images": [
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1699806678863-07164145876b?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/midnight-espresso.svg",
+      "/images/products/midnight-espresso-notes.svg"
     ],
     "inStock": true
   },
   {
     "id": "decaf-swiss-water",
-    "name": "Decaf Swiss Water Colombia",
+    "name": "Decaf Swiss Water Coorg",
     "category": "blends",
-    "origin": "Colombia",
+    "origin": "India Coorg",
     "weight": "250g",
     "price": 549,
     "rating": 4.2,
     "reviewCount": 64,
     "roast": 3,
-    "tastingNotes": ["Toffee", "Walnut", "Red apple"],
-    "description": "Chemical-free decaffeination keeps the sweetness. For the evening cup.",
+    "tastingNotes": [
+      "Toffee",
+      "Walnut",
+      "Red apple"
+    ],
+    "description": "Chemical-free Swiss Water decaffeination preserves all origin sweetness and nutty nuances of Karnataka coffee. For the evening cup.",
     "brewRecipe": "Aeropress or espresso",
-    "image": "https://images.unsplash.com/photo-1605711599412-775918dbe770?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/decaf-swiss-water.svg",
     "images": [
-      "https://images.unsplash.com/photo-1605711599412-775918dbe770?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1620154561953-0756754dd76d?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/decaf-swiss-water.svg",
+      "/images/products/decaf-swiss-water-notes.svg"
     ],
     "inStock": false
   },
@@ -227,21 +367,26 @@
     "id": "holiday-reserve-limited-edition-whole-bean-gift-box-with-hand-numbered-tin",
     "name": "Winter Reserve Limited Edition Whole Bean Gift Box with Hand-Numbered Tin and Tasting Card",
     "category": "blends",
-    "origin": "Coorg, Ethiopia, Colombia",
+    "origin": "Chikmagalur, Coorg, Araku",
     "weight": "3 × 100g",
     "price": 1899,
     "rating": 4.9,
     "reviewCount": 33,
     "roast": 2,
-    "tastingNotes": ["Spice", "Orange peel", "Dark berry"],
-    "description": "Three small lots in one numbered tin, with a card to guide a side-by-side tasting. Available while stocks last.",
-    "brewRecipe": "Pour over, 1:16",
-    "image": "https://images.unsplash.com/photo-1695245503558-5cdb37f49092?w=900&h=1100&fit=crop&auto=format&q=80",
-    "images": [
-      "https://images.unsplash.com/photo-1695245503558-5cdb37f49092?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1620154562294-b5de7281e05d?w=900&h=1100&fit=crop&auto=format&q=80"
+    "tastingNotes": [
+      "Cardamom",
+      "Orange peel",
+      "Dark berry"
     ],
-    "inStock": true
+    "description": "Three specialty micro-lots from southern India in one numbered gift tin, with a guide to side-by-side comparative tasting. Available while stocks last.",
+    "brewRecipe": "Pour over, 1:16",
+    "image": "/images/products/holiday-reserve-limited-edition-whole-bean-gift-box-with-hand-numbered-tin.svg",
+    "images": [
+      "/images/products/holiday-reserve-limited-edition-whole-bean-gift-box-with-hand-numbered-tin.svg",
+      "/images/products/holiday-reserve-limited-edition-whole-bean-gift-box-with-hand-numbered-tin-notes.svg"
+    ],
+    "inStock": true,
+    "artKind": "gift-box"
   },
   {
     "id": "darjeeling-first-flush",
@@ -250,35 +395,89 @@
     "origin": "India Darjeeling",
     "weight": "100g",
     "price": 1299,
-    "rating": 4.8,
-    "reviewCount": 152,
-    "tastingNotes": ["Muscatel", "Fresh cut grass", "Apricot"],
-    "description": "Picked in early spring from the Castleton gardens. Light, lively and quietly complex.",
+    "rating": 4.9,
+    "reviewCount": 198,
+    "tastingNotes": [
+      "Muscatel",
+      "Spring blossom",
+      "White peach"
+    ],
+    "description": "Hand-plucked tender spring harvest from the Himalayan foothills of Darjeeling. Revered globally as the 'Champagne of Teas' for its delicate amber liquor and signature muscatel fruitiness.",
     "brewRecipe": "2.5g per 200ml, 85°C, 3 minutes",
-    "image": "https://images.unsplash.com/photo-1606163017137-888c0177b3dd?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/darjeeling-first-flush.svg",
     "images": [
-      "https://images.unsplash.com/photo-1606163017137-888c0177b3dd?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1760602180499-382146d5eb02?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/darjeeling-first-flush.svg",
+      "/images/products/darjeeling-first-flush-notes.svg"
     ],
     "featured": 5,
     "inStock": true
   },
   {
     "id": "assam-breakfast",
-    "name": "Assam Mangalam Breakfast",
+    "name": "Assam Mangalam Golden Tips",
     "category": "tea",
     "origin": "India Assam",
     "weight": "250g",
-    "price": 499,
-    "rating": 4.6,
-    "reviewCount": 210,
-    "tastingNotes": ["Malt", "Honey", "Dark bread"],
-    "description": "Robust and malty with a deep amber cup. Stands up to milk and a splash of sugar.",
+    "price": 549,
+    "rating": 4.7,
+    "reviewCount": 230,
+    "tastingNotes": [
+      "Malt",
+      "Wild honey",
+      "Caramelized toast"
+    ],
+    "description": "Orthodox whole leaf tea from the Brahmaputra valley in Assam, rich with golden tips. Deep amber, thick and robust; pairs sublimely with steamed milk.",
     "brewRecipe": "3g per 200ml, 98°C, 4 minutes",
-    "image": "https://images.unsplash.com/photo-1610111793912-b8a45b3f94b4?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/assam-breakfast.svg",
     "images": [
-      "https://images.unsplash.com/photo-1610111793912-b8a45b3f94b4?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1632088691096-ba95dd63a647?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/assam-breakfast.svg",
+      "/images/products/assam-breakfast-notes.svg"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "nilgiri-frost-tea",
+    "name": "Nilgiri Blue Mountain Frost Tea",
+    "category": "tea",
+    "origin": "India Nilgiri Hills",
+    "weight": "100g",
+    "price": 699,
+    "rating": 4.8,
+    "reviewCount": 112,
+    "tastingNotes": [
+      "Winter frost",
+      "Meyer lemon",
+      "Honey nectar"
+    ],
+    "description": "Plucked during freezing crisp January mornings above 2,000m in the Nilgiris of Tamil Nadu. High essential oil concentration produces a sparkling, golden, floral cup.",
+    "brewRecipe": "2.5g per 200ml, 90°C, 3.5 minutes",
+    "image": "/images/products/nilgiri-frost-tea.svg",
+    "images": [
+      "/images/products/nilgiri-frost-tea.svg",
+      "/images/products/nilgiri-frost-tea-notes.svg"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "kashmiri-kahwa",
+    "name": "Kashmiri Saffron Kahwa",
+    "category": "tea",
+    "origin": "India Kashmir",
+    "weight": "100g",
+    "price": 799,
+    "rating": 4.9,
+    "reviewCount": 145,
+    "tastingNotes": [
+      "Kashmiri saffron",
+      "Green cardamom",
+      "Cinnamon bark"
+    ],
+    "description": "Traditional royal festive green tea from the Kashmir valley, blended with authentic saffron stigmas, crushed cardamom, and sweet cinnamon. Warming, aromatic, and invigorating.",
+    "brewRecipe": "2g per 200ml, 85°C, 4 minutes; optional crushed almonds and honey",
+    "image": "/images/products/kashmiri-kahwa.svg",
+    "images": [
+      "/images/products/kashmiri-kahwa.svg",
+      "/images/products/kashmiri-kahwa-notes.svg"
     ],
     "inStock": true
   },
@@ -291,13 +490,17 @@
     "price": 699,
     "rating": 4.7,
     "reviewCount": 119,
-    "tastingNotes": ["Sea air", "Sweet pea", "Lemon balm"],
+    "tastingNotes": [
+      "Sea air",
+      "Sweet pea",
+      "Lemon balm"
+    ],
     "description": "Steamed green tea with a vivid emerald cup. Savoury, fresh and green.",
     "brewRecipe": "4g per 200ml, 70°C, 60 seconds",
-    "image": "https://images.unsplash.com/photo-1610112278819-069287c86d03?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/japanese-sencha.svg",
     "images": [
-      "https://images.unsplash.com/photo-1610112278819-069287c86d03?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1610111794807-83a64d32ef72?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/japanese-sencha.svg",
+      "/images/products/japanese-sencha-notes.svg"
     ],
     "inStock": true
   },
@@ -305,16 +508,21 @@
     "id": "genmaicha",
     "name": "Toasted Genmaicha",
     "category": "tea",
+    "origin": "Japan Kagoshima",
     "weight": "100g",
     "price": 399,
     "rating": 4.3,
     "reviewCount": 76,
-    "tastingNotes": ["Toasted rice", "Popcorn", "Sweet grass"],
+    "tastingNotes": [
+      "Toasted rice",
+      "Popcorn",
+      "Sweet grass"
+    ],
     "description": "Sencha blended with roasted brown rice. Nutty, comforting and low in caffeine.",
-    "image": "https://images.unsplash.com/photo-1610643625267-aee6dae3ca22?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/genmaicha.svg",
     "images": [
-      "https://images.unsplash.com/photo-1610643625267-aee6dae3ca22?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1606163017137-888c0177b3dd?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/genmaicha.svg",
+      "/images/products/genmaicha-notes.svg"
     ],
     "inStock": true
   },
@@ -327,13 +535,17 @@
     "price": 899,
     "rating": 4.9,
     "reviewCount": 88,
-    "tastingNotes": ["Orchid", "Cream", "Green apple"],
+    "tastingNotes": [
+      "Orchid",
+      "Cream",
+      "Green apple"
+    ],
     "description": "Grown above 1,200m in cool mist. Buttery, floral and endlessly re-steepable.",
     "brewRecipe": "5g per 150ml, 95°C, five short infusions",
-    "image": "https://images.unsplash.com/photo-1760602180499-382146d5eb02?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/oolong-alishan.svg",
     "images": [
-      "https://images.unsplash.com/photo-1760602180499-382146d5eb02?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1610111793912-b8a45b3f94b4?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/oolong-alishan.svg",
+      "/images/products/oolong-alishan-notes.svg"
     ],
     "inStock": true
   },
@@ -346,13 +558,17 @@
     "price": 449,
     "rating": 4.1,
     "reviewCount": 57,
-    "tastingNotes": ["Bergamot", "Pine smoke", "Black pepper"],
+    "tastingNotes": [
+      "Bergamot",
+      "Pine smoke",
+      "Black pepper"
+    ],
     "description": "Nilgiri black tea scented with oil of bergamot and a kiss of pine smoke.",
     "brewRecipe": "3g per 200ml, 96°C, 4 minutes",
-    "image": "https://images.unsplash.com/photo-1632088691096-ba95dd63a647?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/earl-grey-smoked.svg",
     "images": [
-      "https://images.unsplash.com/photo-1632088691096-ba95dd63a647?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1610112278819-069287c86d03?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/earl-grey-smoked.svg",
+      "/images/products/earl-grey-smoked-notes.svg"
     ],
     "inStock": true
   },
@@ -364,15 +580,20 @@
     "price": 4499,
     "rating": 4.8,
     "reviewCount": 301,
-    "tastingNotes": ["48mm burrs", "Steel body", "30 clicks"],
+    "tastingNotes": [
+      "48mm burrs",
+      "Steel body",
+      "30 clicks"
+    ],
     "description": "Precise, quiet and travels well. Stainless conical burrs deliver even grounds from espresso to French press.",
     "brewRecipe": "Dial 12 clicks for pour-over, 5 for espresso",
-    "image": "https://images.unsplash.com/photo-1595827295672-97a059484442?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/hand-grinder.svg",
     "images": [
-      "https://images.unsplash.com/photo-1595827295672-97a059484442?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1522726336270-3a0053210f06?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/hand-grinder.svg",
+      "/images/products/hand-grinder-notes.svg"
     ],
-    "inStock": true
+    "inStock": true,
+    "artKind": "grinder"
   },
   {
     "id": "pour-over-kit",
@@ -382,15 +603,20 @@
     "price": 1899,
     "rating": 4.6,
     "reviewCount": 144,
-    "tastingNotes": ["Dripper", "Carafe", "40 filters"],
+    "tastingNotes": [
+      "Dripper",
+      "Carafe",
+      "40 filters"
+    ],
     "description": "A glazed ceramic dripper, a glass carafe and a starter pack of paper filters.",
     "brewRecipe": "Recommended with 02 filter papers and 300-500ml brews",
-    "image": "https://images.unsplash.com/photo-1587955245893-389f2215c6eb?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/pour-over-kit.svg",
     "images": [
-      "https://images.unsplash.com/photo-1587955245893-389f2215c6eb?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1729277133095-bff46b56c29a?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/pour-over-kit.svg",
+      "/images/products/pour-over-kit-notes.svg"
     ],
-    "inStock": true
+    "inStock": true,
+    "artKind": "dripper"
   },
   {
     "id": "gooseneck-kettle",
@@ -400,15 +626,20 @@
     "price": 4299,
     "rating": 4.7,
     "reviewCount": 205,
-    "tastingNotes": ["Precise pour", "Stainless", "Gas and induction"],
+    "tastingNotes": [
+      "Precise pour",
+      "Stainless",
+      "Gas and induction"
+    ],
     "description": "A balanced, slow-pouring spout makes bloom and spiral technique easy.",
     "brewRecipe": "Heat water to 92-96°C for optimal extraction",
-    "image": "https://images.unsplash.com/photo-1592417766326-088bf3da80c5?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/gooseneck-kettle.svg",
     "images": [
-      "https://images.unsplash.com/photo-1592417766326-088bf3da80c5?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1541469406036-71229832e06e?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/gooseneck-kettle.svg",
+      "/images/products/gooseneck-kettle-notes.svg"
     ],
-    "inStock": true
+    "inStock": true,
+    "artKind": "kettle"
   },
   {
     "id": "digital-scale",
@@ -416,16 +647,21 @@
     "category": "gear",
     "weight": "420g",
     "price": 1899,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 62,
-    "tastingNotes": ["0.1g accuracy", "Water-resistant", "USB-C"],
+    "tastingNotes": [
+      "0.1g accuracy",
+      "Water-resistant",
+      "USB-C"
+    ],
     "description": "Weigh, time and repeat. Reliable accuracy for the home brewer.",
     "brewRecipe": "Tare carafe, start timer with first water pour",
-    "image": "https://images.unsplash.com/photo-1522726336270-3a0053210f06?w=900&h=1100&fit=crop&auto=format&q=80",
+    "image": "/images/products/digital-scale.svg",
     "images": [
-      "https://images.unsplash.com/photo-1522726336270-3a0053210f06?w=900&h=1100&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1595827295672-97a059484442?w=900&h=1100&fit=crop&auto=format&q=80"
+      "/images/products/digital-scale.svg",
+      "/images/products/digital-scale-notes.svg"
     ],
-    "inStock": true
+    "inStock": true,
+    "artKind": "scale"
   }
 ]
