@@ -6,8 +6,7 @@ import { money } from "../../lib/currency";
 import { useCart } from "../../context/CartContext";
 import { SafeImage } from "../common/SafeImage";
 import { StarRating } from "../common/StarRating";
-import { IconCheck } from "../common/Icons";
-
+import { IconCheck, IconPlus } from "../common/Icons";
 import { getCategoryTileBg, getProductAlt } from "../../lib/styles";
 
 export interface ProductCardProps {
@@ -45,7 +44,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         className={`relative aspect-[4/5] overflow-hidden rounded-card ${getCategoryTileBg(
           product.category,
           product.artKind,
-        )} p-4 flex items-center justify-center`}
+        )} flex items-center justify-center p-4`}
       >
         <SafeImage
           src={product.images?.[0] ?? product.image}
@@ -64,11 +63,14 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col pt-4">
-        <h3 className="line-clamp-2 min-h-[2.6em] font-display text-[17px] leading-snug">
+      <div className="flex flex-1 flex-col pt-3.5">
+        <h3
+          title={product.name}
+          className="line-clamp-2 h-[2.7em] font-display text-[17px] leading-snug text-ink"
+        >
           {product.name}
         </h3>
-        <p className="mt-0.5 truncate text-xs text-mute">{meta}</p>
+        <p className="mt-1 h-4 truncate text-xs text-mute">{meta}</p>
 
         <div className="mt-3 flex items-center justify-between">
           <StarRating rating={product.rating} count={product.reviewCount} />
@@ -79,12 +81,12 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
           type="button"
           onClick={handleAdd}
           disabled={isOutOfStock}
-          className={`relative z-20 mt-4 min-h-11 w-full rounded-ctl border text-sm font-medium transition active:scale-[0.98] ${
+          className={`relative z-20 mt-auto min-h-[44px] w-full rounded-ctl border text-xs font-medium tracking-wide transition active:scale-[0.98] ${
             isOutOfStock
-              ? "cursor-not-allowed border-line bg-sunk text-mute opacity-70"
+              ? "cursor-not-allowed border-line bg-sunk/60 text-mute opacity-60"
               : isAdded
                 ? "border-accent bg-accent text-white"
-                : "border-ink/20 hover:border-accent hover:bg-accent hover:text-white"
+                : "border-line bg-card/60 text-ink/90 [@media(hover:hover)]:hover:border-accent [@media(hover:hover)]:hover:bg-accent [@media(hover:hover)]:hover:text-white"
           }`}
           aria-label={
             isOutOfStock
@@ -92,15 +94,17 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
               : `Add ${product.name} to cart`
           }
         >
-          <span className="inline-flex items-center gap-2" aria-live="polite">
+          <span className="inline-flex items-center justify-center gap-1.5" aria-live="polite">
             {isOutOfStock ? (
               "Out of stock"
             ) : isAdded ? (
               <>
-                <IconCheck width={16} height={16} /> Added ✓
+                <IconCheck width={15} height={15} /> Added ✓
               </>
             ) : (
-              "Add to cart"
+              <>
+                <IconPlus width={15} height={15} /> Add to cart
+              </>
             )}
           </span>
         </button>

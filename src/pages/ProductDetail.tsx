@@ -20,7 +20,7 @@ export default function ProductDetail() {
   const { id = "" } = useParams();
   const { product, status, retry } = useProduct(id);
   const navigate = useNavigate();
-  const { add } = useCart();
+  const { add, lines } = useCart();
   const { openDrawer } = useCartDrawer();
   const [prevId, setPrevId] = useState(id);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -77,9 +77,24 @@ export default function ProductDetail() {
 
   const gallery = product.images?.length ? product.images : [product.image];
   const isOutOfStock = product.inStock === false;
+  const currentLine = lines.find((line) => line.id === product.id);
+  const isMaxInCart = (currentLine?.qty ?? 0) >= 20;
+
+  const handleBack = () => {
+    if (
+      typeof window !== "undefined" &&
+      window.history.state &&
+      typeof window.history.state.idx === "number" &&
+      window.history.state.idx > 0
+    ) {
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
+  };
 
   const handleAdd = () => {
-    if (isOutOfStock) return;
+    if (isOutOfStock || isMaxInCart) return;
     add(product.id, 1);
     setIsAdded(true);
     openDrawer();
@@ -90,7 +105,7 @@ export default function ProductDetail() {
       <div className="flex flex-col items-start gap-2.5 text-sm text-mute">
         <button
           type="button"
-          onClick={() => navigate(-1)}
+          onClick={handleBack}
           className="inline-flex items-center gap-1.5 py-1 text-mute transition hover:text-ink"
         >
           <IconBack width={16} height={16} /> Back
@@ -228,14 +243,16 @@ export default function ProductDetail() {
             <button
               type="button"
               onClick={handleAdd}
-              disabled={isOutOfStock}
+              disabled={isOutOfStock || isMaxInCart}
               className={`${btnPrimary} w-full ${
-                isOutOfStock ? "cursor-not-allowed opacity-60" : ""
+                isOutOfStock || isMaxInCart ? "cursor-not-allowed opacity-60" : ""
               }`}
             >
               <span className="inline-flex items-center gap-2" aria-live="polite">
                 {isOutOfStock ? (
                   "Out of stock"
+                ) : isMaxInCart ? (
+                  "Maximum in cart"
                 ) : isAdded ? (
                   <>
                     <IconCheck width={18} height={18} /> Added to cart ✓
@@ -252,18 +269,20 @@ export default function ProductDetail() {
       <RelatedProducts currentProduct={product} />
 
       {/* Mobile sticky action bar */}
-      <div className="fixed inset-x-0 bottom-0 z-30 flex items-center border-t border-line bg-[#f7f4ee]/95 px-4 py-3 backdrop-blur-md md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-30 flex items-center border-t border-line bg-[#f7f4ee] px-4 py-3 shadow-md md:hidden">
         <button
           type="button"
           onClick={handleAdd}
-          disabled={isOutOfStock}
+          disabled={isOutOfStock || isMaxInCart}
           className={`${btnPrimary} w-full ${
-            isOutOfStock ? "cursor-not-allowed opacity-60" : ""
+            isOutOfStock || isMaxInCart ? "cursor-not-allowed opacity-60" : ""
           }`}
         >
           <span className="inline-flex items-center gap-2" aria-live="polite">
             {isOutOfStock ? (
               "Out of stock"
+            ) : isMaxInCart ? (
+              "Maximum in cart"
             ) : isAdded ? (
               <>
                 <IconCheck width={16} height={16} /> Added ✓

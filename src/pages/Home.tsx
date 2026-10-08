@@ -70,7 +70,7 @@ export default function Home() {
       </section>
 
       <section id="shop" className="mx-auto max-w-[1280px] scroll-mt-20 px-5 md:px-8">
-        <div className="static z-30 border-y border-line bg-[#f7f4ee] py-2.5 md:sticky md:top-16 md:bg-[#f7f4ee]/95 md:backdrop-blur-md">
+        <div className="sticky top-16 z-30 border-y border-line bg-[#f7f4ee] py-2.5 shadow-2xs">
           <div className="flex items-center justify-between gap-4">
             <CategoryPills
               activeCategory={cat}

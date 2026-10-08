@@ -121,6 +121,7 @@ The catalog service includes built-in inspection hooks to test loading, error, a
 6. **Quantity Limit**: Orders enforce a maximum of 20 units per line item. Steppers disable the increment button and display "Maximum 20 per order".
 7. **URL-Synchronized Filter State**: Search query, category filter, and sort order are stored directly in browser search parameters, debounced at 250ms to prevent history thrashing while preserving back/forward browser support.
 8. **Client-Side Routing on Deployments**: SPA rewrites are included via `public/_redirects` (Netlify/Cloudflare) and `vercel.json` (Vercel) to support deep linking on direct navigation to `/product/:id` and `/cart`.
+9. **Add-to-Cart Flow Rationale (Grid Inline vs Detail Drawer)**: On the product catalog grid, quick-add stays inline with brief visual confirmation ("Added ✓") so shoppers can rapidly browse and add multiple items without disrupting their scrolling flow. Conversely, on the Product Detail page, adding an item represents focused purchase intent for that specific product, so the slide-over Cart Drawer opens immediately to confirm the addition and offer rapid access to review and checkout.
 
 ---
 

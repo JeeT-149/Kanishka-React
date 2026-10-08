@@ -73,7 +73,7 @@ export function Navbar() {
   }, [isMobileSearchOpen]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-[#f7f4ee]/95 backdrop-blur-md transition-all duration-200">
+    <header className="sticky top-0 z-40 border-b border-line bg-[#f7f4ee] transition-all duration-200">
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 focus:z-50 focus:rounded focus:bg-ink focus:px-3 focus:py-2 focus:text-paper"
