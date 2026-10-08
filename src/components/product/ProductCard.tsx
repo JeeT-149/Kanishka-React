@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useViewTransitionState } from "react-router";
 import type { Product } from "../../types/product";
 import { categoryLabel } from "../../types/product";
 import { money } from "../../lib/currency";
@@ -17,6 +17,9 @@ export interface ProductCardProps {
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { add } = useCart();
   const [isAdded, setIsAdded] = useState(false);
+  const to = `/product/${product.id}`;
+  const isTransitioning = useViewTransitionState(to);
+
   const meta = [product.origin ?? categoryLabel(product.category), product.weight]
     .filter(Boolean)
     .join(" · ");
@@ -32,11 +35,16 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
   return (
     <article
-      className="rise group relative flex flex-col"
-      style={{ animationDelay: `${Math.min(index, 8) * 45}ms` }}
+      className="card-entrance group relative flex flex-col"
+      style={
+        {
+          "--i": index < 8 ? index : 0,
+        } as React.CSSProperties
+      }
     >
       <Link
-        to={`/product/${product.id}`}
+        to={to}
+        viewTransition
         aria-label={`${product.name}, ${money(product.price)}`}
         className="absolute inset-0 z-10 rounded-card focus-visible:outline-2"
       />
@@ -49,7 +57,10 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         <SafeImage
           src={product.images?.[0] ?? product.image}
           alt={getProductAlt(product)}
-          className="size-full object-contain transition duration-700 ease-out group-hover:scale-[1.04]"
+          style={{
+            viewTransitionName: isTransitioning ? "product-image" : "none",
+          }}
+          className="size-full object-contain transition-transform duration-500 ease-out [@media(hover:hover)]:group-hover:scale-[1.03]"
         />
         {product.rating < 4.1 && (
           <span className="absolute left-3 top-3 rounded-full bg-paper/90 px-2.5 py-1 text-[11px] font-medium text-mute shadow-2xs">

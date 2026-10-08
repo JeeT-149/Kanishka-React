@@ -16,6 +16,14 @@
   --radius-card: 12px;
   --radius-ctl: 8px;
   --shadow-soft: 0 12px 40px -16px rgb(22 20 18 / 0.2);
+
+  --duration-fast: 160ms;
+  --duration-base: 240ms;
+  --duration-slow: 420ms;
+  --duration-reveal: 700ms;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 html {
@@ -70,6 +78,40 @@ body {
     transform: scale(1.35);
   }
 }
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-accent {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes card-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .rise {
   animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
@@ -85,6 +127,26 @@ body {
   animation: pop 0.35s ease;
 }
 
+.animate-hero-reveal {
+  animation: hero-reveal var(--duration-reveal) var(--ease-out) both;
+}
+.animate-hero-accent {
+  animation: hero-accent var(--duration-reveal) var(--ease-out) both;
+}
+
+.card-entrance {
+  animation: card-entrance var(--duration-base) var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 40ms);
+}
+
+::view-transition-group(main-navbar) {
+  animation: none;
+}
+::view-transition-group(product-image) {
+  animation-duration: var(--duration-base);
+  animation-timing-function: var(--ease-out);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -95,5 +157,11 @@ body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    transform: none !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }

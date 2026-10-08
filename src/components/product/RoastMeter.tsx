@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { RoastLevel } from "../../types/product";
 
 export interface RoastMeterProps {
@@ -13,13 +14,25 @@ const ROAST_LABELS: Record<RoastLevel, string> = {
 };
 
 export function RoastMeter({ level }: RoastMeterProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   return (
     <span className="flex items-center gap-3">
       <span className="flex gap-1" role="img" aria-label={`Roast level ${level} of 5`}>
         {([1, 2, 3, 4, 5] as const).map((n) => (
           <span
             key={n}
-            className={`h-2 w-6 rounded-full ${n <= level ? "bg-accent" : "bg-line"}`}
+            style={{
+              transitionDelay: `${(n - 1) * 70}ms`,
+            }}
+            className={`h-2 w-6 rounded-full transition-colors duration-300 ease-out ${
+              mounted && n <= level ? "bg-accent" : "bg-line"
+            }`}
           />
         ))}
       </span>

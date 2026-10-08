@@ -50,14 +50,28 @@ export default function Home() {
   return (
     <>
       <section className="mx-auto grid max-w-[1280px] gap-6 px-5 pb-5 pt-6 md:grid-cols-[1.3fr_1fr] md:items-end md:px-8 md:pb-7 md:pt-8">
-        <h1 className="rise font-display text-3xl font-light leading-[1.05] tracking-tight sm:text-4xl md:text-[54px] lg:text-[62px]">
-          Roasted slowly.
-          <br />
-          <span className="italic text-accent">Steeped</span> with care.
+        <h1 className="font-display text-3xl font-light leading-[1.05] tracking-tight sm:text-4xl md:text-[54px] lg:text-[62px]">
+          <span className="block overflow-hidden">
+            <span className="animate-hero-reveal block">Roasted slowly.</span>
+          </span>
+          <span className="block overflow-hidden">
+            <span
+              className="animate-hero-reveal block"
+              style={{ animationDelay: "80ms" }}
+            >
+              <span
+                className="animate-hero-accent inline-block italic text-accent"
+                style={{ animationDelay: "240ms" }}
+              >
+                Steeped
+              </span>{" "}
+              with care.
+            </span>
+          </span>
         </h1>
         <div
-          className="rise max-w-sm md:justify-self-end"
-          style={{ animationDelay: "120ms" }}
+          className="fade max-w-sm md:justify-self-end"
+          style={{ animationDelay: "360ms", animationFillMode: "both" }}
         >
           <p className="text-sm leading-relaxed text-mute">
             Small-batch coffee and rare-leaf tea from growers we know by name, roasted
@@ -151,7 +165,9 @@ export default function Home() {
           />
         )}
 
-        {status === "success" && results.length > 0 && <ProductGrid products={results} />}
+        {status === "success" && results.length > 0 && (
+          <ProductGrid key={`${cat}-${sort}-${q}`} products={results} />
+        )}
       </section>
     </>
   );

@@ -150,6 +150,9 @@ export default function ProductDetail() {
                   ? getProductAlt(product)
                   : `${product.name} tasting and cupping notes archive card`
               }
+              style={{
+                viewTransitionName: activeImageIndex === 0 ? "product-image" : "none",
+              }}
               className="fade size-full object-contain"
             />
             {isOutOfStock && (
@@ -219,10 +222,11 @@ export default function ProductDetail() {
                 label="Notes"
                 value={
                   <ul className="flex flex-wrap gap-2">
-                    {product.tastingNotes.map((note) => (
+                    {product.tastingNotes.map((note, i) => (
                       <li
                         key={note}
-                        className="rounded-full border border-line bg-card px-3 py-1 text-xs"
+                        style={{ animationDelay: `${i * 50 + 100}ms` }}
+                        className="fade rounded-full border border-line bg-card px-3 py-1 text-xs"
                       >
                         {note}
                       </li>
