@@ -98,22 +98,29 @@ export function CartLineItem({ item, compact = false }: CartLineItemProps) {
               className="pointer-events-none absolute -inset-x-2 inset-y-1 rounded-lg bg-accent-soft/70 animate-highlight-fade"
             />
           )}
-          <Link to={`/product/${product.id}`} onClick={closeDrawer} className="z-10 shrink-0">
-            <div
-              className={`${
-                compact ? "size-20" : "size-24 sm:size-28"
-              } rounded-lg ${getCategoryTileBg(
-                product.category,
-                product.artKind,
-              )} p-1.5 flex items-center justify-center`}
-            >
-              <SafeImage
-                src={product.images?.[0] ?? product.image}
-                alt={getProductAlt(product)}
-                className="size-full object-contain"
-              />
-            </div>
-          </Link>
+          {(() => {
+            const itemImg = product.images?.[0] ?? product.image;
+            const isItemSvg = itemImg.endsWith(".svg");
+            return (
+              <Link to={`/product/${product.id}`} onClick={closeDrawer} className="z-10 shrink-0">
+                <div
+                  className={`${
+                    compact ? "size-20" : "size-24 sm:size-28"
+                  } rounded-lg ${
+                    isItemSvg
+                      ? `${getCategoryTileBg(product.category, product.artKind)} p-1.5`
+                      : "bg-sunk p-0 overflow-hidden"
+                  } flex items-center justify-center`}
+                >
+                  <SafeImage
+                    src={itemImg}
+                    alt={getProductAlt(product)}
+                    className={`size-full ${isItemSvg ? "object-contain" : "object-cover"}`}
+                  />
+                </div>
+              </Link>
+            );
+          })()}
           <div className="z-10 flex min-w-0 flex-1 flex-col">
             <div className="flex justify-between gap-3">
               <div className="min-w-0">

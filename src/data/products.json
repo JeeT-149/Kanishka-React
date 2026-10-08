@@ -587,10 +587,10 @@
     ],
     "description": "Precise, quiet and travels well. Stainless conical burrs deliver even grounds from espresso to French press.",
     "brewRecipe": "Dial 12 clicks for pour-over, 5 for espresso",
-    "image": "/images/products/hand-grinder.svg",
+    "image": "/images/products/hand-grinder.jpg",
     "images": [
-      "/images/products/hand-grinder.svg",
-      "/images/products/hand-grinder-notes.svg"
+      "/images/products/hand-grinder.jpg",
+      "/images/products/hand-grinder-2.jpg"
     ],
     "inStock": true,
     "artKind": "grinder"
@@ -610,10 +610,10 @@
     ],
     "description": "A glazed ceramic dripper, a glass carafe and a starter pack of paper filters.",
     "brewRecipe": "Recommended with 02 filter papers and 300-500ml brews",
-    "image": "/images/products/pour-over-kit.svg",
+    "image": "/images/products/pour-over-kit.jpg",
     "images": [
-      "/images/products/pour-over-kit.svg",
-      "/images/products/pour-over-kit-notes.svg"
+      "/images/products/pour-over-kit.jpg",
+      "/images/products/pour-over-kit-2.jpg"
     ],
     "inStock": true,
     "artKind": "dripper"
@@ -633,10 +633,10 @@
     ],
     "description": "A balanced, slow-pouring spout makes bloom and spiral technique easy.",
     "brewRecipe": "Heat water to 92-96°C for optimal extraction",
-    "image": "/images/products/gooseneck-kettle.svg",
+    "image": "/images/products/gooseneck-kettle.jpg",
     "images": [
-      "/images/products/gooseneck-kettle.svg",
-      "/images/products/gooseneck-kettle-notes.svg"
+      "/images/products/gooseneck-kettle.jpg",
+      "/images/products/gooseneck-kettle-2.jpg"
     ],
     "inStock": true,
     "artKind": "kettle"
@@ -656,9 +656,9 @@
     ],
     "description": "Weigh, time and repeat. Reliable accuracy for the home brewer.",
     "brewRecipe": "Tare carafe, start timer with first water pour",
-    "image": "/images/products/digital-scale.svg",
+    "image": "/images/products/digital-scale.jpg",
     "images": [
-      "/images/products/digital-scale.svg",
+      "/images/products/digital-scale.jpg",
       "/images/products/digital-scale-notes.svg"
     ],
     "inStock": true,

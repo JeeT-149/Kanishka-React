@@ -136,56 +136,71 @@ export default function ProductDetail() {
 
       <div className="mt-4 grid gap-10 md:grid-cols-2 md:gap-16">
         <div className="rise md:sticky md:top-24 md:self-start">
-          <div
-            className={`relative aspect-[4/5] overflow-hidden rounded-card ${getCategoryTileBg(
-              product.category,
-              product.artKind,
-            )} flex items-center justify-center p-6 md:p-8`}
-          >
-            <SafeImage
-              key={activeImageIndex}
-              src={gallery[activeImageIndex] ?? gallery[0]}
-              alt={
-                activeImageIndex === 0
-                  ? getProductAlt(product)
-                  : `${product.name} tasting and cupping notes archive card`
-              }
-              style={{
-                viewTransitionName: activeImageIndex === 0 ? "product-image" : "none",
-              }}
-              className="fade size-full object-contain"
-            />
-            {isOutOfStock && (
-              <span className="absolute right-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs font-medium text-paper">
-                Sold out
-              </span>
-            )}
-          </div>
+          {(() => {
+            const currentImg = gallery[activeImageIndex] ?? gallery[0];
+            const isCurrentSvg = currentImg?.endsWith(".svg");
+            return (
+              <div
+                className={`relative aspect-[4/5] overflow-hidden rounded-card ${
+                  isCurrentSvg
+                    ? `${getCategoryTileBg(product.category, product.artKind)} flex items-center justify-center p-6 md:p-8`
+                    : "bg-sunk"
+                }`}
+              >
+                <SafeImage
+                  key={activeImageIndex}
+                  src={currentImg}
+                  alt={
+                    activeImageIndex === 0
+                      ? getProductAlt(product)
+                      : `${product.name} tasting and cupping notes archive card`
+                  }
+                  style={{
+                    viewTransitionName: activeImageIndex === 0 ? "product-image" : "none",
+                  }}
+                  className={`fade size-full ${isCurrentSvg ? "object-contain" : "object-cover"}`}
+                />
+                {isOutOfStock && (
+                  <span className="absolute right-4 top-4 rounded-full bg-ink/80 px-3 py-1 text-xs font-medium text-paper">
+                    Sold out
+                  </span>
+                )}
+              </div>
+            );
+          })()}
           {gallery.length > 1 && (
             <div className="mt-3 flex gap-3">
-              {gallery.map((src, i) => (
-                <button
-                  key={src}
-                  type="button"
-                  onClick={() => setActiveImageIndex(i)}
-                  aria-label={
-                    i === 0
-                      ? `Show packaging for ${product.name}`
-                      : `Show tasting notes card for ${product.name}`
-                  }
-                  aria-current={i === activeImageIndex}
-                  className={`size-20 overflow-hidden rounded-lg border-2 p-1.5 ${getCategoryTileBg(
-                    product.category,
-                    product.artKind,
-                  )} transition ${
-                    i === activeImageIndex
-                      ? "border-accent"
-                      : "border-transparent opacity-70 hover:opacity-100"
-                  }`}
-                >
-                  <SafeImage src={src} alt="" className="size-full object-contain" />
-                </button>
-              ))}
+              {gallery.map((src, i) => {
+                const isThumbSvg = src.endsWith(".svg");
+                return (
+                  <button
+                    key={src}
+                    type="button"
+                    onClick={() => setActiveImageIndex(i)}
+                    aria-label={
+                      i === 0
+                        ? `Show packaging for ${product.name}`
+                        : `Show detail view for ${product.name}`
+                    }
+                    aria-current={i === activeImageIndex}
+                    className={`size-20 overflow-hidden rounded-lg border-2 ${
+                      isThumbSvg
+                        ? `${getCategoryTileBg(product.category, product.artKind)} p-1.5`
+                        : "bg-sunk p-0"
+                    } transition ${
+                      i === activeImageIndex
+                        ? "border-accent"
+                        : "border-transparent opacity-70 hover:opacity-100"
+                    }`}
+                  >
+                    <SafeImage
+                      src={src}
+                      alt=""
+                      className={`size-full ${isThumbSvg ? "object-contain" : "object-cover"}`}
+                    />
+                  </button>
+                );
+              })}
             </div>
           )}
         </div>

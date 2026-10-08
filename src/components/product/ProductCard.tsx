@@ -33,6 +33,9 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     setTimeout(() => setIsAdded(false), 1400);
   };
 
+  const imgSrc = product.images?.[0] ?? product.image;
+  const isSvg = imgSrc.endsWith(".svg");
+
   return (
     <article
       className="card-entrance group relative flex flex-col"
@@ -49,18 +52,21 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
         className="absolute inset-0 z-10 rounded-card focus-visible:outline-2"
       />
       <div
-        className={`relative aspect-[4/5] overflow-hidden rounded-card ${getCategoryTileBg(
-          product.category,
-          product.artKind,
-        )} flex items-center justify-center p-4`}
+        className={`relative aspect-[4/5] overflow-hidden rounded-card ${
+          isSvg
+            ? `${getCategoryTileBg(product.category, product.artKind)} flex items-center justify-center p-4`
+            : "bg-sunk"
+        }`}
       >
         <SafeImage
-          src={product.images?.[0] ?? product.image}
+          src={imgSrc}
           alt={getProductAlt(product)}
           style={{
             viewTransitionName: isTransitioning ? "product-image" : "none",
           }}
-          className="size-full object-contain transition-transform duration-500 ease-out [@media(hover:hover)]:group-hover:scale-[1.03]"
+          className={`size-full ${
+            isSvg ? "object-contain" : "object-cover"
+          } transition-transform duration-500 ease-out [@media(hover:hover)]:group-hover:scale-[1.03]`}
         />
         {product.rating < 4.1 && (
           <span className="absolute left-3 top-3 rounded-full bg-paper/90 px-2.5 py-1 text-[11px] font-medium text-mute shadow-2xs">
