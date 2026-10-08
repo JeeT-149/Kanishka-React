@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { CartLines, Summary } from "../Layout";
-import { useCart } from "../store";
+import { useCart } from "../context/CartContext";
 import { IconBack, IconBag, StateBlock, btnPrimary } from "../ui";
 
 export default function Cart() {

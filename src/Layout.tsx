@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { Link, Outlet, ScrollRestoration, useLocation, useNavigate, useSearchParams } from "react-router";
 import { findProduct } from "./services/productService";
 import { money, toMinor, formatMinor } from "./lib/currency";
-import { useCart } from "./store";
+import { useCart } from "./context/CartContext";
+import { useCartDrawer } from "./context/CartDrawerContext";
 import { IconArrow, IconBag, IconSearch, IconTrash, IconX, Img, Logo, Qty, StateBlock, btnGhost, btnPrimary } from "./ui";
 
 export function CartLines({ compact = false }: { compact?: boolean }) {
-  const { lines, setQty, remove, setDrawer } = useCart();
+  const { lines, setQty, remove } = useCart();
+  const { closeDrawer } = useCartDrawer();
   return (
     <ul className="divide-y divide-line">
       {lines.map((l) => {
@@ -14,9 +16,9 @@ export function CartLines({ compact = false }: { compact?: boolean }) {
         if (!p) return null;
         return (
           <li key={l.id} className="rise flex gap-4 py-5">
-            <Link to={`/product/${p.id}`} onClick={() => setDrawer(false)} className="shrink-0">
+            <Link to={`/product/${p.id}`} onClick={closeDrawer} className="shrink-0">
               <Img
-                src={p.images[0]}
+                src={p.images?.[0] ?? p.image}
                 alt={p.name}
                 className={`${compact ? "size-20" : "size-24 sm:size-28"} rounded-lg bg-sunk object-cover`}
               />
@@ -24,7 +26,7 @@ export function CartLines({ compact = false }: { compact?: boolean }) {
             <div className="flex min-w-0 flex-1 flex-col">
               <div className="flex justify-between gap-3">
                 <div className="min-w-0">
-                  <Link to={`/product/${p.id}`} onClick={() => setDrawer(false)} className="line-clamp-2 font-display text-base leading-snug hover:text-accent">
+                  <Link to={`/product/${p.id}`} onClick={closeDrawer} className="line-clamp-2 font-display text-base leading-snug hover:text-accent">
                     {p.name}
                   </Link>
                   <p className="mt-0.5 text-xs text-mute">
@@ -79,14 +81,15 @@ export function Summary({ onCheckout }: { onCheckout?: () => void }) {
 }
 
 function CartDrawer() {
-  const { drawer, setDrawer, lines, count } = useCart();
+  const { isOpen, closeDrawer } = useCartDrawer();
+  const { lines, count } = useCart();
   const closeRef = useRef<HTMLButtonElement>(null);
   const navigate = useNavigate();
   const [note, setNote] = useState(false);
 
   useEffect(() => {
-    if (!drawer) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setDrawer(false);
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && closeDrawer();
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     closeRef.current?.focus();
@@ -94,28 +97,28 @@ function CartDrawer() {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [drawer, setDrawer]);
+  }, [isOpen, closeDrawer]);
 
   return (
-    <div className={`fixed inset-0 z-50 ${drawer ? "" : "pointer-events-none"}`} aria-hidden={!drawer}>
+    <div className={`fixed inset-0 z-50 ${isOpen ? "" : "pointer-events-none"}`} aria-hidden={!isOpen}>
       <div
-        onClick={() => setDrawer(false)}
-        className={`absolute inset-0 bg-ink/40 transition-opacity duration-300 ${drawer ? "opacity-100" : "opacity-0"}`}
+        onClick={closeDrawer}
+        className={`absolute inset-0 bg-ink/40 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
       />
       <aside
         role="dialog"
         aria-modal="true"
         aria-label="Shopping cart"
-        inert={!drawer}
+        inert={!isOpen}
         className={`absolute right-0 top-0 flex h-full w-full flex-col bg-paper shadow-soft transition-transform duration-300 ease-out sm:w-[440px] ${
-          drawer ? "translate-x-0" : "translate-x-full"
+          isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <header className="flex items-center justify-between border-b border-line px-6 py-4">
           <h2 className="font-display text-2xl">
             Your cart <span className="text-base text-mute">({count})</span>
           </h2>
-          <button ref={closeRef} onClick={() => setDrawer(false)} aria-label="Close cart" className="grid size-11 place-items-center rounded-full hover:bg-sunk">
+          <button ref={closeRef} onClick={closeDrawer} aria-label="Close cart" className="grid size-11 place-items-center rounded-full hover:bg-sunk">
             <IconX />
           </button>
         </header>
@@ -128,7 +131,7 @@ function CartDrawer() {
                 <button
                   className={btnPrimary}
                   onClick={() => {
-                    setDrawer(false);
+                    closeDrawer();
                     navigate("/");
                   }}
                 >
@@ -153,7 +156,7 @@ function CartDrawer() {
               )}
               <Link
                 to="/cart"
-                onClick={() => setDrawer(false)}
+                onClick={closeDrawer}
                 className="mt-3 flex min-h-11 items-center justify-center gap-1.5 text-sm text-mute underline-offset-4 hover:text-ink hover:underline"
               >
                 View full cart <IconArrow width={14} height={14} />
@@ -167,7 +170,8 @@ function CartDrawer() {
 }
 
 function Navbar() {
-  const { count, setDrawer, bump } = useCart();
+  const { count } = useCart();
+  const { openDrawer } = useCartDrawer();
   const [params, setParams] = useSearchParams();
   const loc = useLocation();
   const navigate = useNavigate();
@@ -241,14 +245,14 @@ function Navbar() {
             {open ? <IconX /> : <IconSearch />}
           </button>
           <button
-            onClick={() => setDrawer(true)}
+            onClick={openDrawer}
             aria-label={`Open cart, ${count} ${count === 1 ? "item" : "items"}`}
             className="relative grid size-11 place-items-center rounded-full hover:bg-sunk"
           >
             <IconBag />
             {count > 0 && (
               <span
-                key={bump}
+                key={count}
                 className="pop absolute right-0.5 top-0.5 grid min-w-[18px] place-items-center rounded-full bg-accent px-1 text-[11px] font-semibold leading-[18px] text-white"
               >
                 {count}

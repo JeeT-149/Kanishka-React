@@ -3,7 +3,8 @@ import { Link, useNavigate, useParams } from "react-router";
 import { categoryLabel } from "../types/product";
 import { getAllProducts } from "../services/productService";
 import { money, toMinor, formatMinor } from "../lib/currency";
-import { useCart } from "../store";
+import { useCart } from "../context/CartContext";
+import { useCartDrawer } from "../context/CartDrawerContext";
 import { useProduct } from "../hooks/useProduct";
 import { IconArrow, IconBack, IconCheck, IconSearch, IconX, Img, ProductCard, Qty, Stars, StateBlock, btnGhost, btnPrimary } from "../ui";
 
@@ -34,7 +35,8 @@ export default function Product() {
   const { id = "" } = useParams();
   const { product: p, status, retry } = useProduct(id);
   const nav = useNavigate();
-  const { add, setDrawer } = useCart();
+  const { add } = useCart();
+  const { openDrawer } = useCartDrawer();
   const [qty, setQty] = useState(1);
   const [img, setImg] = useState(0);
   const [added, setAdded] = useState(false);
@@ -192,7 +194,7 @@ export default function Product() {
           </div>
           <div aria-live="polite" className="mt-3 hidden min-h-6 text-sm md:block">
             {added && (
-              <button onClick={() => setDrawer(true)} className="fade inline-flex items-center gap-1.5 text-accent underline underline-offset-4">
+              <button onClick={openDrawer} className="fade inline-flex items-center gap-1.5 text-accent underline underline-offset-4">
                 View cart <IconArrow width={14} height={14} />
               </button>
             )}
@@ -215,7 +217,7 @@ export default function Product() {
       <div className="fixed inset-x-0 bottom-0 z-30 flex items-center gap-3 border-t border-line bg-[#f7f4ee]/95 px-4 py-3 backdrop-blur-md md:hidden">
         <Qty size="sm" value={qty} onChange={setQty} label={p.name} />
         <button
-          onClick={added ? () => setDrawer(true) : onAdd}
+          onClick={added ? openDrawer : onAdd}
           disabled={isOutOfStock}
           className={`${btnPrimary} flex-1 ${isOutOfStock ? "cursor-not-allowed opacity-60" : ""}`}
         >

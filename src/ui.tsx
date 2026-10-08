@@ -2,7 +2,7 @@ import { useState, type ReactNode, type SVGProps } from "react";
 import { Link } from "react-router";
 import { categoryLabel, type Product } from "./types/product";
 import { money } from "./lib/currency";
-import { useCart } from "./store";
+import { useCart } from "./context/CartContext";
 
 export const btnPrimary =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-ctl bg-accent px-5 text-sm font-medium text-white transition hover:bg-accent-deep active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-line disabled:text-mute";
@@ -131,20 +131,28 @@ export function Qty({
   label: string;
   size?: "sm" | "md";
 }) {
+  const isMax = value >= 20;
   const b =
     "grid place-items-center transition hover:bg-sunk active:bg-line disabled:text-mute/40 disabled:hover:bg-transparent " +
     (size === "sm" ? "size-9" : "size-11");
   return (
-    <div role="group" aria-label={`Quantity for ${label}`} className="inline-flex items-center rounded-ctl border border-ink/20">
-      <button className={`${b} rounded-l-[7px]`} disabled={value <= 1} onClick={() => onChange(value - 1)} aria-label={`Decrease quantity of ${label}`}>
-        <IconMinus width={16} height={16} />
-      </button>
-      <span key={value} aria-live="polite" className="fade min-w-8 text-center text-sm font-medium tabular-nums">
-        {value}
-      </span>
-      <button className={`${b} rounded-r-[7px]`} disabled={value >= 20} onClick={() => onChange(value + 1)} aria-label={`Increase quantity of ${label}`}>
-        <IconPlus width={16} height={16} />
-      </button>
+    <div className="inline-flex flex-col items-start gap-1">
+      <div role="group" aria-label={`Quantity for ${label}`} className="inline-flex items-center rounded-ctl border border-ink/20">
+        <button className={`${b} rounded-l-[7px]`} disabled={value <= 1} onClick={() => onChange(value - 1)} aria-label={`Decrease quantity of ${label}`}>
+          <IconMinus width={16} height={16} />
+        </button>
+        <span key={value} aria-live="polite" className="fade min-w-8 text-center text-sm font-medium tabular-nums">
+          {value}
+        </span>
+        <button className={`${b} rounded-r-[7px]`} disabled={isMax} onClick={() => onChange(value + 1)} aria-label={`Increase quantity of ${label}`}>
+          <IconPlus width={16} height={16} />
+        </button>
+      </div>
+      {isMax && (
+        <span className="text-[11px] text-mute" role="status">
+          Maximum 20 per order
+        </span>
+      )}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { RouterProvider, createHashRouter } from "react-router";
 import Layout from "./Layout";
-import { CartProvider } from "./store";
+import { CartProvider } from "./context/CartContext";
+import { CartDrawerProvider } from "./context/CartDrawerContext";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
@@ -22,7 +23,9 @@ const router = createHashRouter([
 export default function App() {
   return (
     <CartProvider>
-      <RouterProvider router={router} />
+      <CartDrawerProvider>
+        <RouterProvider router={router} />
+      </CartDrawerProvider>
     </CartProvider>
   );
 }
