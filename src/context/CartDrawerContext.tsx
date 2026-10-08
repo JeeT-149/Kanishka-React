@@ -1,19 +1,44 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useRef,
+  useCallback,
+  type ReactNode,
+} from "react";
 
 interface CartDrawerContextValue {
   isOpen: boolean;
-  openDrawer: () => void;
+  openDrawer: (highlightId?: string) => void;
   closeDrawer: () => void;
   setIsOpen: (open: boolean) => void;
+  lastAddedId: string | null;
 }
 
 const CartDrawerContext = createContext<CartDrawerContextValue | null>(null);
 
 export function CartDrawerProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [lastAddedId, setLastAddedId] = useState<string | null>(null);
+  const highlightTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const openDrawer = () => setIsOpen(true);
-  const closeDrawer = () => setIsOpen(false);
+  const openDrawer = useCallback((highlightId?: string) => {
+    setIsOpen(true);
+    if (highlightId) {
+      if (highlightTimerRef.current) {
+        clearTimeout(highlightTimerRef.current);
+      }
+      setLastAddedId(highlightId);
+      highlightTimerRef.current = setTimeout(() => {
+        setLastAddedId(null);
+        highlightTimerRef.current = null;
+      }, 1200);
+    }
+  }, []);
+
+  const closeDrawer = useCallback(() => {
+    setIsOpen(false);
+  }, []);
 
   return (
     <CartDrawerContext.Provider
@@ -22,6 +47,7 @@ export function CartDrawerProvider({ children }: { children: ReactNode }) {
         openDrawer,
         closeDrawer,
         setIsOpen,
+        lastAddedId,
       }}
     >
       {children}

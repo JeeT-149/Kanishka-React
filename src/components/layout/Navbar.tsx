@@ -111,7 +111,7 @@ export function Navbar() {
 
           <button
             type="button"
-            onClick={openDrawer}
+            onClick={() => openDrawer()}
             aria-label={`Open cart, ${count} ${count === 1 ? "item" : "items"}`}
             className="relative grid size-11 place-items-center rounded-full hover:bg-sunk"
           >

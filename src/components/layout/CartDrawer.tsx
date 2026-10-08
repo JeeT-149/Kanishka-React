@@ -96,13 +96,15 @@ export function CartDrawer() {
         aria-modal="true"
         aria-labelledby="cart-drawer-heading"
         inert={!isOpen}
-        className={`absolute right-0 top-0 flex h-full w-full flex-col bg-paper shadow-soft transition-transform duration-300 ease-out sm:w-[440px] ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`absolute bottom-0 right-0 top-0 flex h-full w-full flex-col bg-paper shadow-soft transition-transform duration-300 ease-out sm:w-[440px] ${
+          isOpen
+            ? "translate-x-0 translate-y-0"
+            : "max-sm:translate-y-full max-sm:translate-x-0 sm:translate-x-full sm:translate-y-0"
         }`}
       >
         <header className="flex items-center justify-between border-b border-line px-6 py-4">
           <h2 id="cart-drawer-heading" className="font-display text-2xl">
-            Your cart <span className="text-base text-mute">({count})</span>
+            Your cart <span key={count} className="num-feedback inline-block text-base text-mute">({count})</span>
           </h2>
           <button
             ref={closeButtonRef}

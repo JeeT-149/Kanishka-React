@@ -112,6 +112,26 @@ body {
   }
 }
 
+@keyframes number-feedback {
+  0% {
+    opacity: 0.3;
+    transform: translateY(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes highlight-fade {
+  0% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .rise {
   animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
@@ -125,6 +145,25 @@ body {
 }
 .pop {
   animation: pop 0.35s ease;
+}
+
+.num-feedback {
+  animation: number-feedback var(--duration-fast) var(--ease-out) both;
+}
+.animate-highlight-fade {
+  animation: highlight-fade 1.2s ease-out forwards;
+}
+
+.line-collapse-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition: grid-template-rows var(--duration-base) var(--ease-in-out),
+              opacity var(--duration-base) var(--ease-in-out);
+}
+.line-collapse-wrapper.is-leaving {
+  grid-template-rows: 0fr;
+  opacity: 0;
 }
 
 .animate-hero-reveal {

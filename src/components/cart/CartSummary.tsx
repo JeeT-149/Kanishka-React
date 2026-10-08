@@ -20,11 +20,11 @@ export function CartSummary({ onCheckout }: CartSummaryProps) {
     <dl className="space-y-2 text-sm">
       <div className="flex justify-between">
         <dt className="text-mute">Items</dt>
-        <dd className="tabular-nums">{count}</dd>
+        <dd key={count} className="num-feedback tabular-nums">{count}</dd>
       </div>
       <div className="flex justify-between">
         <dt className="text-mute">Subtotal</dt>
-        <dd className="tabular-nums">{money(subtotal)}</dd>
+        <dd key={subtotal} className="num-feedback tabular-nums">{money(subtotal)}</dd>
       </div>
       <div className="flex justify-between">
         <dt className="text-mute">Shipping</dt>
@@ -32,7 +32,7 @@ export function CartSummary({ onCheckout }: CartSummaryProps) {
       </div>
       <div className="flex justify-between border-t border-line pt-3 text-base font-medium">
         <dt>Total</dt>
-        <dd className="tabular-nums font-semibold">{money(subtotal)}</dd>
+        <dd key={subtotal} className="num-feedback tabular-nums font-semibold">{money(subtotal)}</dd>
       </div>
       <button
         type="button"

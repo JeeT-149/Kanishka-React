@@ -97,7 +97,7 @@ export default function ProductDetail() {
     if (isOutOfStock || isMaxInCart) return;
     add(product.id, 1);
     setIsAdded(true);
-    openDrawer();
+    openDrawer(product.id);
   };
 
   return (

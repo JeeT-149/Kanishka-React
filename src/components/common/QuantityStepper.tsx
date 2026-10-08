@@ -44,7 +44,7 @@ export function QuantityStepper({
         <span
           key={value}
           aria-live="polite"
-          className="fade min-w-8 text-center text-sm font-medium tabular-nums"
+          className="num-feedback min-w-8 text-center text-sm font-medium tabular-nums"
         >
           {value}
         </span>

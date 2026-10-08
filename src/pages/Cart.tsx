@@ -37,7 +37,7 @@ export default function Cart() {
         <IconBack width={16} height={16} /> Continue shopping
       </Link>
       <h1 className="mt-2 font-display text-4xl font-light tracking-tight md:text-5xl">
-        Your cart <span className="text-mute">({count})</span>
+        Your cart <span key={count} className="num-feedback inline-block text-mute">({count})</span>
       </h1>
       <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_380px] lg:gap-16">
         <div className="border-t border-line">

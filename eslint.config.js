@@ -18,7 +18,7 @@ export default tseslint.config(
         "warn",
         {
           allowConstantExport: true,
-          allowExportNames: ["useCart", "useCartDrawer"],
+          allowExportNames: ["useCart", "useCartDrawer", "useToast"],
         },
       ],
     },
