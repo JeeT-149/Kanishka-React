@@ -65,7 +65,7 @@ export function Summary({ onCheckout }: { onCheckout?: () => void }) {
       </div>
       <div className="flex justify-between">
         <dt className="text-mute">Shipping</dt>
-        <dd className="text-mute">{subtotal >= 40 ? "Free" : "Calculated at checkout"}</dd>
+        <dd className="text-mute">Free</dd>
       </div>
       <div className="flex justify-between border-t border-line pt-3 text-base font-medium">
         <dt>Total</dt>
@@ -268,7 +268,7 @@ function Footer() {
       <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-5 py-12 md:flex-row md:items-start md:justify-between md:px-8">
         <div>
           <Logo />
-          <p className="mt-3 max-w-xs text-sm text-mute">Small-batch coffee and tea, roasted and blended in Leeds since 2016.</p>
+          <p className="mt-3 max-w-xs text-sm text-mute">Small-batch coffee and tea, roasted and blended in Bengaluru since 2016.</p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
           {[
