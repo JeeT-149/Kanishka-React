@@ -1,10 +1,13 @@
 import { Link } from "react-router";
-import { btnPrimary } from "../ui";
+import { btnPrimary } from "../lib/styles";
 
 export default function NotFound() {
   return (
     <div className="mx-auto flex max-w-[1280px] flex-col items-center px-5 py-24 text-center md:py-32">
-      <p className="font-display text-[120px] font-light italic leading-none text-accent md:text-[200px]" aria-hidden>
+      <p
+        className="font-display text-[120px] font-light italic leading-none text-accent md:text-[200px]"
+        aria-hidden="true"
+      >
         404
       </p>
       <h1 className="mt-4 font-display text-3xl md:text-4xl">This page has gone cold</h1>

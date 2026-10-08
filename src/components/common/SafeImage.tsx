@@ -1,0 +1,47 @@
+import { useState } from "react";
+import { IconImage } from "./Icons";
+
+export interface SafeImageProps {
+  src: string;
+  alt: string;
+  className?: string;
+  aspectRatio?: string;
+}
+
+/**
+ * Image component that reserves aspect ratio to avoid layout shift
+ * and renders a neutral fallback placeholder when an image fails to load.
+ */
+export function SafeImage({
+  src,
+  alt,
+  className = "",
+  aspectRatio,
+}: SafeImageProps) {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div
+        role="img"
+        aria-label={`${alt} (image unavailable)`}
+        style={aspectRatio ? { aspectRatio } : undefined}
+        className={`flex flex-col items-center justify-center gap-2 bg-sunk text-mute ${className}`}
+      >
+        <IconImage width={28} height={28} />
+        <span className="text-xs">Image unavailable</span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      onError={() => setHasError(true)}
+      style={aspectRatio ? { aspectRatio } : undefined}
+      className={className}
+    />
+  );
+}
