@@ -224,4 +224,3 @@ The project uses client-side single-page app (SPA) routing with React Router.
     ]
   }
   ```
-- **Netlify Equivalent**: If deploying to Netlify, include `/* /index.html 200` in a `public/_redirects` file or specify the redirect in `netlify.toml`.
