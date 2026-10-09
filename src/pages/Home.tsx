@@ -83,8 +83,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="shop" className="mx-auto max-w-[1280px] scroll-mt-20 px-5 md:px-8">
-        <div className="sticky top-16 z-30 border-y border-line bg-[#f7f4ee] py-2.5 shadow-2xs">
+      <section id="shop" className="mx-auto max-w-[1280px] scroll-mt-[116px] px-5 md:px-8">
+        <div className="sticky top-16 z-30 border-y border-line bg-[#f7f4ee] py-2.5 shadow-2xs md:top-20">
           <div className="flex items-center justify-between gap-4">
             <CategoryPills
               activeCategory={cat}
@@ -166,7 +166,11 @@ export default function Home() {
         )}
 
         {status === "success" && results.length > 0 && (
-          <ProductGrid key={`${cat}-${sort}-${q}`} products={results} />
+          <ProductGrid
+            key={`${cat}-${q}`}
+            products={results}
+            sortKey={sort}
+          />
         )}
       </section>
     </>

@@ -1,8 +1,8 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, ImgHTMLAttributes } from "react";
 import { useState } from "react";
 import { IconImage } from "./Icons";
 
-export interface SafeImageProps {
+export interface SafeImageProps extends Pick<ImgHTMLAttributes<HTMLImageElement>, "loading" | "aria-hidden" | "aria-label"> {
   src: string;
   alt: string;
   className?: string;
@@ -20,6 +20,9 @@ export function SafeImage({
   className = "",
   aspectRatio,
   style,
+  loading,
+  "aria-hidden": ariaHidden,
+  "aria-label": ariaLabel,
 }: SafeImageProps) {
   const [hasError, setHasError] = useState(false);
 
@@ -32,7 +35,8 @@ export function SafeImage({
     return (
       <div
         role="img"
-        aria-label={`${alt} (image unavailable)`}
+        aria-label={ariaLabel ?? `${alt} (image unavailable)`}
+        aria-hidden={ariaHidden}
         style={mergedStyle}
         className={`flex flex-col items-center justify-center gap-2 bg-sunk text-mute ${className}`}
       >
@@ -46,7 +50,9 @@ export function SafeImage({
     <img
       src={src}
       alt={alt}
-      loading="lazy"
+      loading={loading ?? "lazy"}
+      aria-hidden={ariaHidden}
+      aria-label={ariaLabel}
       onError={() => setHasError(true)}
       style={mergedStyle}
       className={className}
