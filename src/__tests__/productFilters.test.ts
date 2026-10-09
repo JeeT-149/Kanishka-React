@@ -18,6 +18,9 @@ const sampleProducts: Product[] = [
     tastingNotes: ["Dark chocolate", "Plum", "Brown sugar"],
     description: "Grown on volcanic slopes.",
     featured: 2,
+    about: "Grown in nutrient-dense volcanic soil.",
+    details: [{ label: "Altitude", value: "1,500m" }],
+    box: ["250g pouch"],
   },
   {
     id: "ethiopia-washed",
@@ -31,6 +34,9 @@ const sampleProducts: Product[] = [
     tastingNotes: ["Jasmine", "Bergamot", "Peach"],
     description: "A washed process heirloom lot with delicate floral brightness.",
     featured: 1,
+    about: "Hand-picked high in the Yirgacheffe highlands.",
+    details: [{ label: "Altitude", value: "1,900m" }],
+    box: ["250g pouch"],
   },
   {
     id: "house-blend",
@@ -43,6 +49,9 @@ const sampleProducts: Product[] = [
     tastingNotes: ["Caramel", "Hazelnut"],
     description: "Our signature blend.",
     featured: 3,
+    about: "Roasted medium to highlight sweet caramel notes.",
+    details: [{ label: "Components", value: "Arabica blend" }],
+    box: ["250g pouch"],
   },
   {
     id: "darjeeling-tea",
@@ -56,6 +65,9 @@ const sampleProducts: Product[] = [
     tastingNotes: ["Muscatel", "White peach"],
     description: "Rare first harvest white tea.",
     featured: 4,
+    about: "Delicate spring harvest from Makaibari estate.",
+    details: [{ label: "Harvest", value: "First flush" }],
+    box: ["100g tin"],
   },
 ];
 

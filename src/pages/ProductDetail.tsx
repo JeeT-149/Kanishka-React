@@ -15,6 +15,14 @@ import { EmptyState } from "../components/feedback/EmptyState";
 import { ErrorState } from "../components/feedback/ErrorState";
 import { IconBack, IconCheck, IconSearch } from "../components/common/Icons";
 import { ReassuranceRows } from "../components/product/ReassuranceRows";
+import { ProductSection } from "../components/product/ProductSection";
+import { ProductAbout } from "../components/product/ProductAbout";
+import { AllergenInfo } from "../components/product/AllergenInfo";
+import { MaterialsCare } from "../components/product/MaterialsCare";
+import { ParcelContents } from "../components/product/ParcelContents";
+import { ReviewSummary } from "../components/product/ReviewSummary";
+import { ReviewList } from "../components/product/ReviewList";
+import { getReviewsByProductId } from "../services/reviewService";
 import { btnPrimary, getCategoryTileBg, getProductAlt } from "../lib/styles";
 
 export default function ProductDetail() {
@@ -299,6 +307,65 @@ export default function ProductDetail() {
         </div>
       </div>
 
+      {/* 2. About this coffee / tea / piece */}
+      <ProductSection
+        id="about"
+        title={`About this ${
+          product.category === "tea"
+            ? "tea"
+            : product.category === "gear"
+              ? "piece"
+              : "coffee"
+        }`}
+        kicker="Story & Terroir"
+      >
+        <ProductAbout about={product.about} details={product.details} />
+      </ProductSection>
+
+      {/* 3. Allergen information (consumables) / Materials & care (gear) */}
+      {product.category === "gear" ? (
+        <ProductSection
+          id="materials-care"
+          title="Materials & care"
+          kicker="Craft & Maintenance"
+        >
+          <MaterialsCare materials={product.materials} care={product.care} />
+        </ProductSection>
+      ) : (
+        <ProductSection
+          id="allergens"
+          title="Allergen information"
+          kicker="Dietary & Facility"
+        >
+          <AllergenInfo allergens={product.allergens} />
+        </ProductSection>
+      )}
+
+      {/* 4. Inside your parcel */}
+      <ProductSection
+        id="parcel"
+        title="Inside your parcel"
+        kicker="Packaging & Contents"
+      >
+        <ParcelContents items={product.box} />
+      </ProductSection>
+
+      {/* 5. Customer reviews */}
+      <ProductSection
+        id="reviews"
+        title="Customer reviews"
+        kicker="Verified Experiences"
+      >
+        <div className="space-y-6">
+          <ReviewSummary
+            rating={product.rating}
+            reviewCount={product.reviewCount}
+          />
+          <ReviewList reviews={getReviewsByProductId(product.id)} />
+        </div>
+      </ProductSection>
+
+      {/* 6. You may also like */}
       <RelatedProducts currentProduct={product} />
 
       {/* Mobile sticky action bar */}

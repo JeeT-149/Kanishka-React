@@ -1,0 +1,572 @@
+[
+  {
+    "id": "rev-chik-1",
+    "productId": "chikmagalur-estate",
+    "author": "Arjun K.",
+    "rating": 5,
+    "date": "2026-03-14",
+    "title": "The standard for Indian specialty coffee",
+    "body": "Brewed on a V60 at 92 degrees. The cardamom note is remarkably delicate and marries perfectly with the milk chocolate backbone. Hands down my everyday morning cup.",
+    "verified": true
+  },
+  {
+    "id": "rev-chik-2",
+    "productId": "chikmagalur-estate",
+    "author": "Sarah M.",
+    "rating": 5,
+    "date": "2026-04-22",
+    "title": "Sweet and beautifully balanced",
+    "body": "Extracted with an Aeropress using the inverted method. Incredible sweetness and clean mouthfeel with zero astringency. Roasted fresh within 24 hours of dispatch.",
+    "verified": true
+  },
+  {
+    "id": "rev-chik-3",
+    "productId": "chikmagalur-estate",
+    "author": "Rohan B.",
+    "rating": 5,
+    "date": "2026-07-09",
+    "title": "Consistent and nostalgic",
+    "body": "Reminds me of plantation visits in Karnataka but roasted to modern specialty standards. The almond praline finish lingers nicely.",
+    "verified": true
+  },
+  {
+    "id": "rev-mon-1",
+    "productId": "monsooned-malabar",
+    "author": "Vikram N.",
+    "rating": 5,
+    "date": "2026-02-18",
+    "title": "Unbeatable crema and body",
+    "body": "Pulls a thick, golden crema on my manual lever machine. The low acidity makes it ideal for late afternoon milk drinks with deep cocoa and spice.",
+    "verified": true
+  },
+  {
+    "id": "rev-mon-2",
+    "productId": "monsooned-malabar",
+    "author": "Elena P.",
+    "rating": 5,
+    "date": "2026-05-11",
+    "title": "Rich and comforting in South Indian filter",
+    "body": "Classic monsooned earthy sweetness without any unpleasant harshness. Brewed in a brass filter decoction with hot frothy milk.",
+    "verified": true
+  },
+  {
+    "id": "rev-arak-1",
+    "productId": "araku-valley",
+    "author": "Devika S.",
+    "rating": 5,
+    "date": "2026-01-29",
+    "title": "Crisp citrus sweetness",
+    "body": "Clean washed cup with a vibrant mandarin orange brightness. Outstanding work by the tribal grower collective in Andhra.",
+    "verified": true
+  },
+  {
+    "id": "rev-arak-2",
+    "productId": "araku-valley",
+    "author": "Carlos T.",
+    "rating": 5,
+    "date": "2026-06-03",
+    "title": "Luminous on ice",
+    "body": "I flash-chilled this over ice on a Kalita Wave. Sparkling citrus acidity and honeyed aftertaste make it super refreshing.",
+    "verified": true
+  },
+  {
+    "id": "rev-coorg-1",
+    "productId": "coorg-rainforest",
+    "author": "Preeti R.",
+    "rating": 5,
+    "date": "2026-03-05",
+    "title": "Deep forest honey and nuts",
+    "body": "Made in a French press with a coarse grind. The natural pulped processing gives it a rounded, comforting syrup texture.",
+    "verified": true
+  },
+  {
+    "id": "rev-coorg-2",
+    "productId": "coorg-rainforest",
+    "author": "Marcus V.",
+    "rating": 4,
+    "date": "2026-05-30",
+    "title": "Great everyday immersion brew",
+    "body": "Smooth and low bitterness. Pairs exceptionally well with a drop of warm oat milk on rainy mornings.",
+    "verified": true
+  },
+  {
+    "id": "rev-yirg-1",
+    "productId": "ethiopia-yirgacheffe",
+    "author": "Anya D.",
+    "rating": 5,
+    "date": "2026-02-14",
+    "title": "Like drinking jasmine tea and peaches",
+    "body": "One of the finest Kochere lots I have cupped this season. Incredibly floral aroma that fills the entire kitchen when grinding.",
+    "verified": true
+  },
+  {
+    "id": "rev-yirg-2",
+    "productId": "ethiopia-yirgacheffe",
+    "author": "Karan J.",
+    "rating": 5,
+    "date": "2026-06-18",
+    "title": "Laser precision light roast",
+    "body": "No roasty notes whatsoever, pure origin expression. Bergamot and candied peach all the way down to room temperature.",
+    "verified": true
+  },
+  {
+    "id": "rev-huila-1",
+    "productId": "colombia-huila",
+    "author": "Mateo R.",
+    "rating": 5,
+    "date": "2026-04-12",
+    "title": "Sweet panela caramel and cherry",
+    "body": "Dialed in as a 1:2.2 ratio espresso. Bright red cherry fruit upfront settling into dense caramel dulce de leche.",
+    "verified": true
+  },
+  {
+    "id": "rev-huila-2",
+    "productId": "colombia-huila",
+    "author": "Siddharth P.",
+    "rating": 4,
+    "date": "2026-08-01",
+    "title": "Complex washed Colombian",
+    "body": "The 36-hour fermentation brings pleasant fruit notes without funk. Excellent clarity on the Chemex.",
+    "verified": true
+  },
+  {
+    "id": "rev-nyeri-1",
+    "productId": "kenya-nyeri",
+    "author": "Liam O.",
+    "rating": 5,
+    "date": "2026-03-22",
+    "title": "Vibrant blackcurrant acidity",
+    "body": "Classic SL28 profile with juicy blackcurrant and grapefruit notes. Pours sparkling clean when brewed at 94°C on V60.",
+    "verified": true
+  },
+  {
+    "id": "rev-nyeri-2",
+    "productId": "kenya-nyeri",
+    "author": "Aditi G.",
+    "rating": 5,
+    "date": "2026-07-14",
+    "title": "Punchy and memorable",
+    "body": "If you enjoy high-altitude Kenyan coffees with laser brightness, this lot is phenomenal. Sweet brown sugar finish.",
+    "verified": true
+  },
+  {
+    "id": "rev-anti-1",
+    "productId": "guatemala-antigua",
+    "author": "Nikhil T.",
+    "rating": 5,
+    "date": "2026-02-27",
+    "title": "Classic Central American sweetness",
+    "body": "Smooth stewed apple and milk chocolate notes. Very forgiving to brew whether using a drip machine or French press.",
+    "verified": true
+  },
+  {
+    "id": "rev-anti-2",
+    "productId": "guatemala-antigua",
+    "author": "Hannah W.",
+    "rating": 4,
+    "date": "2026-05-19",
+    "title": "Comforting hazelnut aroma",
+    "body": "A clean, comforting medium roast that satisfies everyone who visits. Balanced sweetness and gentle acidity.",
+    "verified": true
+  },
+  {
+    "id": "rev-braz-1",
+    "productId": "brazil-cerrado",
+    "author": "Rahul M.",
+    "rating": 5,
+    "date": "2026-03-08",
+    "title": "Peanut butter and chocolate powerhouse",
+    "body": "Heavy body, practically zero sourness, and delicious nuttiness. Makes the creamiest flat whites and iced lattes.",
+    "verified": true
+  },
+  {
+    "id": "rev-braz-2",
+    "productId": "brazil-cerrado",
+    "author": "Chloe S.",
+    "rating": 4,
+    "date": "2026-06-25",
+    "title": "Great for cold brew concentrate",
+    "body": "Steeped for 16 hours in the fridge. Incredibly smooth dark chocolate and molasses profile without bitterness.",
+    "verified": true
+  },
+  {
+    "id": "rev-sum-1",
+    "productId": "sumatra-mandheling",
+    "author": "Tariq A.",
+    "rating": 5,
+    "date": "2026-01-19",
+    "title": "Heavy, earthy, and profound",
+    "body": "For fans of traditional wet-hulled Mandheling, this hits the spot. Deep cedar, dark cocoa nibs, and heavy forest floor notes.",
+    "verified": true
+  },
+  {
+    "id": "rev-sum-2",
+    "productId": "sumatra-mandheling",
+    "author": "Oliver B.",
+    "rating": 4,
+    "date": "2026-04-05",
+    "title": "Rustic and bold",
+    "body": "Brewed on the Moka pot with whole milk. It has genuine punch and depth that stands up to hearty breakfasts.",
+    "verified": true
+  },
+  {
+    "id": "rev-rwa-1",
+    "productId": "rwanda-nyamasheke",
+    "author": "Varun H.",
+    "rating": 4,
+    "date": "2026-02-11",
+    "title": "Distinctive black tea and apricot notes",
+    "body": "Very unusual profile that drinks more like an aromatic black tea with dried stone fruit than a traditional coffee. Takes patience to extract well.",
+    "verified": true
+  },
+  {
+    "id": "rev-rwa-2",
+    "productId": "rwanda-nyamasheke",
+    "author": "Simon K.",
+    "rating": 3,
+    "date": "2026-05-16",
+    "title": "An acquired taste — very delicate and tea-like",
+    "body": "Slightly too tart and light-bodied for my usual morning espresso, but pleasant as a slow Sunday afternoon pour-over once you adjust the grind.",
+    "verified": true
+  },
+  {
+    "id": "rev-khb-1",
+    "productId": "kiln-house-blend",
+    "author": "Ananya C.",
+    "rating": 5,
+    "date": "2026-03-30",
+    "title": "Our household staple",
+    "body": "The balance between Chikmagalur chocolate and Colombian citrus makes this impossible to get tired of. Ordered three 250g bags already.",
+    "verified": true
+  },
+  {
+    "id": "rev-khb-2",
+    "productId": "kiln-house-blend",
+    "author": "James L.",
+    "rating": 5,
+    "date": "2026-06-12",
+    "title": "Perfect all-rounder",
+    "body": "Works equally well as a morning black Americano and an afternoon milky cortado. Rich chocolate fudge with a hint of orange peel.",
+    "verified": true
+  },
+  {
+    "id": "rev-morn-1",
+    "productId": "morning-ember",
+    "author": "Sunita G.",
+    "rating": 5,
+    "date": "2026-02-23",
+    "title": "Gentle and buttery dawn coffee",
+    "body": "So easy to drink first thing in the morning without jolting your palate. Roasted hazelnuts and sweet buttery shortbread.",
+    "verified": true
+  },
+  {
+    "id": "rev-morn-2",
+    "productId": "morning-ember",
+    "author": "David L.",
+    "rating": 4,
+    "date": "2026-07-20",
+    "title": "Smooth toffee profile",
+    "body": "Brewed on a Moccamaster batch brewer. Even extraction and no bitterness whatsoever. Very satisfying everyday cup.",
+    "verified": true
+  },
+  {
+    "id": "rev-mid-1",
+    "productId": "midnight-espresso",
+    "author": "Prashant K.",
+    "rating": 5,
+    "date": "2026-04-09",
+    "title": "Crema monster for traditionalists",
+    "body": "If you love a dark, bittersweet espresso that punches right through steamed milk, look no further. Smoky dark cocoa notes that stay rich.",
+    "verified": true
+  },
+  {
+    "id": "rev-mid-2",
+    "productId": "midnight-espresso",
+    "author": "Marco F.",
+    "rating": 5,
+    "date": "2026-08-15",
+    "title": "Bold and syrup-thick",
+    "body": "Pulls like warm melted chocolate at a 1:1.8 ratio on 9 bar. Molasses and campfire notes linger for minutes.",
+    "verified": true
+  },
+  {
+    "id": "rev-dec-1",
+    "productId": "decaf-swiss-water",
+    "author": "Kavita N.",
+    "rating": 5,
+    "date": "2026-03-17",
+    "title": "Finally a decaf that actually tastes like coffee",
+    "body": "No cardboard or chemical taste like cheap decafs. Sweet dates and milk chocolate make this my favorite post-dinner ritual.",
+    "verified": true
+  },
+  {
+    "id": "rev-dec-2",
+    "productId": "decaf-swiss-water",
+    "author": "Tobias H.",
+    "rating": 4,
+    "date": "2026-06-08",
+    "title": "Impressive body and sweetness",
+    "body": "Swiss Water process preserves the delicate Coorg character. Brews cleanly in an Aeropress without bitterness.",
+    "verified": true
+  },
+  {
+    "id": "rev-hol-1",
+    "productId": "holiday-reserve-limited-edition-whole-bean-gift-box-with-hand-numbered-tin",
+    "author": "Meera D.",
+    "rating": 5,
+    "date": "2026-01-05",
+    "title": "Unbelievable presentation and flavor",
+    "body": "The embossed tin is a work of art on the counter. The coffee itself has rich brandied plum and dark ganache notes that feel deeply festive.",
+    "verified": true
+  },
+  {
+    "id": "rev-hol-2",
+    "productId": "holiday-reserve-limited-edition-whole-bean-gift-box-with-hand-numbered-tin",
+    "author": "Jonathan P.",
+    "rating": 5,
+    "date": "2026-02-02",
+    "title": "A luxury gift for any coffee lover",
+    "body": "Gave this to my brother who is an avid home barista. The batch card and tasting notes made the unwrapping experience memorable.",
+    "verified": true
+  },
+  {
+    "id": "rev-darj-1",
+    "productId": "darjeeling-first-flush",
+    "author": "Deepak S.",
+    "rating": 5,
+    "date": "2026-04-18",
+    "title": "Exquisite muscatel and spring florals",
+    "body": "Steeped at 85°C for 3 minutes. The champagne-hued liquor is luminous with muscatel grape and meadow flower sweetness. Truly orthodox craftsmanship.",
+    "verified": true
+  },
+  {
+    "id": "rev-darj-2",
+    "productId": "darjeeling-first-flush",
+    "author": "Claire R.",
+    "rating": 5,
+    "date": "2026-07-27",
+    "title": "Pure spring in a porcelain cup",
+    "body": "Whole unbroken leaves with silver downy tips. Crisp, delicate, and leaves a cooling floral sweetness on the palate.",
+    "verified": true
+  },
+  {
+    "id": "rev-assm-1",
+    "productId": "assam-breakfast",
+    "author": "Rajesh V.",
+    "rating": 5,
+    "date": "2026-03-11",
+    "title": "Golden tips and deep malt",
+    "body": "You can see the abundance of golden tips in the dry leaf. Takes a splash of milk and raw sugar to create the ultimate morning chai.",
+    "verified": true
+  },
+  {
+    "id": "rev-assm-2",
+    "productId": "assam-breakfast",
+    "author": "Emma G.",
+    "rating": 5,
+    "date": "2026-05-24",
+    "title": "Robust, honeyed and brisk",
+    "body": "Rich ruby liquor that warms you through. Steeps cleanly in 4 minutes with zero harshness.",
+    "verified": true
+  },
+  {
+    "id": "rev-nilg-1",
+    "productId": "nilgiri-frost-tea",
+    "author": "Shreya M.",
+    "rating": 5,
+    "date": "2026-02-28",
+    "title": "Rare winter harvest magic",
+    "body": "The frost harvest concentrates the floral oils in a way you rarely taste in South Indian teas. Distinct white orchid aroma and crisp finish.",
+    "verified": true
+  },
+  {
+    "id": "rev-nilg-2",
+    "productId": "nilgiri-frost-tea",
+    "author": "Lucas N.",
+    "rating": 5,
+    "date": "2026-06-15",
+    "title": "Incredible cold brew tea",
+    "body": "I cold-steeped 5g in 500ml cold water in the fridge overnight. Sweet citrus and orchid blossom notes shone through effortlessly.",
+    "verified": true
+  },
+  {
+    "id": "rev-kahw-1",
+    "productId": "kashmiri-kahwa",
+    "author": "Tanvi B.",
+    "rating": 5,
+    "date": "2026-01-22",
+    "title": "Generous with real saffron and almonds",
+    "body": "So many commercial kahwa blends skimp on ingredients, but this one is loaded with fragrant saffron strands and slivered almonds. Truly warming.",
+    "verified": true
+  },
+  {
+    "id": "rev-kahw-2",
+    "productId": "kashmiri-kahwa",
+    "author": "Zainab M.",
+    "rating": 5,
+    "date": "2026-04-03",
+    "title": "Authentic celebratory brew",
+    "body": "Steeped with a touch of wild honey. The cardamom and saffron aroma fill the dining room instantly. Absolute comfort in a cup.",
+    "verified": true
+  },
+  {
+    "id": "rev-sen-1",
+    "productId": "japanese-sencha",
+    "author": "Kenji Y.",
+    "rating": 5,
+    "date": "2026-03-02",
+    "title": "Deep steamed umami perfection",
+    "body": "Fukamushi steaming gives this an emerald-cloudy liquor and rich savory umami. Brew at 70°C for 60 seconds to avoid astringency.",
+    "verified": true
+  },
+  {
+    "id": "rev-sen-2",
+    "productId": "japanese-sencha",
+    "author": "Nisha P.",
+    "rating": 4,
+    "date": "2026-05-18",
+    "title": "Refreshing oceanic greens",
+    "body": "Sweet maritime aroma and vivid green color. Great quality Shizuoka harvest that can easily be re-steeped two or three times.",
+    "verified": true
+  },
+  {
+    "id": "rev-genm-1",
+    "productId": "genmaicha",
+    "author": "Aarav K.",
+    "rating": 5,
+    "date": "2026-02-17",
+    "title": "Toasted popcorn comfort",
+    "body": "The aroma of roasted rice immediately relaxes you. Light in caffeine and easy on the stomach for late evening sipping.",
+    "verified": true
+  },
+  {
+    "id": "rev-genm-2",
+    "productId": "genmaicha",
+    "author": "Emily C.",
+    "rating": 4,
+    "date": "2026-06-29",
+    "title": "Nutty and wholesome",
+    "body": "A wonderful balanced blend with puffed rice kernels that add so much depth. Pairs nicely with savoury snacks.",
+    "verified": true
+  },
+  {
+    "id": "rev-ool-1",
+    "productId": "oolong-alishan",
+    "author": "Wei L.",
+    "rating": 5,
+    "date": "2026-03-25",
+    "title": "Milky gardenia and endless infusions",
+    "body": "Tightly rolled high mountain pearls that open up across seven gongfu infusions. Notes of honeydew melon, sweet cream, and gardenia flowers.",
+    "verified": true
+  },
+  {
+    "id": "rev-ool-2",
+    "productId": "oolong-alishan",
+    "author": "Pooja V.",
+    "rating": 5,
+    "date": "2026-07-04",
+    "title": "High mountain mist in a gaiwan",
+    "body": "Sublime buttery texture and zero astringency. One of the finest Taiwanese high-mountain lots available in India.",
+    "verified": true
+  },
+  {
+    "id": "rev-eg-1",
+    "productId": "earl-grey-smoked",
+    "author": "Arthur P.",
+    "rating": 5,
+    "date": "2026-01-30",
+    "title": "Intriguing woodsmoke and citrus harmony",
+    "body": "The applewood cold smoke adds an unexpected savory depth to the bright bergamot citrus. Pours rich and amber with real personality.",
+    "verified": true
+  },
+  {
+    "id": "rev-eg-2",
+    "productId": "earl-grey-smoked",
+    "author": "Smriti R.",
+    "rating": 4,
+    "date": "2026-05-09",
+    "title": "Bold twist on a timeless classic",
+    "body": "If standard Earl Grey feels too perfumed, this smoky variation grounds it with comforting hearthside character. Beautiful with a dash of milk.",
+    "verified": true
+  },
+  {
+    "id": "rev-grind-1",
+    "productId": "hand-grinder",
+    "author": "Akash T.",
+    "rating": 5,
+    "date": "2026-02-09",
+    "title": "Smooth cranking and unimpeachable burr alignment",
+    "body": "The dual bearings eliminate any shaft play. Grinds 18g of dense Ethiopian beans for pourover in under 35 seconds with minimal effort.",
+    "verified": true
+  },
+  {
+    "id": "rev-grind-2",
+    "productId": "hand-grinder",
+    "author": "Felix W.",
+    "rating": 5,
+    "date": "2026-06-22",
+    "title": "Replaced my bulky electric grinder",
+    "body": "Particle distribution is remarkably uniform with very few fines. The magnetic catch-cup and walnut handle feel exceptionally premium in the hand.",
+    "verified": true
+  },
+  {
+    "id": "rev-pour-1",
+    "productId": "pour-over-kit",
+    "author": "Manish S.",
+    "rating": 5,
+    "date": "2026-03-07",
+    "title": "Superb thermal stability and handsome design",
+    "body": "The heavy ceramic cone retains heat far better than plastic equivalents. Glass server pours without drips and the included filters fit like a glove.",
+    "verified": true
+  },
+  {
+    "id": "rev-pour-2",
+    "productId": "pour-over-kit",
+    "author": "Sophie B.",
+    "rating": 5,
+    "date": "2026-05-14",
+    "title": "Essential for starting specialty coffee",
+    "body": "Everything you need to brew clean artisan coffee at home. Looks stunning sitting on the kitchen counter when not in use.",
+    "verified": true
+  },
+  {
+    "id": "rev-kett-1",
+    "productId": "gooseneck-kettle",
+    "author": "Harish N.",
+    "rating": 5,
+    "date": "2026-02-25",
+    "title": "Pinpoint pouring control",
+    "body": "The curved spout enables a steady, pencil-thin vertical water stream directly into the coffee bed. Balanced handle keeps wrist fatigue away.",
+    "verified": true
+  },
+  {
+    "id": "rev-kett-2",
+    "productId": "gooseneck-kettle",
+    "author": "Daniel K.",
+    "rating": 5,
+    "date": "2026-07-11",
+    "title": "Heats fast on induction",
+    "body": "Works like a charm on my induction cooktop. 0.9L is the sweet spot for brewing two cups without feeling heavy.",
+    "verified": true
+  },
+  {
+    "id": "rev-scale-1",
+    "productId": "digital-scale",
+    "author": "Gaurav D.",
+    "rating": 5,
+    "date": "2026-04-01",
+    "title": "Fast 0.1g response with clean hidden display",
+    "body": "Zero perceptible delay when pouring water. The auto-timer starts cleanly when flow begins and the silicone mat protects against heat.",
+    "verified": true
+  },
+  {
+    "id": "rev-scale-2",
+    "productId": "digital-scale",
+    "author": "Mia L.",
+    "rating": 4,
+    "date": "2026-06-19",
+    "title": "Compact and USB-C rechargeable",
+    "body": "Battery lasts for weeks of multiple daily brews on a single charge. Fits comfortably under the portafilter of my espresso machine.",
+    "verified": true
+  }
+]

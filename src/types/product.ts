@@ -11,6 +11,17 @@ export type ArtKind =
   | "gift-box"
   | "generic";
 
+export interface ProductDetailItem {
+  label: string;
+  value: string;
+}
+
+export interface AllergenInfoData {
+  contains: string[];
+  mayContain: string[];
+  note?: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -29,6 +40,12 @@ export interface Product {
   brewRecipe?: string;
   featured?: number;
   artKind?: ArtKind;
+  about: string;
+  details: ProductDetailItem[];
+  allergens?: AllergenInfoData;
+  materials?: string[];
+  care?: string;
+  box: string[];
 }
 
 export const CATEGORIES: { id: Category | "all"; label: string }[] = [

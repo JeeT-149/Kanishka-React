@@ -91,6 +91,9 @@ describe("cartReducer", () => {
       image: "/test.svg",
       images: ["/test.svg"],
       inStock: false,
+      about: "Test about story.",
+      details: [{ label: "Origin", value: "Test" }],
+      box: ["250g coffee"],
     });
 
     const initialState: CartItem[] = [];
