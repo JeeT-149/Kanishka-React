@@ -4,7 +4,7 @@ A refined artisanal e-commerce storefront for **Kiln & Leaf Roasters**, a specia
 
 Built with Vite, React 19, TypeScript (strict mode), Tailwind CSS v4, and React Router.
 
-**Live Demo:** [https://kiln-and-leaf.vercel.app](https://kiln-and-leaf.vercel.app) *(Candidate: replace with your deployment URL)*
+**Live Demo:** [https://kiln-and-leaf.vercel.app](https://kiln-and-leaf.vercel.app)
 
 ---
 
