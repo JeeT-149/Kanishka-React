@@ -16,7 +16,7 @@
     <line x1="180" y1="192" x2="620" y2="192" stroke="#E2DCD0" stroke-width="1" />
 
     <!-- Product Title -->
-    <text x="400" y="260" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#161412">Darjeeling First Flush</text>
+    <text x="400" y="275" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#161412">Darjeeling First Flush</text>
 
     <!-- Origin & Specs Bar -->
     <rect x="160" y="358" width="480" height="46" rx="6" fill="#F7F4EE" />

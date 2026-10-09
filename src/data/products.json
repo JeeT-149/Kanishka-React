@@ -654,9 +654,9 @@
   },
   {
     "id": "rwanda-nyamasheke",
-    "name": "Araku Valley Reserve",
+    "name": "Nyamasheke Washed",
     "category": "single",
-    "origin": "India Araku Valley",
+    "origin": "Rwanda Lake Kivu",
     "weight": "250g",
     "price": 649,
     "rating": 4.6,
@@ -667,7 +667,7 @@
       "Black tea",
       "Honey"
     ],
-    "description": "A clean, sweet micro-lot grown in shade by tribal farmers in the Eastern Ghats of Araku Valley, with a silky body and a long honeyed finish.",
+    "description": "A clean, sweet lot from the shores of Lake Kivu, with a silky body and a long honeyed finish.",
     "brewRecipe": "Kalita Wave, 1:16, 93°C",
     "image": "/images/products/rwanda-nyamasheke.svg",
     "images": [

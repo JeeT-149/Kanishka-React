@@ -152,15 +152,20 @@ export default function ProductDetail() {
         </nav>
       </div>
 
-      <div className="mt-4 grid gap-10 md:grid-cols-2 md:gap-16">
+      <div className="mt-4 grid gap-10 md:grid-cols-2 md:items-start md:gap-16">
         {/* Left column: product image tile and thumbnails */}
         <div className="rise">
           {(() => {
             const currentImg = gallery[activeImageIndex] ?? gallery[0];
             const isCurrentSvg = currentImg?.endsWith(".svg");
+            const hasThumbnails = gallery.length > 1;
             return (
               <div
-                className={`relative aspect-[4/5] max-h-[80svh] overflow-hidden rounded-card ${
+                className={`relative aspect-[4/5] w-full overflow-hidden rounded-card ${
+                  hasThumbnails
+                    ? "max-h-[480px] md:max-h-[530px]"
+                    : "max-h-[580px] md:max-h-[630px]"
+                } ${
                   isCurrentSvg
                     ? `${getCategoryTileBg(product.category, product.artKind)} flex items-center justify-center p-6 md:p-8`
                     : "bg-sunk"
@@ -224,8 +229,8 @@ export default function ProductDetail() {
           )}
         </div>
 
-        {/* Right column: info & sticky buy box */}
-        <div className="rise pt-2 md:sticky md:top-24 md:self-start" style={{ animationDelay: "80ms" }}>
+        {/* Right column: info & buy box */}
+        <div className="rise pt-1" style={{ animationDelay: "80ms" }}>
           <p className="text-xs uppercase tracking-[0.14em] text-mute">
             {product.origin ?? categoryLabel(product.category)}
           </p>

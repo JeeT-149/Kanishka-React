@@ -46,12 +46,13 @@ function escapeXml(unsafe) {
 }
 
 /** Wrap text into lines; each line is at most maxChars wide. */
-function wrapText(text, maxChars = 20, maxLines = 3) {
-  const words = String(text ?? "").split(/\s+/);
+function wrapText(text, maxChars = 17, maxLines = 3) {
+  const words = String(text ?? "").split(/\s+/).filter(Boolean);
   const lines = [];
   let current = "";
 
-  for (const word of words) {
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
     if (!current) {
       current = word;
     } else if ((current + " " + word).length <= maxChars) {
@@ -60,7 +61,13 @@ function wrapText(text, maxChars = 20, maxLines = 3) {
       lines.push(current);
       current = word;
       if (lines.length === maxLines - 1) {
-        // Collect remaining words onto last allowed line
+        for (let j = i + 1; j < words.length; j++) {
+          if ((current + " " + words[j]).length <= maxChars) {
+            current += " " + words[j];
+          } else {
+            break;
+          }
+        }
         break;
       }
     }
@@ -329,16 +336,20 @@ function renderMotif(motif, styles, labelX, labelY, labelW, labelH) {
  * usable height), about 73% of the tile height at 4/5 aspect ratio.
  */
 function renderPouchArt(product, styles, motif) {
-  const nameLines = wrapText(product.name, 20, 3);
+  const nameLines = wrapText(product.name, 17, 3);
   const originText = escapeXml(product.origin ?? "Specialty Roastery");
   const weightText = escapeXml(product.weight ?? "250g");
   const isBlend = product.category === "blends";
 
-  // Name lines: placed inside label at ~y=450 baseline for first line
+  // Name lines: font size 24 for 1-2 lines, 22 for 3 lines to fit safely inside the 288px label
+  const fontSize = nameLines.length > 2 ? 22 : 24;
+  const startY = nameLines.length === 1 ? 468 : nameLines.length === 2 ? 450 : 436;
+  const lineSpacing = nameLines.length > 2 ? 28 : 32;
+
   const nameSvgLines = nameLines
     .map((line, i) => {
-      const y = 454 + i * 32;
-      return `<text x="400" y="${y}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#161412">${escapeXml(line)}</text>`;
+      const y = startY + i * lineSpacing;
+      return `<text x="400" y="${y}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="${fontSize}" font-weight="600" fill="#161412">${escapeXml(line)}</text>`;
     })
     .join("\n      ");
 
@@ -434,14 +445,18 @@ function renderPouchArt(product, styles, motif) {
  * viewBox 0 0 800 1100; tin body runs ~180-950.
  */
 function renderTeaTinArt(product, styles, motif) {
-  const nameLines = wrapText(product.name, 18, 3);
+  const nameLines = wrapText(product.name, 16, 3);
   const originText = escapeXml(product.origin ?? "Artisan Estate");
   const weightText = escapeXml(product.weight ?? "100g");
 
+  const fontSize = nameLines.length > 2 ? 22 : 24;
+  const startY = nameLines.length === 1 ? 520 : nameLines.length === 2 ? 495 : 475;
+  const lineSpacing = nameLines.length > 2 ? 28 : 32;
+
   const nameSvgLines = nameLines
     .map((line, i) => {
-      const y = 500 + i * 32;
-      return `<text x="400" y="${y}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="600" fill="${styles.labelText}">${escapeXml(line)}</text>`;
+      const y = startY + i * lineSpacing;
+      return `<text x="400" y="${y}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="${fontSize}" font-weight="600" fill="${styles.labelText}">${escapeXml(line)}</text>`;
     })
     .join("\n      ");
 
@@ -517,10 +532,12 @@ function renderTeaTinArt(product, styles, motif) {
 }
 
 function renderGiftBoxArt(product, styles) {
-  const nameLines = wrapText(product.name, 22, 2);
+  const boxTitle = product.name.length > 30 ? "Winter Reserve Tasting Set" : product.name;
+  const nameLines = wrapText(boxTitle, 18, 2);
+  const startY = nameLines.length === 1 ? 590 : 570;
   const nameSvgLines = nameLines
     .map((line, i) => {
-      const y = 526 + i * 32;
+      const y = startY + i * 32;
       return `<text x="400" y="${y}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="600" fill="#161412">${escapeXml(line)}</text>`;
     })
     .join("\n      ");
@@ -661,10 +678,14 @@ function renderNotesCard(product) {
   const origin = escapeXml(product.origin ?? "Artisan roastery batch");
   const weight = escapeXml(product.weight ?? "250g");
 
+  const fontSize = nameLines.length > 2 ? 24 : 28;
+  const lineSpacing = nameLines.length > 2 ? 30 : 36;
+  const startY = nameLines.length === 1 ? 275 : nameLines.length === 2 ? 260 : 246;
+
   const nameSvgLines = nameLines
     .map((line, i) => {
-      const y = 260 + i * 36;
-      return `<text x="400" y="${y}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#161412">${escapeXml(line)}</text>`;
+      const y = startY + i * lineSpacing;
+      return `<text x="400" y="${y}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="${fontSize}" font-weight="600" fill="#161412">${escapeXml(line)}</text>`;
     })
     .join("\n      ");
 

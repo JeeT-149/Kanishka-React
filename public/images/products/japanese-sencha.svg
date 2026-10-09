@@ -57,8 +57,8 @@
       <line x1="306" y1="394" x2="494" y2="394" stroke="#C8A96E" stroke-opacity="0.3" stroke-width="1" />
 
       <!-- Product Name -->
-      <text x="400" y="500" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="600" fill="#161412">Japanese Sencha</text>
-      <text x="400" y="532" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="600" fill="#161412">Yabukita</text>
+      <text x="400" y="495" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#161412">Japanese Sencha</text>
+      <text x="400" y="527" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#161412">Yabukita</text>
 
       <line x1="320" y1="612" x2="480" y2="612" stroke="#C8A96E" stroke-opacity="0.3" stroke-width="1" />
 

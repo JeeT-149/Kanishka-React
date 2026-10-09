@@ -66,7 +66,7 @@
       <line x1="296" y1="360" x2="504" y2="360" stroke="#E2DCD0" stroke-width="1" />
 
       <!-- Product Name (min 28px rendered, ≈12px+ at card width) -->
-      <text x="400" y="454" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#161412">Kiln House Blend</text>
+      <text x="400" y="468" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#161412">Kiln House Blend</text>
 
       <line x1="316" y1="578" x2="484" y2="578" stroke="#E2DCD0" stroke-width="1" />
 
