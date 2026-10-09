@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link } from "react-router";
 import { useCart } from "../context/CartContext";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
@@ -10,6 +11,8 @@ import { btnPrimary } from "../lib/styles";
 export default function Cart() {
   useDocumentTitle("Shopping Cart");
   const { lines, count } = useCart();
+  // Visually hidden aria-live region shared across all line items on this page
+  const announceRef = useRef<HTMLElement | null>(null);
 
   if (lines.length === 0) {
     return (
@@ -30,6 +33,14 @@ export default function Cart() {
 
   return (
     <div className="mx-auto max-w-[1280px] px-5 pb-8 pt-10 md:px-8">
+      {/* Visually hidden aria-live region for removal announcements */}
+      <span
+        ref={announceRef as React.RefObject<HTMLSpanElement>}
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      />
       <Link
         to="/"
         className="inline-flex min-h-11 items-center gap-1.5 text-sm text-mute hover:text-ink"
@@ -43,7 +54,11 @@ export default function Cart() {
         <div className="border-t border-line">
           <ul className="divide-y divide-line">
             {lines.map((item) => (
-              <CartLineItem key={item.id} item={item} />
+              <CartLineItem
+                key={item.id}
+                item={item}
+                announceRef={announceRef as React.RefObject<HTMLElement | null>}
+              />
             ))}
           </ul>
         </div>

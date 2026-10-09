@@ -2,7 +2,6 @@ import { Outlet, ScrollRestoration } from "react-router";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { CartDrawer } from "./CartDrawer";
-import { Toast } from "../common/Toast";
 
 export function Layout() {
   return (
@@ -13,7 +12,6 @@ export function Layout() {
       </main>
       <Footer />
       <CartDrawer />
-      <Toast />
       <ScrollRestoration />
     </div>
   );

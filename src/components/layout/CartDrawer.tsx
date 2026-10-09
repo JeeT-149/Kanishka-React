@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { Link, useNavigate } from "react-router";
 import { useCart } from "../../context/CartContext";
 import { useCartDrawer } from "../../context/CartDrawerContext";
@@ -13,8 +13,20 @@ export function CartDrawer() {
   const { lines, count } = useCart();
   const asideRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const continueButtonRef = useRef<HTMLButtonElement>(null);
   const triggerElementRef = useRef<HTMLElement | null>(null);
   const navigate = useNavigate();
+
+  // Visually hidden aria-live region announces removal messages to screen readers
+  const announceRef = useRef<HTMLElement | null>(null);
+
+  // When the drawer closes, announce region text should be cleared so it
+  // doesn't re-announce on re-open.
+  useEffect(() => {
+    if (!isOpen && announceRef.current) {
+      announceRef.current.textContent = "";
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -79,11 +91,29 @@ export function CartDrawer() {
     };
   }, [isOpen, closeDrawer]);
 
+  // Called by CartLineItem after state is removed; if cart is now empty,
+  // move focus to the empty-state "Continue shopping" button.
+  const handleLineRemoved = useCallback(() => {
+    // lines is stale here (captured before reducer runs), so check next tick
+    requestAnimationFrame(() => {
+      continueButtonRef.current?.focus();
+    });
+  }, []);
+
   return (
     <div
       className={`fixed inset-0 z-50 ${isOpen ? "" : "pointer-events-none"}`}
       aria-hidden={!isOpen}
     >
+      {/* Visually hidden aria-live region for removal announcements */}
+      <span
+        ref={announceRef as React.RefObject<HTMLSpanElement>}
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      />
+
       <div
         onClick={closeDrawer}
         className={`absolute inset-0 bg-ink/40 transition-opacity duration-300 ${
@@ -125,6 +155,7 @@ export function CartDrawer() {
               message="Nothing here yet. Fresh roasts ship within 48 hours."
               action={
                 <button
+                  ref={continueButtonRef}
                   type="button"
                   className={btnPrimary}
                   onClick={() => {
@@ -142,7 +173,13 @@ export function CartDrawer() {
             <div className="no-scrollbar flex-1 overflow-auto px-6">
               <ul className="divide-y divide-line">
                 {lines.map((item) => (
-                  <CartLineItem key={item.id} item={item} compact />
+                  <CartLineItem
+                    key={item.id}
+                    item={item}
+                    compact
+                    announceRef={announceRef as React.RefObject<HTMLElement | null>}
+                    onRemoved={handleLineRemoved}
+                  />
                 ))}
               </ul>
             </div>
