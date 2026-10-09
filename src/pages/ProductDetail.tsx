@@ -14,6 +14,7 @@ import { ProductDetailSkeleton } from "../components/feedback/ProductDetailSkele
 import { EmptyState } from "../components/feedback/EmptyState";
 import { ErrorState } from "../components/feedback/ErrorState";
 import { IconBack, IconCheck, IconSearch } from "../components/common/Icons";
+import { ReassuranceRows } from "../components/product/ReassuranceRows";
 import { btnPrimary, getCategoryTileBg, getProductAlt } from "../lib/styles";
 
 export default function ProductDetail() {
@@ -102,31 +103,40 @@ export default function ProductDetail() {
 
   return (
     <div className="mx-auto max-w-[1280px] px-5 pb-28 pt-6 md:px-8 md:pb-12">
-      <div className="flex flex-col items-start gap-2.5 text-sm text-mute">
+      {/* Top bar: compact Back control and breadcrumb in a single row */}
+      <div className="flex items-center gap-3 text-sm text-mute">
         <button
           type="button"
           onClick={handleBack}
-          className="inline-flex items-center gap-1.5 py-1 text-mute transition hover:text-ink"
+          aria-label="Go back"
+          className="inline-flex shrink-0 items-center gap-1.5 py-1 text-mute transition hover:text-ink focus-visible:outline-2"
         >
           <IconBack width={16} height={16} /> Back
         </button>
-        <nav aria-label="Breadcrumb">
-          <ol className="flex flex-wrap items-center gap-2">
-            <li>
+        <span className="text-line select-none" aria-hidden="true">
+          ·
+        </span>
+        <nav aria-label="Breadcrumb" className="min-w-0 flex-1">
+          <ol className="flex items-center gap-2 truncate">
+            <li className="shrink-0">
               <Link to="/" className="hover:text-ink">
                 Shop
               </Link>
             </li>
-            <li aria-hidden="true">/</li>
-            <li>
+            <li aria-hidden="true" className="shrink-0 text-mute/50">
+              /
+            </li>
+            <li className="shrink-0">
               <Link to={`/?cat=${product.category}`} className="hover:text-ink">
                 {categoryLabel(product.category)}
               </Link>
             </li>
-            <li aria-hidden="true">/</li>
+            <li aria-hidden="true" className="shrink-0 text-mute/50">
+              /
+            </li>
             <li
               aria-current="page"
-              className="max-w-[80vw] truncate text-ink md:max-w-md"
+              className="truncate text-ink"
             >
               {product.name}
             </li>
@@ -135,13 +145,14 @@ export default function ProductDetail() {
       </div>
 
       <div className="mt-4 grid gap-10 md:grid-cols-2 md:gap-16">
-        <div className="rise md:sticky md:top-24 md:self-start">
+        {/* Left column: product image tile and thumbnails */}
+        <div className="rise">
           {(() => {
             const currentImg = gallery[activeImageIndex] ?? gallery[0];
             const isCurrentSvg = currentImg?.endsWith(".svg");
             return (
               <div
-                className={`relative aspect-[4/5] overflow-hidden rounded-card ${
+                className={`relative aspect-[4/5] max-h-[80svh] overflow-hidden rounded-card ${
                   isCurrentSvg
                     ? `${getCategoryTileBg(product.category, product.artKind)} flex items-center justify-center p-6 md:p-8`
                     : "bg-sunk"
@@ -183,13 +194,13 @@ export default function ProductDetail() {
                         : `Show detail view for ${product.name}`
                     }
                     aria-current={i === activeImageIndex}
-                    className={`size-20 overflow-hidden rounded-lg border-2 ${
+                    className={`size-20 overflow-hidden rounded-lg border-2 focus-visible:outline-2 focus-visible:outline-accent ${
                       isThumbSvg
                         ? `${getCategoryTileBg(product.category, product.artKind)} p-1.5`
                         : "bg-sunk p-0"
                     } transition ${
                       i === activeImageIndex
-                        ? "border-accent"
+                        ? "border-accent ring-1 ring-accent"
                         : "border-transparent opacity-70 hover:opacity-100"
                     }`}
                   >
@@ -205,7 +216,8 @@ export default function ProductDetail() {
           )}
         </div>
 
-        <div className="rise pt-2" style={{ animationDelay: "80ms" }}>
+        {/* Right column: info & sticky buy box */}
+        <div className="rise pt-2 md:sticky md:top-24 md:self-start" style={{ animationDelay: "80ms" }}>
           <p className="text-xs uppercase tracking-[0.14em] text-mute">
             {product.origin ?? categoryLabel(product.category)}
           </p>
@@ -282,6 +294,8 @@ export default function ProductDetail() {
               </span>
             </button>
           </div>
+
+          <ReassuranceRows category={product.category} />
         </div>
       </div>
 

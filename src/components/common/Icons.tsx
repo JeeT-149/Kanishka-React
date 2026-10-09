@@ -97,3 +97,47 @@ export const IconChevronDown = (props: IconProps) => (
     <polyline points="6 9 12 15 18 9" />
   </svg>
 );
+
+export const IconFlame = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M12 2c.5 3.5 3 6 4 9a6 6 0 1 1-10 1c0-4 3-6.5 4-10z" />
+  </Svg>
+);
+
+export const IconLeaf = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M11 20A7 7 0 0 1 4 13C4 7 10 3 20 3c0 10-4 16-11 17Z" />
+    <path d="M4 21c4-4 8-8 10-14" />
+  </Svg>
+);
+
+export const IconShieldCheck = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <path d="m9 12 2 2 4-4" />
+  </Svg>
+);
+
+export const IconClock = (props: IconProps) => (
+  <Svg {...props}>
+    <circle cx="12" cy="12" r="10" />
+    <polyline points="12 6 12 12 16 14" />
+  </Svg>
+);
+
+export const IconTruck = (props: IconProps) => (
+  <Svg {...props}>
+    <rect x="1" y="5" width="14" height="11" rx="1" />
+    <path d="M15 9h4l3 3v4h-7V9z" />
+    <circle cx="5.5" cy="18.5" r="2.5" />
+    <circle cx="18.5" cy="18.5" r="2.5" />
+  </Svg>
+);
+
+export const IconBox = (props: IconProps) => (
+  <Svg {...props}>
+    <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+    <path d="m3.3 7 8.7 5 8.7-5M12 12v10" />
+  </Svg>
+);
+
