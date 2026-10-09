@@ -7,56 +7,56 @@
 
   <!-- Archival Tasting Card Background -->
   <g filter="url(#card-shadow-earl-grey-smoked)">
-    <rect x="120" y="90" width="560" height="820" rx="16" fill="#FDFCFA" stroke="#E2DCD0" stroke-width="2" />
-    <rect x="136" y="106" width="528" height="788" rx="12" fill="none" stroke="#EAE4D8" stroke-width="1" />
+    <rect x="100" y="80" width="600" height="840" rx="16" fill="#FDFCFA" stroke="#E2DCD0" stroke-width="2" />
+    <rect x="116" y="96" width="568" height="808" rx="12" fill="none" stroke="#EAE4D8" stroke-width="1" />
 
     <!-- Card Header -->
-    <text x="400" y="160" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" letter-spacing="4" fill="#8C3A14">KILN &amp; LEAF</text>
-    <text x="400" y="180" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="#786F66">CUPPING ARCHIVE &amp; TASTING CARD</text>
-    <line x1="200" y1="198" x2="600" y2="198" stroke="#E2DCD0" stroke-width="1" />
+    <text x="400" y="152" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" letter-spacing="4" fill="#8C3A14">KILN &amp; LEAF</text>
+    <text x="400" y="174" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#786F66">CUPPING ARCHIVE &amp; TASTING CARD</text>
+    <line x1="180" y1="192" x2="620" y2="192" stroke="#E2DCD0" stroke-width="1" />
 
     <!-- Product Title -->
-    <text x="400" y="250" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="600" fill="#161412">Smoked Earl Grey</text>
+    <text x="400" y="260" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#161412">Smoked Earl Grey</text>
 
     <!-- Origin & Specs Bar -->
-    <rect x="180" y="340" width="440" height="42" rx="6" fill="#F7F4EE" />
-    <text x="210" y="366" font-family="-apple-system, system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#4E473F">ORIGIN: India Nilgiri</text>
-    <text x="590" y="366" text-anchor="end" font-family="-apple-system, system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#786F66">100g</text>
+    <rect x="160" y="358" width="480" height="46" rx="6" fill="#F7F4EE" />
+    <text x="190" y="386" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#4E473F">ORIGIN: India Nilgiri</text>
+    <text x="610" y="386" text-anchor="end" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#786F66">100g</text>
 
     <!-- Tasting Notes Section -->
-    <text x="400" y="434" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="9.5" font-weight="700" letter-spacing="2" fill="#786F66">CURATED FLAVOR PROFILE</text>
+    <text x="400" y="448" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#786F66">CURATED FLAVOR PROFILE</text>
     
-      <g transform="translate(160, 460)">
-        <rect x="0" y="0" width="112" height="34" rx="17" fill="#F4EFE6" stroke="#E2DCD0" stroke-width="1.5" />
-        <text x="56" y="21" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#4E473F">Bergamot</text>
+      <g transform="translate(148, 468)">
+        <rect x="0" y="0" width="118" height="38" rx="19" fill="#F4EFE6" stroke="#E2DCD0" stroke-width="1.5" />
+        <text x="59" y="24" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#4E473F">Bergamot</text>
       </g>
 
-      <g transform="translate(285, 460)">
-        <rect x="0" y="0" width="112" height="34" rx="17" fill="#F4EFE6" stroke="#E2DCD0" stroke-width="1.5" />
-        <text x="56" y="21" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#4E473F">Pine smoke</text>
+      <g transform="translate(278, 468)">
+        <rect x="0" y="0" width="118" height="38" rx="19" fill="#F4EFE6" stroke="#E2DCD0" stroke-width="1.5" />
+        <text x="59" y="24" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#4E473F">Pine smoke</text>
       </g>
 
-      <g transform="translate(410, 460)">
-        <rect x="0" y="0" width="112" height="34" rx="17" fill="#F4EFE6" stroke="#E2DCD0" stroke-width="1.5" />
-        <text x="56" y="21" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#4E473F">Black pepper</text>
+      <g transform="translate(408, 468)">
+        <rect x="0" y="0" width="118" height="38" rx="19" fill="#F4EFE6" stroke="#E2DCD0" stroke-width="1.5" />
+        <text x="59" y="24" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="13" font-weight="600" fill="#4E473F">Black pepper</text>
       </g>
 
-    <line x1="180" y1="540" x2="620" y2="540" stroke="#E2DCD0" stroke-width="1" />
+    <line x1="160" y1="558" x2="640" y2="558" stroke="#E2DCD0" stroke-width="1" />
 
     
     <!-- Category Block -->
-    <text x="400" y="580" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="9.5" font-weight="700" letter-spacing="2" fill="#786F66">CATEGORY: TEA</text>
-    <text x="400" y="612" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="12" font-weight="500" fill="#4E473F">Curated harvest &amp; equipment</text>
+    <text x="400" y="598" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#786F66">CATEGORY: TEA</text>
+    <text x="400" y="630" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="500" fill="#4E473F">Curated harvest &amp; estate selection</text>
     
 
-    <line x1="180" y1="656" x2="620" y2="656" stroke="#E2DCD0" stroke-width="1" />
+    <line x1="160" y1="672" x2="640" y2="672" stroke="#E2DCD0" stroke-width="1" />
 
     <!-- Brew Recipe Block -->
-    <text x="400" y="694" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="9.5" font-weight="700" letter-spacing="2" fill="#786F66">BREW &amp; EXTRACTION RECIPE</text>
-    <rect x="180" y="714" width="440" height="54" rx="8" fill="#F7F4EE" stroke="#E2DCD0" stroke-width="1" />
-    <text x="400" y="746" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-style="italic" fill="#161412">3g per 200ml, 96°C, 4 minutes</text>
+    <text x="400" y="712" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#786F66">BREW &amp; EXTRACTION RECIPE</text>
+    <rect x="160" y="730" width="480" height="60" rx="8" fill="#F7F4EE" stroke="#E2DCD0" stroke-width="1" />
+    <text x="400" y="766" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#161412">3g per 200ml, 96°C, 4 minutes</text>
 
     <!-- Bottom seal -->
-    <text x="400" y="830" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="8.5" letter-spacing="2" fill="#786F66">AUTHENTIC SPECIALTY GRADE · DIRECT ROASTER SELECTION</text>
+    <text x="400" y="852" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="10" letter-spacing="2" fill="#786F66">AUTHENTIC SPECIALTY GRADE · DIRECT ROASTER SELECTION</text>
   </g>
 </svg>

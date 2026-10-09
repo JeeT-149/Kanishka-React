@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" fill="none">
   <defs>
     <radialGradient id="shadow-brazil-cerrado" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#000000" stop-opacity="0.18" />
@@ -6,11 +6,11 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="pouch-body-brazil-cerrado" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7D3516" />
-      <stop offset="18%" stop-color="#A44C26" />
-      <stop offset="50%" stop-color="#A44C26" />
-      <stop offset="85%" stop-color="#7D3516" />
-      <stop offset="100%" stop-color="#A44C26" />
+      <stop offset="0%" stop-color="#3E2038" />
+      <stop offset="18%" stop-color="#5B3050" />
+      <stop offset="50%" stop-color="#5B3050" />
+      <stop offset="85%" stop-color="#3E2038" />
+      <stop offset="100%" stop-color="#5B3050" />
     </linearGradient>
     <linearGradient id="top-seal-brazil-cerrado" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22" />
@@ -19,72 +19,68 @@
   </defs>
 
   <!-- Ground shadow -->
-  <ellipse cx="400" cy="855" rx="230" ry="28" fill="url(#shadow-brazil-cerrado)" />
+  <ellipse cx="400" cy="960" rx="240" ry="28" fill="url(#shadow-brazil-cerrado)" />
 
   <!-- Pouch Body -->
   <g>
     <!-- Back gusset fold hint -->
-    <path d="M 235 220 L 565 220 L 585 790 Q 400 812 215 790 Z" fill="#7D3516" opacity="0.6" />
+    <path d="M 215 150 L 585 150 L 610 900 Q 400 924 190 900 Z" fill="#3E2038" opacity="0.6" />
 
-    <!-- Main pouch front -->
-    <path d="M 240 220 L 560 220 Q 580 320 575 780 Q 400 812 225 780 Q 220 320 240 220 Z" fill="url(#pouch-body-brazil-cerrado)" />
+    <!-- Main pouch front (taller: top ~150, bottom ~900) -->
+    <path d="M 220 150 L 580 150 Q 606 250 600 890 Q 400 924 200 890 Q 194 250 220 150 Z" fill="url(#pouch-body-brazil-cerrado)" />
 
     <!-- Side crease highlights -->
-    <path d="M 240 220 L 255 785" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2" />
-    <path d="M 560 220 L 545 785" stroke="#000000" stroke-opacity="0.22" stroke-width="2" />
+    <path d="M 220 150 L 236 892" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2" />
+    <path d="M 580 150 L 564 892" stroke="#000000" stroke-opacity="0.22" stroke-width="2" />
 
     <!-- Top seal / zipper band -->
-    <rect x="236" y="170" width="328" height="52" rx="4" fill="#A44C26" stroke="#7D3516" stroke-width="1.5" />
-    <rect x="236" y="170" width="328" height="52" rx="4" fill="url(#top-seal-brazil-cerrado)" />
-    <line x1="244" y1="192" x2="556" y2="192" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="4 3" />
-    <line x1="244" y1="202" x2="556" y2="202" stroke="#000000" stroke-opacity="0.2" stroke-width="1" />
+    <rect x="216" y="96" width="368" height="58" rx="4" fill="#5B3050" stroke="#3E2038" stroke-width="1.5" />
+    <rect x="216" y="96" width="368" height="58" rx="4" fill="url(#top-seal-brazil-cerrado)" />
+    <line x1="226" y1="120" x2="574" y2="120" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="4 3" />
+    <line x1="226" y1="132" x2="574" y2="132" stroke="#000000" stroke-opacity="0.2" stroke-width="1" />
 
     <!-- Tear notches -->
-    <path d="M 236 195 L 246 190 L 246 200 Z" fill="#FFFFFF" fill-opacity="0.4" />
-    <path d="M 564 195 L 554 190 L 554 200 Z" fill="#000000" fill-opacity="0.3" />
+    <path d="M 216 124 L 230 117 L 230 131 Z" fill="#FFFFFF" fill-opacity="0.4" />
+    <path d="M 584 124 L 570 117 L 570 131 Z" fill="#000000" fill-opacity="0.3" />
 
     
 
     <!-- One-way degassing valve -->
-    <circle cx="400" cy="272" r="14" fill="#000000" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1" />
-    <circle cx="400" cy="272" r="4" fill="#000000" fill-opacity="0.25" />
-    <circle cx="395" cy="272" r="1.5" fill="#FFFFFF" fill-opacity="0.4" />
-    <circle cx="405" cy="272" r="1.5" fill="#FFFFFF" fill-opacity="0.4" />
+    <circle cx="400" cy="210" r="16" fill="#000000" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.2" stroke-width="1" />
+    <circle cx="400" cy="210" r="5" fill="#000000" fill-opacity="0.25" />
+    <circle cx="394" cy="210" r="2" fill="#FFFFFF" fill-opacity="0.4" />
+    <circle cx="406" cy="210" r="2" fill="#FFFFFF" fill-opacity="0.4" />
 
-    <!-- Label Sticker -->
+    <!-- Label Sticker: taller to match bigger pack -->
     <g filter="drop-shadow(0 4px 12px rgba(0,0,0,0.08))">
-      <rect x="268" y="324" width="264" height="376" rx="6" fill="#FCFAF6" stroke="#E2DCD0" stroke-width="1.5" />
-      
+      <rect x="256" y="300" width="288" height="440" rx="6" fill="#FAF7F2" stroke="#E2DCD0" stroke-width="1.5" />
+
+      <path d="M 274 722 L 274 686 M 274 722 L 310 722" stroke="#D4A46A" stroke-width="3" stroke-linecap="round" opacity="0.4" />
+
       <!-- Wordmark -->
-      <text x="400" y="364" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="700" letter-spacing="4" fill="#8C3A14">KILN &amp; LEAF</text>
-      <text x="400" y="380" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="8.5" font-weight="600" letter-spacing="2" fill="#786F66">ROASTERY · ARTISAN LOT</text>
-      <line x1="308" y1="394" x2="492" y2="394" stroke="#E2DCD0" stroke-width="1" />
+      <text x="400" y="344" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" letter-spacing="4" fill="#8C3A14">KILN &amp; LEAF</text>
+      <line x1="296" y1="360" x2="504" y2="360" stroke="#E2DCD0" stroke-width="1" />
 
-      <!-- Product Name -->
-      <text x="400" y="432" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="600" fill="#161412">Cerrado Mineiro</text>
-      <text x="400" y="458" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="600" fill="#161412">Natural</text>
+      <!-- Product Name (min 28px rendered, ≈12px+ at card width) -->
+      <text x="400" y="454" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#161412">Cerrado Mineiro</text>
+      <text x="400" y="486" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="600" fill="#161412">Natural</text>
 
-      <line x1="330" y1="532" x2="470" y2="532" stroke="#E2DCD0" stroke-width="1" />
+      <line x1="316" y1="578" x2="484" y2="578" stroke="#E2DCD0" stroke-width="1" />
 
-      <!-- Origin & Details -->
-      <text x="400" y="562" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#4E473F">Brazil Cerrado</text>
-      <text x="400" y="582" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="10.5" font-weight="500" fill="#786F66">Whole Bean · 500g</text>
+      <!-- Origin & Weight (14px rendered) -->
+      <text x="400" y="612" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#4E473F">Brazil Cerrado</text>
+      <text x="400" y="634" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="12" font-weight="500" fill="#786F66">Whole Bean · 500g</text>
 
-      <!-- Roast dots -->
-      <g transform="translate(0, 16)">
-        <text x="400" y="612" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="8.5" font-weight="600" letter-spacing="1.5" fill="#786F66">ROAST PROFILE</text>
-        
-      <circle cx="364" cy="630" r="4.5" fill="#8C3A14" stroke="#8C3A14" stroke-width="1.5" />
-    
-      <circle cx="382" cy="630" r="4.5" fill="#8C3A14" stroke="#8C3A14" stroke-width="1.5" />
-    
-      <circle cx="400" cy="630" r="4.5" fill="#8C3A14" stroke="#8C3A14" stroke-width="1.5" />
-    
-      <circle cx="418" cy="630" r="4.5" fill="none" stroke="#8C3A14" stroke-width="1.5" />
-    
-      <circle cx="436" cy="630" r="4.5" fill="none" stroke="#8C3A14" stroke-width="1.5" />
-    
+      
+      <!-- Roast dots (coffee) -->
+      <g>
+        <circle cx="356" cy="692" r="6" fill="#8C3A14" stroke="#8C3A14" stroke-width="1.5" />
+      <circle cx="378" cy="692" r="6" fill="#8C3A14" stroke="#8C3A14" stroke-width="1.5" />
+      <circle cx="400" cy="692" r="6" fill="#8C3A14" stroke="#8C3A14" stroke-width="1.5" />
+      <circle cx="422" cy="692" r="6" fill="none" stroke="#8C3A14" stroke-width="1.5" />
+      <circle cx="444" cy="692" r="6" fill="none" stroke="#8C3A14" stroke-width="1.5" />
       </g>
+      
     </g>
   </g>
 </svg>
