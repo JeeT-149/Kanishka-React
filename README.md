@@ -4,7 +4,7 @@ A refined artisanal e-commerce storefront for **Kiln & Leaf Roasters**, a specia
 
 Built with Vite, React 19, TypeScript (strict mode), Tailwind CSS v4, and React Router.
 
-**Live Demo:** [https://kiln-and-leaf.vercel.app](https://kiln-and-leaf.vercel.app) *(Candidate: replace with your deployment URL)*
+**Live Demo:** [https://kiln-and-leaf.vercel.app](https://kiln-and-leaf.vercel.app)
 
 ---
 
@@ -224,4 +224,3 @@ The project uses client-side single-page app (SPA) routing with React Router.
     ]
   }
   ```
-- **Netlify Equivalent**: If deploying to Netlify, include `/* /index.html 200` in a `public/_redirects` file or specify the redirect in `netlify.toml`.
