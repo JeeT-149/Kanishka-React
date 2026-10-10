@@ -16,7 +16,7 @@ describe("Data Integrity", () => {
     expect(uniqueIds.size).toBe(products.length);
   });
 
-  it("verifies that every image and gallery file exists on disk", () => {
+  it("verifies that every image and gallery file exists on disk and is not an LFS pointer", () => {
     products.forEach((product) => {
       const allImages = Array.from(
         new Set([product.image, ...(product.images || [])]),
@@ -29,6 +29,22 @@ describe("Data Integrity", () => {
           fs.existsSync(absPath),
           `Image ${imgRelPath} for product ${product.id} does not exist on disk at ${absPath}`,
         ).toBe(true);
+
+        const stat = fs.statSync(absPath);
+        expect(
+          stat.size,
+          `Image ${imgRelPath} is suspiciously small (${stat.size} bytes)`,
+        ).toBeGreaterThan(500);
+
+        // Verify it is not an un-downloaded Git LFS pointer text file
+        const head = Buffer.alloc(30);
+        const fd = fs.openSync(absPath, "r");
+        fs.readSync(fd, head, 0, 30, 0);
+        fs.closeSync(fd);
+        expect(
+          head.toString("utf8").startsWith("version https://git-lfs"),
+          `Image ${imgRelPath} is an un-downloaded Git LFS pointer file!`,
+        ).toBe(false);
       });
     });
   });
